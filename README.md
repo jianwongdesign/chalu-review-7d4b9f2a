@@ -4,7 +4,7 @@ An original responsive concept for Chalu, stored in the `crystal-cha` project. C
 
 - **Shareable preview:** https://jianwongdesign.github.io/crystal-cha/
 - **Repository:** https://github.com/jianwongdesign/crystal-cha
-- **Hero film:** https://jianwongdesign.github.io/crystal-cha/assets/hero-loop-v2.mp4
+- **Hero film:** https://jianwongdesign.github.io/crystal-cha/assets/hero-loop-v3.mp4
 - **Status:** Design and shopping demo. No real payments, orders or delivery.
 
 ## Design
@@ -28,7 +28,7 @@ Illustrative prices: Snow Jasmine S$32, Hibiscus Noir S$36, Volcano Oolong S$38,
 
 ## Film
 
-The current Kling 3.0 Pro film has visible camera movement. Its opening 2.25 seconds play forwards and backwards as a 4.5-second seamless loop, preserving full bottles for mobile contain framing. The silent H.264 file is 1,442,351 bytes. Two generations cost **24.5 credits total**, within the approved 50-credit cap. A matching poster, prominent play/retry overlay, pause control and offscreen/background pause logic support playback. Reduced-motion and data-saving preferences default to the poster until the visitor presses play. See `docs/HERO-VIDEO.md`.
+The current Kling 3.0 Pro film has visible camera movement. Its opening footage is motion-interpolated and retimed with a cosine curve into an 8-second, 60 fps loop. The movement slows naturally at both turnarounds, preserving complete bottles for mobile contain framing. The silent H.264 file is 2,761,598 bytes; smoothing used no additional Higgsfield credits. Two generations cost **24.5 credits total**, within the approved 50-credit cap. A matching poster, prominent play/retry overlay, pause control and offscreen/background pause logic support playback. Reduced-motion and data-saving preferences default to the poster until the visitor presses play. See `docs/HERO-VIDEO.md`.
 
 ## Run and verify
 
@@ -97,4 +97,6 @@ Each product has three distinct suggested dishes in its “Better together” se
 - [The craft](https://jianwongdesign.github.io/crystal-cha/craft.html)
 - [The ritual](https://jianwongdesign.github.io/crystal-cha/ritual.html)
 
-These are dedicated documents with active navigation, shared commerce, mobile menus and contextual next-page links. Their source is `templates/page.html` and `scripts/render-pages.py`, which reuse maintained homepage sections. `pages.css` provides page layouts and naturally wrapping copy. Run both page renderers after shared homepage edits.
+These are dedicated documents with active navigation, shared commerce, mobile menus and contextual next-page links. Their source is `templates/page.html`, the fuller editorial fragments in `templates/pages/`, and `scripts/render-pages.py`, which reuse maintained homepage sections. `pages.css` provides page layouts and naturally wrapping copy. Run both page renderers after shared homepage edits.
+
+The four navigation pages share a rounded, full-content-width image-and-copy section featuring an original generated tea-farm landscape. Shop has a selection guide, Story has fuller founder/table copy, Craft adds tasting guidance, and Ritual includes hosting ideas. Products include individual tasting narratives and expanded serving guidance. Decorative small headings remain removed.

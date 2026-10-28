@@ -72,3 +72,11 @@ Hero V2 supersedes the subtle first clip. Kling 3.0 Pro generated an 8-second mo
 Local verification: four new pages at 320/768/1440 widths, mobile menu destination and active navigation; product right-column paragraph uses its full 604.8 px desktop width with no manual breaks. Hero playback, pause/central resume and geometry at 320×568, 390×844, 768×1024, 1440×1000, 2560×1440 and 844×390; no horizontal overflow. New shop add-to-bag and checkout show S$32 + S$6 = S$38. Reduced-motion remains source-reviewed only.
 
 User’s final direction: remove small decorative headings/captions throughout. Removed all eyebrow paragraphs from home, navigation pages, products, bag and checkout, plus photo slogans, hero footer slogans, founder micro-caption and product portrait kicker. Functional prices, tasting notes, form labels, origin facts and demo notices remain. No new media generation.
+
+## Latest revision — smoother film, expanded subpages and tea-farm section
+
+User requested smoother hero motion, more content on every subpage, and an image-led replacement for the plain next-page box. V3 retimes the same original video into an 8-second 60 fps loop with motion-compensated interpolation and cosine easing. Both turnarounds slow naturally. File: assets/hero-loop-v3.mp4 (2,761,598 bytes). Existing V2 poster stays. No new Higgsfield spend; cumulative 24.5/50. Reproduction script: scripts/smooth-hero.py.
+
+All four navigation pages now have expanded content in templates/pages/*.html. Products have tasting_copy, occasion_copy and serve_copy in docs/products.json, rendered into a new readable tasting section and fuller serving disclosure. Checkout has a practical demo-help block. Small decorative headings remain absent.
+
+The shared next-page module now uses a two-column photograph/copy layout with full paragraphs and a button, matching the content gutters. It stacks on mobile. assets/tea-farm.webp is an original built-in image-generation result (1536×1024, 314 KB), an imagined Yunnan-inspired farm, not a verified Chalu estate. Preserve that provenance and alt wording.

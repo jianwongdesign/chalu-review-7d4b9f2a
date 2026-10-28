@@ -58,3 +58,9 @@ Use subtle, smooth expand/collapse motion for FAQ-style disclosures, gentle cont
 ## Confirmed revision — full navigation and natural wrapping
 
 Shop, Our story, The craft and The ritual each need a dedicated shareable page. Let wording fill its actual column before wrapping, including The perfect pour and other right-hand product copy. The homepage video must visibly move: the current replacement has a gentle camera orbit and a mobile-safe 4.5-second forward/reverse loop. Total Higgsfield cost is now 24.5 of the approved 50 credits.
+
+## Confirmed expansion — fuller subpages and landscape imagery
+
+Add useful copy to every subpage while keeping decorative micro-headings removed. Expand tea selection, founder/story context, tasting guidance, serving and pairing ideas. Replace the plain next-page box across all four navigation pages with a rounded image-and-text panel matching the surrounding content width. Use an original generated tea-farm image. The hero motion should be smoother; the existing footage is now an eased 8-second 60 fps edit with no further Higgsfield spending.
+
+Existing brand and product details rechecked against https://chaludrinks.com/ on 28 October 2026. New meal/tasting/hosting suggestions are original editorial guidance, not manufacturer-tested claims. No unverified shelf-life, health, certification, brewing-duration or commercial-policy claims were added.

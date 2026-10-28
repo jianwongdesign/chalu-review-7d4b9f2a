@@ -144,5 +144,15 @@
     "source": "First frame of assets/hero-loop-v2.mp4",
     "owner": "Derived from generated Chalu hero film",
     "use": "Poster and reduced-motion fallback"
+  },
+  {
+    "file": "assets/hero-loop-v3.mp4",
+    "source": "Offline eased edit of Higgsfield job 10c65994-dd37-49e0-82e5-3dd6d5577d19; see HERO-VIDEO.md",
+    "use": "8 seconds, 60 fps; motion interpolation and cosine retiming; no extra credits"
+  },
+  {
+    "file": "assets/tea-farm.webp",
+    "source": "Built-in image generation, 28 October 2026; source exec-912db53b-bb0f-434f-8681-e2191aefb2d2.png",
+    "use": "Original imagined Yunnan-inspired tea-farm landscape for shared next-page editorial panel; not an actual verified estate photograph"
   }
 ]

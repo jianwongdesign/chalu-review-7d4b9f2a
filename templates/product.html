@@ -11,8 +11,8 @@
   <link rel="stylesheet" href="styles.css?v=20261028-clean"><link rel="stylesheet" href="shop.css?v=20261028-clean"><link rel="stylesheet" href="product.css?v=20261028-motion">
   <script src="commerce.js?v=20261028-clean" defer></script><script src="navigation.js?v=20261028-products" defer></script><script src="product.js?v=20261028-products" defer></script>
   <link rel="stylesheet" href="motion.css?v=20261028-motion">
-  <script src="motion.js?v=20261028-clean" defer></script>
-  <link rel="stylesheet" href="pages.css?v=20261028-clean">
+  <script src="motion.js?v=20261028-expanded" defer></script>
+  <link rel="stylesheet" href="pages.css?v=20261028-expanded">
 </head>
 <body class="product-page $id" data-tea="$id">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -35,11 +35,12 @@
         <p class="purchase-caption">Demo checkout available. No real order or payment.</p>
         <div class="tea-disclosures">
           <details open><summary>The tea &amp; the blend <span aria-hidden="true">+</span></summary><dl><div><dt>Tea</dt><dd>$tea</dd></div><div><dt>Origin</dt><dd>$origin</dd></div><div><dt>Character</dt><dd>$profile</dd></div></dl><h3>$blend_heading</h3><p>$blend</p><a class="source-link" href="https://chaludrinks.com/" target="_blank" rel="noopener noreferrer">Product information from Chalu ↗</a></details>
-          <details><summary>The perfect pour <span aria-hidden="true">+</span></summary><p>Serve chilled. Open the cork carefully, then pour into a wine glass or flute to enjoy the aromas and bubbles.</p></details>
+          <details><summary>The perfect pour <span aria-hidden="true">+</span></summary><p>$serve_copy</p></details>
           <details><summary>About this demo <span aria-hidden="true">+</span></summary><p>Explore the bag and checkout using sample details. Prices and delivery charges are illustrative; this preview does not process payments or place orders.</p></details>
         </div>
       </div>
     </section>
+    <section class="page-reading tea-reading" aria-labelledby="tasting-story-title"><h2 id="tasting-story-title">Get to know $name.</h2><div>$tasting_copy<h3>At your table</h3><p>$occasion_copy</p><a class="text-link" href="ritual.html">More serving ideas ↗</a></div></section>
     <section class="tea-moment" aria-labelledby="moment-title"><img src="assets/$photo.webp" width="1000" height="1000" alt="$photoAlt" loading="lazy"><div><h2 id="moment-title">Better <em>together.</em></h2><p class="pairing-intro">Three dishes to explore with $name.</p><ol class="dish-pairings">$pairings</ol><p class="pairing-caption">Pairing ideas inspired by the tea’s flavour profile. Find your own favourite.</p></div></section>
     <section class="related-teas" aria-labelledby="related-title"><div class="related-heading"><div><h2 id="related-title">Keep <em>exploring.</em></h2></div><a class="text-link" href="shop.html">View the collection ↗</a></div><div class="product-grid">$related</div></section>
   </main>

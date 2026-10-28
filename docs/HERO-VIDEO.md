@@ -1,6 +1,14 @@
 # Chalu hero film
 
-## Current film — visible camera motion
+## Current edit — smoother motion
+
+The user requested smoother movement. `assets/hero-loop-v3.mp4` uses the same original Kling V2 source, with motion-compensated interpolation at 120 fps and cosine time mapping into an 8-second, 60 fps loop. Both turnarounds ease to zero speed, avoiding the abrupt constant-speed reversal in V2.
+
+Output: 1760×1176, H.264/yuv420p, faststart, no audio, 480 frames, 8.000 seconds, 2,761,598 bytes. The first-frame V2 poster remains valid. The source traversal ends at approximately 2.208 seconds, retaining complete bottle framing. No new Higgsfield generation: total remains 24.5 / 50 credits.
+
+Reproduce with `python3 scripts/smooth-hero.py INPUT.mp4 OUTPUT.mp4` using the original V2 result below and an FFmpeg build with minterpolate/libx264. The script does not run during the website build.
+
+## Previous edit — visible camera motion
 
 28 October 2026. User reported the earlier cinemagraph looked like a still.
 

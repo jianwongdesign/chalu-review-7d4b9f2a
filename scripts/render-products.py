@@ -18,8 +18,9 @@ bag = re.search(r'<dialog id="bag-dialog".*?(?=  </body>)', home, re.S)[0]
 cards = {p['id']: re.search(r'<article class="product ' + p['id'] + r'">.*?</article>', home, re.S)[0] for p in products}
 template = Template((ROOT / 'templates/product.html').read_text())
 for product in products:
-    values = {k: escape(str(v), quote=True) for k, v in product.items() if k not in ('notes', 'pairings')}
+    values = {k: escape(str(v), quote=True) for k, v in product.items() if k not in ('notes', 'pairings', 'tasting_copy')}
     values.update(header=header, footer=footer, bag=bag,
+        tasting_copy=''.join(f'<p>{escape(paragraph)}</p>' for paragraph in product['tasting_copy']),
         notes=''.join(f'<li><strong>{escape(a)}</strong><span>{escape(b)}</span></li>' for a,b in product['notes']),
         pairings=''.join(f'<li><span class="pairing-number">0{i+1}</span><div><h3>{escape(dish)}</h3><p>{escape(why)}</p></div></li>' for i,(dish,why) in enumerate(product['pairings'])),
         price_label=f"S${product['price']/100:.2f}",

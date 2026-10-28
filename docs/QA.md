@@ -90,3 +90,14 @@ The final release should be verified anonymously after the GitHub Actions deploy
 - Reduced-motion/data-saving paths remain source-reviewed; no browser security workaround or physical-device certification.
 
 Final copy cleanup: all ten pages checked at 320×568 and 1440×1000 after removing decorative eyebrow text and marketing captions. Zero eyebrow elements and no horizontal overflow. Mobile homepage remains 100svh and the v2 film plays. Practical product/checkout text remains intact.
+
+## Revision 7 — smoother film and expanded subpages
+
+28 October 2026:
+
+- All nine subpages checked at 320×568, 768×1024, 1440×1000 and 2560×1440: no horizontal overflow, exactly one H1, no decorative eyebrow headings. Navigation-page main content is approximately 300–510 words; products approximately 440–460 words including existing product/related content.
+- Shared next-page section: original generated farm image, two body paragraphs and contextual link on all four navigation pages. Desktop shop panel aligns to the 72 px content gutters (1296 px panel at 1440 px viewport). At 390 px it stacks into a 342 px panel with 24 px margins. Desktop/mobile screenshots reviewed.
+- Product tasting section visually reviewed on desktop. Expanded “The perfect pour” opens with its product-specific guidance and retains smooth disclosure behavior.
+- Hero V3: 1760×1176, 60 fps, 480 frames, 8 seconds, 2,761,598 bytes. Motion-compensated intermediate frames plus cosine retiming ease both turnarounds and the loop seam. Source bottle framing remains complete; sampled output reviewed for label integrity.
+- Browser video reaches readyState 4, advances currentTime, displays at opacity 1, and responds to pause and central play. Mobile contain framing is unchanged. Reduced-motion/data-saving remain source-reviewed only.
+- All seven JS syntax checks, four commerce tests, renderer freshness checks and ten-page static validation pass. Build now contains 57 files, including the new farm image and V3 video.

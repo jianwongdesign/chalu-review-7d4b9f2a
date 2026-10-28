@@ -43,7 +43,13 @@
         "Pear & almond tart",
         "A softly fruity finish alongside the tea’s gentle sweetness."
       ]
-    ]
+    ],
+    "tasting_copy": [
+      "Begin with the aroma before taking a sip. Snow Jasmine is a good place to explore the lighter side of the collection: follow the floral note first, then look for the gentle fruit character described in the tasting notes above.",
+      "Try your first glass on its own, then take another sip with a lightly flavoured dish. A little fresh ginger or a few herbs can give you a different way into the tea. Keep sauces gentle for your first pairing so you can still notice what is happening in the glass."
+    ],
+    "occasion_copy": "Pour it as guests arrive for lunch, or set it beside a plate of rice-paper rolls for an easy starter. If you are tasting several Chalu teas, begin here before moving on to a more toasted or structured expression.",
+    "serve_copy": "Chill the bottle well and open the cork carefully. Pour a little into a wine glass or flute, leaving room to appreciate the aroma. Taste before adding any garnish, then try a sip alongside the first bite of your meal. Keep the bottle chilled between pours."
   },
   {
     "id": "hibiscus",
@@ -89,7 +95,13 @@
         "A soft cheese board",
         "Creamy textures meet fragrant berry notes—an easy pairing to share."
       ]
-    ]
+    ],
+    "tasting_copy": [
+      "Take a moment with the colour and aroma before your first sip. Hibiscus Noir invites a closer look at the fruit-led side of the collection, especially when you have a richer dish on the table.",
+      "Compare a small glass on its own with a sip after food. Try roast duck for one meal, then an earthy mushroom dish for another. The suggested pairings below are different ways to explore the same tea, rather than a fixed menu you need to follow."
+    ],
+    "occasion_copy": "Bring it out for dinner with friends, or open a bottle when you lay out a cheese board. Serve a small first glass and let everyone choose a bite to try with it. It also makes an interesting side-by-side tasting with the lighter Snow Jasmine.",
+    "serve_copy": "Serve well chilled in a wine glass or flute. Open the cork carefully and pour slowly, leaving space in the glass for the aroma. Start with a taste on its own, then return to the glass with something savoury from the table."
   },
   {
     "id": "oolong",
@@ -135,7 +147,13 @@
         "Roasted mushrooms",
         "Earthy flavours make room for the tea’s warm oak and mineral character."
       ]
-    ]
+    ],
+    "tasting_copy": [
+      "Give the first sip a little time before taking the next. Volcano Oolong is the expression to explore when you are drawn to the savoury side of a meal. Use its toasted and mineral tasting notes as a guide, then describe the finish in your own words.",
+      "Try it with a simple grilled dish first. A lightly charred edge or a spoonful of roasted mushrooms offers a useful contrast to tasting the tea by itself. You can then explore a more elaborate plate once you know what you enjoy in the pairing."
+    ],
+    "occasion_copy": "Set it beside roast chicken for a weekend lunch, or pour it with grilled fish at dinner. For a tasting evening, compare it with Snow Jasmine in separate glasses and notice where your attention goes in each one.",
+    "serve_copy": "Chill well before serving and open the cork carefully. Use a wine glass or flute, then take a small sip before the food arrives. Return to it with a bite of something grilled or roasted, keeping the bottle chilled between glasses."
   },
   {
     "id": "rose",
@@ -181,6 +199,12 @@
         "Strawberry tart",
         "A fruit-forward match that echoes the tea’s summer-berry aromas."
       ]
-    ]
+    ],
+    "tasting_copy": [
+      "Begin with the aroma, then follow the finish after your first sip. Untamed Rosé brings several tasting cues to explore, so take a moment to notice which one stands out to you before looking back at the notes above.",
+      "Try it first with a fresh dish, such as tomato and burrata, then revisit the glass with a bite of fruit. Those two combinations give you different ways to explore the same pour. The suggested dishes below are an easy place to start your own comparison."
+    ],
+    "occasion_copy": "Choose it for a lunch that carries on into the afternoon, or a table of smaller dishes passed around to share. Save a little to try with a strawberry tart at the end of the meal and see how your impression changes.",
+    "serve_copy": "Serve well chilled in a wine glass or flute. Open the cork carefully and begin with a small pour so there is room to enjoy the aroma. Keep the bottle chilled as lunch unfolds and taste again alongside a fresh or fruity dish."
   }
 ]
