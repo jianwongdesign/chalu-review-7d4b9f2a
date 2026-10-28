@@ -113,3 +113,7 @@ Moved Bloom/Bold/Earth/Wild to the bottom-left in collection images, related pro
 ## Even shop row and homepage wording confirmation
 
 Removed the 60 px stagger on alternate shop products. All four image/title rows now align evenly. Confirmed bottom-left words also appear in the homepage collection shown by the user; both sources load the refreshed 20261028-aligned stylesheet. Desktop 1440 px image/title tops match across four products; 390/768/2560 px have equal zero top padding and no overflow. Homepage and shop visually reviewed. Required tests, syntax and build passed.
+
+## Centred bottles and explicit even card baseline
+
+User reiterated no alternating up/down cards and requested bottles in the middle. Collection and related-product images now have zero vertical offset; bottle height is capped to preserve room for the bottom-left words while centring vertically and horizontally. Shop product top padding/margin explicitly zero. Shared stylesheet version 20261028-centered. At 1440 px all four shop card tops match and bottle centre deltas are <0.01 px horizontally, 0 vertically. Home and Shop checked at 390/768/2560 with zero offsets/padding and no overflow. Required commerce tests, JS syntax and build pass.

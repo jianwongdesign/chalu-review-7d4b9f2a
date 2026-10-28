@@ -323,14 +323,17 @@ main p, .story-copy, .serve-list, .product h3 { max-width: none; }
 .news-card h3 a { display: block; }
 
 /* Give each expression its own clear signature below the bottle. */
-.product-image .product-word { left: 16px; right: 12px; bottom: 12px; width: auto; text-align: left; font-size: clamp(44px,4vw,64px); line-height: 1; }
-.product-image img { top: -26px; }
+.product-image .product-word { left: 16px; right: 12px; bottom: 12px; width: auto; text-align: left; font-size: clamp(40px,3.4vw,52px); line-height: 1; }
+.product-image img { top: 0; max-height: calc(100% - 128px); }
 .product-page .portrait-word { top: auto; bottom: 48px; left: 24px; right: 24px; width: auto; text-align: left; font-size: clamp(56px,6vw,84px); line-height: 1; }
 .product-page .portrait-bottle { height: 68%; top: -28px; }
 @media(max-width:760px) {
- #collection-track .product-word { font-size: 54px; }
+ #collection-track .product-word { font-size: 50px; }
  .product-page .portrait-word { left: 20px; bottom: 42px; font-size: 50px; }
  .related-teas .product-image .product-word { left: 10px; right: 8px; bottom: 10px; font-size: 36px; }
- .related-teas .product-image img { top: -24px; }
+ .related-teas .product-image img { top: 0; max-height: calc(100% - 100px); }
 }
 @media(max-width:360px) { .product-page .portrait-bottle { height: 64%; top: -32px; } }
+
+/* Keep every collection card on one baseline; no alternating offsets. */
+.shop-page .product { padding-top: 0; margin-top: 0; }
