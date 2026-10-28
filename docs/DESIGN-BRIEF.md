@@ -40,3 +40,7 @@ The user subsequently requested:
 - Make the homepage hero **100vh** and arrange overlay text carefully.
 
 This revision supersedes the earlier static-only scope. The implemented store uses explicitly illustrative SGD prices, a local basket and simulated checkout. The original split hero is replaced by a full-screen film. One video generation cost 10.5 credits.
+
+## Confirmed revision — rounded corners
+
+Use rounded corners across most interface surfaces, including imagery, product cards, buttons, dialogs and the demo checkout. Shared radius tokens in `shop.css` keep the treatment consistent and slightly tighter on mobile.

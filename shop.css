@@ -1,4 +1,10 @@
 /* Full-screen film and the explicitly simulated shopping experience. */
+:root {
+  --radius-control: 14px;
+  --radius-small: 12px;
+  --radius-panel: 24px;
+  --radius-pill: 999px;
+}
 [hidden] {
   display: none !important;
 }
@@ -1306,4 +1312,62 @@ body.bag-open {
 .checkout-submit:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+/* Soft, consistent corners across the storefront and demo checkout. */
+.button,
+.add-button {
+  border-radius: var(--radius-control);
+}
+
+.product-image,
+.story-main,
+.story-inset,
+.ritual-image,
+.order-summary,
+#product-dialog {
+  border-radius: var(--radius-panel);
+}
+
+.ritual-image {
+  overflow: hidden;
+}
+
+.cinema-hero.hero {
+  border-radius: 0 0 var(--radius-panel) var(--radius-panel);
+}
+
+.bag-dialog[open] {
+  border-radius: var(--radius-panel) 0 0 var(--radius-panel);
+}
+
+.checkout-layout input,
+.checkout-layout select,
+.delivery-option,
+.demo-payment {
+  border-radius: var(--radius-control);
+}
+
+.bag-item-image,
+.summary-image,
+.demo-notice,
+.shop-status {
+  border-radius: var(--radius-small);
+}
+
+.video-control,
+.quantity-control,
+.demo-chip {
+  border-radius: var(--radius-pill);
+}
+
+.mobile-nav {
+  border-radius: 0 0 var(--radius-panel) var(--radius-panel);
+}
+
+@media (max-width: 650px) {
+  :root {
+    --radius-panel: 20px;
+    --radius-control: 12px;
+  }
 }
