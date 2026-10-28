@@ -114,5 +114,23 @@
     "file": "assets/notes/rose.webp",
     "source": "Built-in image-generation tool, 28 October 2026",
     "use": "Original botanical aroma illustration; see docs/BOTANICAL-ASSETS.md for prompts and boundaries"
+  },
+  {
+    "file": "assets/fonts/cormorant-variable.woff2",
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/cormorantgaramond/CormorantGaramond%5Bwght%5D.ttf",
+    "owner": "Cormorant Garamond font authors",
+    "use": "SIL Open Font License; genuine variable medium weights; subset to Latin/extended Latin, punctuation and arrows with fontTools, WOFF2 compression"
+  },
+  {
+    "file": "assets/fonts/cormorant-italic-variable.woff2",
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/cormorantgaramond/CormorantGaramond-Italic%5Bwght%5D.ttf",
+    "owner": "Cormorant Garamond font authors",
+    "use": "SIL Open Font License; genuine variable medium weights; subset to Latin/extended Latin, punctuation and arrows with fontTools, WOFF2 compression"
+  },
+  {
+    "file": "assets/fonts/dm-variable.woff2",
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/dmsans/DMSans%5Bopsz%2Cwght%5D.ttf",
+    "owner": "DM Sans font authors",
+    "use": "SIL Open Font License; genuine variable weight; Latin subset in WOFF2"
   }
 ]

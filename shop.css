@@ -317,7 +317,7 @@ body.bag-open {
   font-size: 43px;
 }
 .bag-header h2 span {
-  font: 12px var(--sans);
+  font: 500 12px var(--sans);
   vertical-align: middle;
   margin-left: 8px;
   color: #79816e;
@@ -346,7 +346,7 @@ body.bag-open {
   padding: 55px 0;
 }
 .bag-empty > span {
-  font: 64px var(--serif);
+  font: 500 64px var(--serif);
   color: #89936c;
 }
 .bag-empty h3 {
@@ -448,7 +448,7 @@ body.bag-open {
   font-size: 16px;
 }
 .bag-totals strong {
-  font-weight: 400;
+  font-weight: 500;
 }
 .bag-totals > p {
   font-size: 10px;
@@ -585,7 +585,7 @@ body.bag-open {
   background: transparent;
   border-radius: 0;
   padding: 11px 13px;
-  font: 14px var(--sans);
+  font: 500 14px var(--sans);
   color: var(--ink);
   min-width: 0;
 }
@@ -610,7 +610,7 @@ body.bag-open {
   flex: 1;
 }
 .delivery-option strong {
-  font-weight: 400;
+  font-weight: 500;
 }
 .delivery-option small {
   display: block;
@@ -637,7 +637,7 @@ body.bag-open {
 }
 .demo-payment strong {
   font-size: 12px;
-  font-weight: 400;
+  font-weight: 500;
 }
 .demo-payment strong span {
   margin-left: 10px;
@@ -727,7 +727,7 @@ body.bag-open {
 .summary-item > strong {
   margin-left: auto;
   font-size: 12px;
-  font-weight: 400;
+  font-weight: 500;
   white-space: nowrap;
 }
 .order-totals {
@@ -820,7 +820,7 @@ body.bag-open {
 }
 .confirmation-reference strong {
   margin-left: 20px;
-  font-weight: 400;
+  font-weight: 500;
 }
 .order-confirmation .summary-item {
   text-align: left;
@@ -832,7 +832,7 @@ body.bag-open {
   font-size: 16px !important;
 }
 .confirmation-total strong {
-  font-weight: 400;
+  font-weight: 500;
   color: var(--ink);
 }
 .order-confirmation > .button {

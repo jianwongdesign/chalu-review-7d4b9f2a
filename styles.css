@@ -1,22 +1,22 @@
 @font-face {
   font-family: Cormorant;
-  src: url("assets/fonts/cormorant-regular.ttf") format("truetype");
+  src: url("assets/fonts/cormorant-variable.woff2") format("woff2");
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300 700;
   font-display: swap;
 }
 @font-face {
   font-family: Cormorant;
-  src: url("assets/fonts/cormorant-italic.ttf") format("truetype");
+  src: url("assets/fonts/cormorant-italic-variable.woff2") format("woff2");
   font-style: italic;
-  font-weight: 400;
+  font-weight: 300 700;
   font-display: swap;
 }
 @font-face {
   font-family: DM;
-  src: url("assets/fonts/dm-regular.ttf") format("truetype");
+  src: url("assets/fonts/dm-variable.woff2") format("woff2");
   font-style: normal;
-  font-weight: 400 600;
+  font-weight: 100 1000;
   font-display: swap;
 }
 :root {
@@ -41,7 +41,7 @@ body {
   margin: 0;
   color: var(--ink);
   background: var(--cream);
-  font: 15px/1.7 var(--sans);
+  font: 500 15px/1.7 var(--sans);
   -webkit-font-smoothing: antialiased;
 }
 body.dialog-open {
@@ -82,7 +82,7 @@ h1,
 h2,
 h3 {
   font-family: var(--serif);
-  font-weight: 400;
+  font-weight: 500;
 }
 h2 {
   font-size: clamp(48px, 5vw, 80px);
@@ -91,7 +91,7 @@ h2 {
 }
 h2 em,
 h1 em {
-  font-weight: 400;
+  font-weight: 500;
 }
 p {
   max-width: 65ch;
@@ -227,7 +227,7 @@ p {
 .tiny-star {
   font-size: 24px;
   color: var(--gold);
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1;
 }
 .hero h1 {
@@ -345,7 +345,7 @@ p {
 .origin-stamp b {
   font-family: Georgia, serif;
   font-size: 29px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.5;
 }
 .intro {
@@ -601,7 +601,7 @@ p {
   object-position: 65% center;
 }
 .founder-note b {
-  font-weight: 400;
+  font-weight: 500;
   color: var(--cream);
 }
 .craft {
@@ -713,7 +713,7 @@ p {
   color: #69785d;
 }
 .serve-list summary > b {
-  font-weight: 400;
+  font-weight: 500;
   font-size: 21px;
   margin-left: auto;
   line-height: 1;

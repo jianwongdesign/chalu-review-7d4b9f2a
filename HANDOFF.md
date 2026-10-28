@@ -50,3 +50,13 @@ The mobile/tablet hero uses contain framing up to 900 px, keeping the entire fil
 The mobile collection (up to 760 px) uses native horizontal scrolling and snap positions, perspective rotation and bottle shadows. Optional automatic rotation advances every 4.2 seconds, reversing at the ends. It pauses after user interaction and offscreen/in background. Explicit arrows and play/pause are available; reduced-motion disables initial autoplay. Desktop retains the four-column collection. `navigation.js` is shared between home and product pages.
 
 Shared CSS/JS URL versions changed to avoid returning visitors retaining the older preview assets.
+
+## Latest polish — motion, food pairings and stronger typography
+
+User requested smooth FAQ/scroll transitions, dish suggestions on each product page and slightly bolder wording throughout. `motion.js` and `motion.css` are shared by all six pages: interruptible native-details height/fade animation, one-time scroll entrances, hover and sticky-header transitions. Browser-native smooth anchor scrolling remains in use. Reduced-motion is respected, and native content remains usable without JS.
+
+Product data now includes `pairings` (three dish/reason pairs per tea), rendered in the rounded “Better together” panel. These are clearly labelled editorial suggestions, inferred from the brand’s flavour profiles and general serving guidance. The product templates still carry visual tasting notes and separate ingredient/blend details.
+
+All main text now uses weight 500. The previous DM file was static 400 despite a declared variable range; the new DM and Cormorant files are actual variable WOFF2 fonts from Google Fonts, subset to Latin/extended Latin, punctuation and arrows. Three files total 176,016 bytes. Original downloaded TTFs are local-only in `.local/font-sources/`; the committed WOFF2 sources are recorded in `docs/assets.json`. CSS URLs are versioned for this release.
+
+Validation: all six pages at 320/768/1440 widths with no horizontal overflow and computed body/H1 weight 500; three pairings on each tea; desktop/mobile disclosure open/close, repeated clicks and keyboard Enter; native smooth anchor scrolling to the homepage ritual; no clipped/stale inline heights after completion. Reduced-motion remains source-reviewed only (previous browser emulation refusal still applies). Build now contains 48 static files.

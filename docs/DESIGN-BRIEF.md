@@ -50,3 +50,7 @@ Use rounded corners across most interface surfaces, including imagery, product c
 Each tea needs its own dedicated page. The user's skincare reference informs a three-part tasting-note display: botanical cutouts, pastel circles and concise labels. This is a natural visual direction, not a claim of certified organic status. Each page includes a full bottle portrait, flavour description, separate ingredient/blend information, a demo purchase action and related teas.
 
 The mobile hero must show the full bottles and retain the video. It now contains the complete film above the text, instead of cropping the landscape video to a tall viewport. A mobile touch carousel adds perspective and bottle shadows, gentle automatic movement, manual horizontal scrolling, arrows and pause.
+
+## Confirmed polish — smooth movement and readability
+
+Use subtle, smooth expand/collapse motion for FAQ-style disclosures, gentle content reveals while scrolling, and slightly bolder wording throughout the site. Each tea also gets specific suggested dishes with flavour explanations alongside its tasting notes. All typography uses genuine variable fonts at medium weights, retaining the existing serif/sans pairing.

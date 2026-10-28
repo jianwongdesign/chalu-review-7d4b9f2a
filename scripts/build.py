@@ -60,7 +60,7 @@ for filename in PAGE_FILES:
 for page in pages.values():
     for filename, target in page.links:
         assert target in pages[filename].ids, f"Missing destination: {filename}#{target}"
-for filename in ("styles.css", "shop.css", "product.css"):
+for filename in ("styles.css", "shop.css", "product.css", "motion.css"):
     for asset in re.findall(r"url\(['\"]?([^'\")]+)", (ROOT / filename).read_text()):
         assert (ROOT / asset).is_file(), f"Missing CSS asset: {asset}"
 for tea in ("jasmine", "hibiscus", "oolong", "rose"):
@@ -69,7 +69,7 @@ for tea in ("jasmine", "hibiscus", "oolong", "rose"):
 if DIST.exists():
     shutil.rmtree(DIST)
 DIST.mkdir()
-for name in (*PAGE_FILES, "styles.css", "shop.css", "product.css", "site.js", "navigation.js", "product.js", "collection.js", "commerce.js", "checkout.js", "robots.txt", ".nojekyll"):
+for name in (*PAGE_FILES, "styles.css", "shop.css", "product.css", "motion.css", "motion.js", "site.js", "navigation.js", "product.js", "collection.js", "commerce.js", "checkout.js", "robots.txt", ".nojekyll"):
     shutil.copy2(ROOT / name, DIST / name)
 shutil.copytree(ROOT / "assets", DIST / "assets")
 print(f"Validated and built {sum(1 for p in DIST.rglob('*') if p.is_file())} static files in dist/")

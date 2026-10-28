@@ -64,3 +64,14 @@ The final release should be verified anonymously after the GitHub Actions deploy
 - Video returned readyState 4, currentTime advanced, opacity reached 1, and pause/resume worked. No warning/error console entries in checked home session. Existing live film was also confirmed playing before edits; source motion is intentionally subtle.
 - Reduced-motion/data-saving and blocked-autoplay recovery are source-reviewed; no new emulation or physical iOS-device certification is claimed.
 - Four Node checks now include consistency between dedicated pages, metadata and authoritative commerce prices. All JS syntax and six-page static build validation pass. Build includes 43 files and rejects stale product render output.
+
+## Revision 5 — motion, dish pairings and weight
+
+28 October 2026:
+
+- All six pages checked at 320×568, 768×1024 and 1440×1000 after loading the genuine variable body font. No horizontal overflow; body and H1 compute to weight 500.
+- Confirmed actual `wght` axes in the generated Cormorant WOFF2 files; DM source is now a genuine variable font instead of static regular mapped to a weight range. WOFF2 files are locally hosted and source/licence documented.
+- Every product page has three dish/reason pairs. Mobile “Better together” layout visually reviewed. Suggestions are editorial inferences, clearly labelled; Chalu source rechecked on this date.
+- Homepage anchor navigation retains CSS smooth scrolling. Homepage serving panels and product disclosures enter animated state, then finish with consistent `open`/`aria-expanded` and cleared explicit heights. Tested repeated toggles, Enter activation, mobile width and no clipped content after settlement.
+- Scroll entrances enhance visible content without a permanent hidden state. Keyboard focus cancels an entrance on its target. Reduced-motion and no-JS fallbacks are source-reviewed, not browser-emulated.
+- Existing four commerce tests, seven JS syntax checks, generated-page freshness and static-link/font validation pass. No warning/error logs in the inspected browser session. Build: 48 files.

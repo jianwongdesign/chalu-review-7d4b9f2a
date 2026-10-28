@@ -13,7 +13,7 @@
 .tea-portrait { height: min(760px,75vw); min-height: 600px; background: var(--tea-tint); border-radius: var(--radius-panel); position: sticky; top: 130px; overflow: hidden; display: grid; place-items: center; }
 .tea-portrait::before { content: ''; width: 76%; aspect-ratio: 1; border-radius: 50%; position: absolute; background: var(--tea-wash); opacity: .8; }
 .portrait-caption { position: absolute; top: 30px; left: 30px; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
-.portrait-word { position: absolute; top: 13%; width: 100%; text-align: center; font: italic clamp(100px,12vw,190px)/1 var(--serif); color: var(--tea-tone); opacity: .35; }
+.portrait-word { position: absolute; top: 13%; width: 100%; text-align: center; font: italic 500 clamp(100px,12vw,190px)/1 var(--serif); color: var(--tea-tone); opacity: .35; }
 .portrait-bottle { position: relative; height: 76%; max-width: 60%; width: auto; object-fit: contain; transform: rotate(-7deg); filter: drop-shadow(28px 24px 14px #21352426); }
 .portrait-seal { position: absolute; right: 6%; bottom: 17%; width: 108px; height: 108px; border: 1px solid #183c304d; border-radius: 50%; text-align: center; padding-top: 22px; font-family: var(--serif); font-size: 24px; line-height: 1.1; transform: rotate(10deg); }
 .portrait-seal small { font-family: var(--sans); font-size: 6px; letter-spacing: .12em; }
@@ -21,7 +21,7 @@
 .tea-copy { padding-top: 15px; }
 .tea-copy > .eyebrow { margin-bottom: 12px; }
 .tea-copy h1 { font-size: clamp(50px,4.8vw,80px); line-height: 1; letter-spacing: -.045em; }
-.tea-tagline { font: italic 27px/1.3 var(--serif); margin: 16px 0; }
+.tea-tagline { font: italic 500 27px/1.3 var(--serif); margin: 16px 0; }
 .tea-description { font-size: 13px; line-height: 1.9; color: #566253; }
 .tea-facts { display: flex; flex-wrap: wrap; gap: 9px; margin: 24px 0 30px; }
 .tea-facts span { border: 1px solid #cbd1c2; border-radius: 999px; padding: 6px 12px; font-size: 10px; }
@@ -89,3 +89,22 @@
 /* Definite sizing prevents the intrinsic bottle height expanding its grid row. */
 .tea-portrait { display: flex; align-items: center; justify-content: center; }
 .portrait-bottle { flex: 0 0 auto; min-height: 0; }
+
+/* Match the stronger type throughout the storefront. */
+.tea-price, .portrait-seal, .note-labels strong { font-weight: 500; }
+
+/* Editorial food pairings, specific to each tea. */
+.tea-moment > img { height: 100%; min-height: 620px; }
+.tea-moment > div { padding: clamp(30px,4vw,64px); }
+.tea-moment .pairing-intro { margin: 20px 0 24px; }
+.dish-pairings { list-style: none; padding: 0; margin: 0; }
+.dish-pairings li { display: grid; grid-template-columns: 25px 1fr; gap: 15px; border-top: 1px solid #183c3026; padding: 20px 0; }
+.pairing-number { font-size: 10px; color: var(--muted); padding-top: 6px; }
+.dish-pairings h3 { font-size: clamp(25px,2.2vw,34px); line-height: 1.1; }
+.tea-moment .dish-pairings p { font-size: 12px; margin: 10px 0 0; line-height: 1.8; }
+.tea-moment .pairing-caption { font-size: 10px; color: var(--muted); margin: 8px 0 0; }
+@media(max-width:760px) {
+ .tea-moment > img { min-height: 0; height: 310px; }
+ .tea-moment > div { padding: 34px 26px; }
+ .dish-pairings li { gap: 10px; padding: 19px 0; }
+}

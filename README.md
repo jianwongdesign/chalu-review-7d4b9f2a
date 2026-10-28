@@ -34,6 +34,7 @@ One six-second Kling 3.0 Pro generation via Higgsfield cost **10.5 credits**, wi
 
 ```sh
 python3 -m http.server 4173 --bind 127.0.0.1
+node --check motion.js
 node --check navigation.js
 node --check product.js
 node --check collection.js
@@ -55,6 +56,7 @@ Pushing `main` runs validation, builds an allowlist of website files into `dist/
 - `shop.css` — cinematic hero, bag and checkout layouts
 - `site.js`, `navigation.js` — video controller, sticky header and shared menu
 - `collection.js` — touch carousel, perspective and optional rotation
+- `motion.js`, `motion.css` — progressive scroll reveals, interruptible disclosure height/fade animations and hover transitions
 - `product.css`, `product.js` — product page styling and shared catalogue price
 - `templates/product.html`, `docs/products.json`, `scripts/render-products.py` — maintained source for the four generated root-level product HTML files
 - `docs/BOTANICAL-ASSETS.md` — original generated artwork and exact prompts
@@ -78,3 +80,11 @@ Chalu photography and trademarks remain their owners' property; confirm usage ri
 - [Untamed Rosé](https://jianwongdesign.github.io/crystal-cha/untamed-rose.html)
 
 Edit the template or product data, then run `python3 scripts/render-products.py`. The build rejects stale generated pages. Sample prices must match `commerce.js`; a unit check enforces this.
+
+## Motion, type and food pairings
+
+All pages use slightly stronger 500-weight text, including genuine medium Cormorant and DM Sans variable font files. The WOFF2 Latin subsets total about 172 KB. Existing fonts and OFL licences remain in `assets/fonts/`.
+
+FAQ-style disclosures animate height and content opacity; repeated clicks reverse from the current visible height. Native summary/keyboard behaviour, browser scrolling and no-JS content remain usable. Scroll entrances are one-time subtle rises/fades, with capped stagger. Reduced-motion skips entrances and preserves instant disclosures; focus and window resize finish relevant animations.
+
+Each product has three distinct suggested dishes in its “Better together” section, with short flavour-based explanations. These are editorial pairing ideas inspired by Chalu’s published flavour profiles, not manufacturer-tested recommendations. Tasting notes and ingredient information remain separate.
