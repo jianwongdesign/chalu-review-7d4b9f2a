@@ -23,7 +23,7 @@ Read `HANDOFF.md`, `README.md`, `docs/DESIGN-BRIEF.md`, then inspect Git status 
 - Shared motion lives in `motion.js` / `motion.css`. Keep native scrolling, reduced-motion, keyboard disclosure access and no-JS readability intact.
 - Body and serif fonts use genuine variable WOFF2 weights, generally 500. Do not map a static regular font to a variable weight range.
 
-- Main navigation destinations are shop.html, story.html, craft.html and ritual.html. Regenerate with `python3 scripts/render-pages.py` after changing index content or templates/page.html. Build checks all ten pages.
+- Main navigation destinations are shop.html, story.html, craft.html, ritual.html and news.html. Regenerate with `python3 scripts/render-pages.py` after changing index content or templates/page.html. Build checks all fourteen pages.
 - Copy wraps naturally to the available column width; avoid reintroducing manual paragraph line breaks or narrow max-width caps.
 
 - Decorative eyebrow headings and small marketing captions were removed at the user’s request. Do not reintroduce them; retain useful prices, tasting notes, form labels and demo disclosures.
@@ -31,3 +31,6 @@ Read `HANDOFF.md`, `README.md`, `docs/DESIGN-BRIEF.md`, then inspect Git status 
 - Expanded navigation-page content lives in `templates/pages/*.html`; shared tea-farm CTA lives in `templates/page.html`. Generated tea-farm scenery is illustrative, not a verified Chalu estate photograph.
 
 - Phone portrait (<=600 px) uses an edge-to-edge 100svh bottle film, compact bottom copy and no announcement bar. Preserve complete bottle framing and switch media on orientation/width changes while respecting explicit pause. Tablet/landscape retain the desktop media composition.
+
+- News content: docs/news.json and templates/article.html; run render-news.py, render-products.py, then render-pages.py after shared edits. Three stories are explicitly sample editorial content, not dated brand announcements.
+- Subpages use open editorial layouts, fine rules and rounded photographs, rather than tinted cards around whole sections. Preserve natural wrapping, the mobile collection carousel and all demo commerce controls.

@@ -102,3 +102,19 @@ These are dedicated documents with active navigation, shared commerce, mobile me
 The four navigation pages share a rounded, full-content-width image-and-copy section featuring an original generated tea-farm landscape. Shop has a selection guide, Story has fuller founder/table copy, Craft adds tasting guidance, and Ritual includes hosting ideas. Products include individual tasting narratives and expanded serving guidance. Decorative small headings remain removed.
 
 Phone portrait layouts up to 600 px use a separate six-second portrait film with larger complete bottles and compact bottom copy. The video fills 100svh; a responsive picture supplies its poster and the player switches media on orientation changes. Desktop retains the smooth 8-second V3 film. The portrait generation added 10.5 Higgsfield credits, bringing total spend to 35/50.
+
+
+## News and editorial subpages
+
+[News & stories](https://jianwongdesign.github.io/crystal-cha/news.html) is linked from the homepage, desktop/mobile menus and footer. Three dedicated sample articles cover the brand story, hosting a tasting and choosing tea for a meal. They are labelled preview editorial content; no fictional dates or announcements are presented as real news.
+
+`docs/news.json`, `templates/article.html` and `scripts/render-news.py` maintain these stories and the homepage listing. After shared changes, run the renderers in this order:
+
+```sh
+python3 scripts/render-news.py
+python3 scripts/render-products.py
+python3 scripts/render-pages.py
+python3 scripts/build.py
+```
+
+The build validates fourteen pages and packages 63 files. Subpages now use open editorial compositions, alternating photography, fine dividers and generous spacing. Selection guides and pairings are unboxed; the shop has staggered arched bottle images, and products have soft open portrait backgrounds. The shared tea-farm photograph stays rounded with copy beside it on the page canvas. Checkout retains its form controls with a lighter summary layout.

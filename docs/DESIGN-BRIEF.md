@@ -68,3 +68,10 @@ Existing brand and product details rechecked against https://chaludrinks.com/ on
 ## Confirmed phone hero redesign
 
 Make the phone homepage hero more attractive, 100vh and mostly focused on the bottles. Use a purpose-composed portrait film, full-bleed media, compact bottom headline/CTA and overlay navigation. Remove the old separated media band. Keep complete bottles visible and smoothly switch to the existing wider film for tablet/desktop and landscape. Higgsfield portrait generation brings total spend to 35/50 credits.
+
+
+## Confirmed revision — News and open subpage design
+
+Add News to the homepage and dedicated navigation. Until client news is provided, use clearly labelled sample editorial stories with dedicated pages; do not invent dated announcements. Three initial stories explore Chalu's background, hosting a sparkling tea tasting and choosing tea for a meal.
+
+All subpages should feel less blocky and less like a grid of cards. Use an open ivory canvas, large rounded photography, alternating image/copy compositions, subtle horizontal rules and natural text flow. Keep rounded controls and imagery, food-pairing content, botanical notes, mobile carousel and demo checkout. The tea-farm section should blend into the page rather than sit inside another tinted box.

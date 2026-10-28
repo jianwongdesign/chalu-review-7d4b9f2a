@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "news-yunnan-to-the-table",
+    "title": "From Yunnan to the table.",
+    "image": "landscape",
+    "image_alt": "Tea gathered in Yunnan",
+    "summary": "Meet the ideas behind Chalu, from a shared curiosity about tea to a bottle made for gathering around the table.",
+    "sections": [
+      {"heading": "A shared beginning", "paragraphs": ["In 2019, Mia and Fraser moved from Shanghai to Yunnan. Mia brought her interest in tea; Fraser brought his brewing experience. Their work together became Chalu, an alcohol-free sparkling tea named after the Tea Horse Road.", "That background offers a useful starting point for exploring the collection. Look at the tea and origin on each bottle’s page, then turn to the tasting notes to see what you might notice in the glass."]},
+      {"heading": "Begin with one bottle", "paragraphs": ["Choose a tea that sounds like something you would enjoy with dinner. There is plenty to explore in a single bottle: the aroma before your first sip, the bubbles, and the impression that stays afterwards.", "Invite someone else to taste with you. Compare what you notice before looking back at the flavour descriptions. Different impressions can make the conversation as interesting as the pairing."]},
+      {"heading": "Bring it to your own table", "paragraphs": ["Keep the first meal simple. A familiar dish gives you an easy way to notice what the tea brings to the combination. Try another sip after a bite, then decide what you would pair it with next time.", "The four product pages include individual tasting notes and suggested dishes. Use them to plan a small tasting, or choose a bottle to open at your next lunch together."]}
+    ],
+    "cta_url": "story.html",
+    "cta_label": "Explore the Chalu story",
+    "source_url": "https://chaludrinks.com/"
+  },
+  {
+    "slug": "news-sparkling-tea-tasting",
+    "title": "Host a sparkling tea tasting.",
+    "image": "table",
+    "image_alt": "Chalu bottles and glasses arranged for a shared meal",
+    "summary": "A few bottles, clear glasses and something good to eat. Make an evening of discovering your favourite expression.",
+    "sections": [
+      {"heading": "Set out two different teas", "paragraphs": ["A small tasting is easy to build around two expressions. Choose bottles with contrasting descriptions so there is something clear to compare. You could begin with Snow Jasmine and Volcano Oolong, then explore the other teas another evening.", "Chill the bottles ahead of time. Give each tea its own glass and leave enough room on the table for a few plates of food. Open the corks carefully when everyone is ready."]},
+      {"heading": "Take your time with the first sip", "paragraphs": ["Start with a small pour. Notice the colour and aroma before tasting, then give yourself a moment before reaching for the second glass. You can write down a few impressions, or simply talk about what you enjoy.", "Return to the first tea after tasting the second. The comparison may draw your attention to a different part of the flavour. Keep the bottles chilled between pours."]},
+      {"heading": "Add a little food", "paragraphs": ["Bring out a familiar dish and taste again. A few rice-paper rolls, roasted mushrooms or a cheese board can give everyone something to try alongside their glass.", "Use the product pages for pairing ideas, then follow your own preferences. At the end, ask everyone which tea they would choose for their next meal. That gives you an easy starting point for another gathering."]}
+    ],
+    "cta_url": "ritual.html",
+    "cta_label": "Explore serving & pairings",
+    "source_url": ""
+  },
+  {
+    "slug": "news-tea-for-your-table",
+    "title": "Choose a tea for your next meal.",
+    "image": "pour",
+    "image_alt": "Chalu Volcano Oolong poured into a wine glass beside a meal",
+    "summary": "Start with the food you love, then explore a tea alongside it. A practical guide to planning your next pour.",
+    "sections": [
+      {"heading": "Let one dish lead", "paragraphs": ["Think about the main thing you are cooking before choosing a bottle. A light lunch, a roast dinner and a fruit dessert each give you a different place to begin.", "The collection page groups the teas by the kind of meal you might enjoy with them. Browse a few options, then open an individual tea’s page for a closer look at its tasting notes."]},
+      {"heading": "Try the suggested pairings", "paragraphs": ["For a lighter meal, explore Snow Jasmine with steamed fish or fresh rice-paper rolls. For something richer, try Hibiscus Noir alongside roast duck or a soft cheese board.", "Volcano Oolong is worth exploring with grilled fish or roasted mushrooms. For a fresh lunch, consider Untamed Rosé with salmon, or tomato and burrata. These are editorial suggestions to try at home, rather than a fixed set of rules."]},
+      {"heading": "Taste before and after a bite", "paragraphs": ["Pour a little tea before serving the food. Once you have tasted it on its own, take another sip after a bite of the dish. Notice what you enjoy about the combination and what you might change next time.", "If you are serving several courses, keep some tea to revisit later in the meal. You may prefer a different pairing to the one you expected. Make a note of the combinations you would happily serve again."]}
+    ],
+    "cta_url": "shop.html",
+    "cta_label": "Find your tea",
+    "source_url": ""
+  }
+]

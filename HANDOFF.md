@@ -86,3 +86,14 @@ The shared next-page module now uses a two-column photograph/copy layout with fu
 The user disliked the separated mobile film/text composition and requested a 100vh bottle-led hero. A new portrait bottle composition (built-in image tool) was animated in Higgsfield Kling 3.0 Pro for 10.5 credits. Third job: b41d69b7-ecdd-400b-a177-2bc3eb9ca37a. Cumulative spend is now 35/50; direct reframing was quoted at 99 and was not submitted.
 
 Phone portrait <=600 px selects assets/hero-mobile-loop.mp4 and assets/hero-mobile-poster.webp; desktop/tablet/phone landscape use the previous V3 film. Mobile now has edge-to-edge 100svh video, larger complete bottles, compact bottom headline/shop CTA and an icon pause control, with navigation over the image. The small announcement, description and secondary CTA are omitted at this breakpoint. Picture handles the poster; site.js switches video source/poster on format changes and preserves explicit pause. Build validates the new data-* media references and picture source.
+
+
+## News and open editorial layouts — 28 October 2026
+
+Added a homepage News & stories section, navigation/footer links, news.html and three dedicated sample editorial article pages. Chalu's homepage and a focused site search did not reveal an existing news archive. Content is therefore clearly labelled sample editorial, with no invented publication dates, events or awards. The origin story paraphrases existing Chalu founder background; tasting/meal articles are original suggestions.
+
+Maintain docs/news.json and templates/article.html, then run scripts/render-news.py before render-products.py and render-pages.py. Build checks freshness of all renderers and fourteen HTML pages (63 packaged files). Existing photography is reused; no new generation or credits.
+
+User then requested every subpage feel less blocky/card-like. pages.css now opens up Story, Craft, Ritual, Shop, product, news/article and checkout layouts. Rounded imagery stays; section containers become transparent, selection guides become numbered ruled rows, Craft becomes a process list, pairing links become open rows, and the tea-farm module is an independent photograph and copy. Shop bottles are staggered in arched image frames on desktop; phone carousel stays. Product portraits use a soft radial wash and pairing content sits beside its rounded photo. Desktop header accommodates the fifth navigation entry.
+
+QA: 13 subpages at 320, 768, 1440 and 2560 px; all one H1 and no horizontal overflow after correcting Ritual's tablet column widths. Visual reviews covered desktop Story, News, Shop and Snow Jasmine and phone Ritual. Mobile menu, article links, product add/bag, checkout S$32 + S$6 = S$38 and simulated order confirmation verified. Four commerce tests, seven JS syntax checks, build and diff whitespace checks pass. Hero assets and playback logic unchanged. Reduced-motion remains source reviewed, not browser emulated.

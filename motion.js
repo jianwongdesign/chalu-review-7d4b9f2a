@@ -72,7 +72,7 @@
         animation.onfinish = () => { reveals.delete(entry.target); animation.cancel(); };
       });
     }, {threshold:0.08, rootMargin:'0px 0px -24px 0px'});
-    document.querySelectorAll('.intro > *, .section-heading, #collection-track > .product, .story-photos, .story-copy > *, .craft-grid > *, .ritual-image, .ritual-copy > *, .contact > *, .tea-copy > :not(.tea-disclosures), .tea-moment, .related-heading, .related-teas .product, .checkout-heading, .page-editorial > *, .page-next > *, .page-reading > *, .selection-grid > *, .ritual-pairings > :not(.ritual-pairing-grid), .ritual-pairing-link').forEach(el => observer.observe(el));
+    document.querySelectorAll('.intro > *, .section-heading, #collection-track > .product, .story-photos, .story-copy > *, .craft-grid > *, .ritual-image, .ritual-copy > *, .contact > *, .tea-copy > :not(.tea-disclosures), .tea-moment, .related-heading, .related-teas .product, .checkout-heading, .page-editorial > *, .page-next > *, .news-heading, .news-card, .article-heading, .article-body > section, .page-reading > *, .selection-grid > *, .ritual-pairings > :not(.ritual-pairing-grid), .ritual-pairing-link').forEach(el => observer.observe(el));
     // Keyboard users never have to wait for an entrance to finish.
     document.addEventListener('focusin', event => {
       reveals.forEach((animation, el) => {

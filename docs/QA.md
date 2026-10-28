@@ -113,3 +113,14 @@ Final copy cleanup: all ten pages checked at 320×568 and 1440×1000 after remov
 - Tablet 768×1024, desktop 1440×1000 and large 2560×1440 retain V3 and viewport-height hero without overflow. Mobile menu opens and follows its Shop link.
 - All seven syntax checks, four commerce tests, both generated-page checks and static build pass. Build contains 59 files; validation includes responsive poster and mobile data-* media paths.
 - Additional generation cost 10.5 credits, confirmed balance 725.75 → 715.25; cumulative spending 35/50. Direct 99-credit reframing was not submitted.
+
+
+## News and editorial layout revision — 28 October 2026
+
+- Build: fourteen pages, 63 files; all local assets/links, one H1, noindex and renderer freshness validated.
+- Four commerce tests pass; all seven JavaScript files parse; git diff --check passes.
+- 52 responsive page checks: every subpage at 320, 768, 1440 and 2560 px. Ritual at 768 initially overflowed; fixed fractional columns with gap and rechecked successfully.
+- Transparent editorial section backgrounds verified for guides, pairings, news and shared farm modules. Visual inspection: desktop Story, News, Shop and product; mobile Ritual and News/article.
+- Desktop navigation fits at 1024. Mobile menu includes News and closes on navigation. Dedicated story link opens its article with three body sections and two related articles.
+- Product add-to-bag and demo checkout: Snow Jasmine S$32 + S$6 delivery = S$38; phone simulated confirmation succeeds, clears bag, no horizontal overflow.
+- Existing homepage mobile film and 35/50 Higgsfield credit ledger unchanged. Reduced-motion handling is source-reviewed only.

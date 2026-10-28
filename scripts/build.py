@@ -45,8 +45,10 @@ class Page(HTMLParser):
 
 
 PRODUCT_PAGES = tuple(p["slug"] + ".html" for p in json.loads((ROOT / "docs/products.json").read_text()))
-NAV_PAGES = ("shop.html", "story.html", "craft.html", "ritual.html")
-PAGE_FILES = ("index.html", "checkout.html", *PRODUCT_PAGES, *NAV_PAGES)
+NAV_PAGES = ("shop.html", "story.html", "craft.html", "ritual.html", "news.html")
+ARTICLE_PAGES = tuple(p["slug"] + ".html" for p in json.loads((ROOT / "docs/news.json").read_text()))
+PAGE_FILES = ("index.html", "checkout.html", *PRODUCT_PAGES, *NAV_PAGES, *ARTICLE_PAGES)
+subprocess.run([sys.executable, str(ROOT / "scripts/render-news.py"), "--check"], check=True)
 subprocess.run([sys.executable, str(ROOT / "scripts/render-products.py"), "--check"], check=True)
 subprocess.run([sys.executable, str(ROOT / "scripts/render-pages.py"), "--check"], check=True)
 pages = {}
