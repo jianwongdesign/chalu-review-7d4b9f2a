@@ -21,8 +21,10 @@ template=Template((ROOT/'templates/page.html').read_text())
 for page in pages:
  content=re.search(r'<section\b[^>]*\bid="'+page['section']+r'"[^>]*>.*?</section>',home,re.S)[0]
  content=content.replace('<h2','<h1',1).replace('</h2>','</h1>',1)
+ if page['slug']=='story': content=content.replace('href="story.html"','href="#story-details"')
  current_header=header.replace('href="'+page['slug']+'.html"','href="'+page['slug']+'.html" aria-current="page"')
  extra=page['extra'].replace('$pairing_links',pairing_links)
+ if page['slug']=='story': extra=extra.replace('class="page-editorial"','class="page-editorial" id="story-details"',1)
  result=template.substitute(**{**page,'header':current_header,'footer':footer,'bag':bag,'content':content,'extra':extra,'extra_script':'<script src="collection.js" defer></script>' if page['slug']=='shop' else ''})
  target=ROOT/(page['slug']+'.html')
  if '--check' in sys.argv: assert target.exists() and target.read_text()==result, f'Regenerate navigation pages: {target.name}'
