@@ -20,7 +20,7 @@ Layout, styles, interaction code and introductory campaign language are newly au
 
 ## Demo shopping
 
-All four teas have sample SGD prices and add-to-bag controls. The drawer supports quantity changes, removal, an empty state, and browser-local persistence. Tasting-note dialogs can also add to the bag.
+All four teas have sample SGD prices and add-to-bag controls. The drawer supports quantity changes, removal, an empty state, and browser-local persistence. Each tea has a dedicated, shareable product page with botanical tasting-note imagery, ingredient/blend information, serving suggestions and add-to-bag controls. On phones the homepage collection becomes a native swipe carousel with perspective portraits, optional automatic rotation, pause and arrow controls.
 
 `checkout.html` reads that bag, shows itemized totals, validates sample delivery fields, and presents a clearly labelled demo confirmation. It clears the basket after completion. Payment uses a non-editable demo card; no payment details are requested. No order API, payment processor, email service or external form endpoint is connected. Only known product IDs and bounded quantities are persisted; contact fields are not stored or sent.
 
@@ -34,22 +34,30 @@ One six-second Kling 3.0 Pro generation via Higgsfield cost **10.5 credits**, wi
 
 ```sh
 python3 -m http.server 4173 --bind 127.0.0.1
+node --check navigation.js
+node --check product.js
+node --check collection.js
 node --check site.js
 node --check commerce.js
 node --check checkout.js
 node --test scripts/commerce.test.cjs
+python3 scripts/render-products.py
 python3 scripts/build.py
 ```
 
 Visit http://127.0.0.1:4173/. No package install or API keys are needed. Python and Node checks use their standard libraries.
 
-Pushing `main` runs validation, builds an allowlist of website files into `dist/`, and publishes GitHub Pages. The build checks both pages, local and cross-page anchors, image/font/video assets and noindex metadata.
+Pushing `main` runs validation, builds an allowlist of website files into `dist/`, and publishes GitHub Pages. The build checks all six pages, local and cross-page anchors, image/font/video assets and noindex metadata.
 
 ## Files
 
 - `index.html`, `styles.css` — main content and original visual system
 - `shop.css` — cinematic hero, bag and checkout layouts
-- `site.js` — menu, tasting dialogs, sticky header and video controller
+- `site.js`, `navigation.js` — video controller, sticky header and shared menu
+- `collection.js` — touch carousel, perspective and optional rotation
+- `product.css`, `product.js` — product page styling and shared catalogue price
+- `templates/product.html`, `docs/products.json`, `scripts/render-products.py` — maintained source for the four generated root-level product HTML files
+- `docs/BOTANICAL-ASSETS.md` — original generated artwork and exact prompts
 - `commerce.js` — shared sample catalogue, calculations and bag
 - `checkout.html`, `checkout.js` — simulated checkout and confirmation
 - `scripts/commerce.test.cjs` — basket totals, delivery and hostile-storage checks
@@ -61,3 +69,12 @@ Pushing `main` runs validation, builds an allowlist of website files into `dist/
 Public by URL. Noindex metadata and a crawler-disallow file are indexing requests, not access control. Production hosting and DNS are unchanged. No analytics, real commerce, newsletter or form backend is connected. Existing contact links open the visitor's email client.
 
 Chalu photography and trademarks remain their owners' property; confirm usage rights and final copy before production. This repository does not grant a licence to reuse those assets. Fonts use the SIL Open Font License, included in `assets/fonts/`.
+
+## Product links
+
+- [Snow Jasmine](https://jianwongdesign.github.io/crystal-cha/snow-jasmine.html)
+- [Hibiscus Noir](https://jianwongdesign.github.io/crystal-cha/hibiscus-noir.html)
+- [Volcano Oolong](https://jianwongdesign.github.io/crystal-cha/volcano-oolong.html)
+- [Untamed Rosé](https://jianwongdesign.github.io/crystal-cha/untamed-rose.html)
+
+Edit the template or product data, then run `python3 scripts/render-products.py`. The build rejects stale generated pages. Sample prices must match `commerce.js`; a unit check enforces this.

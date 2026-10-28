@@ -14,7 +14,7 @@ Updated 28 October 2026.
 
 The homepage now opens with a full-viewport cinematic hero, dark overlays, editorial text, transparent navigation, shop CTA and pause control. Navigation becomes solid green when scrolling, keeping the bag available. A silent generated loop and matching poster are self-hosted. Origin badge wording is “Made in Yunnan”.
 
-All four products have explicit sample SGD prices, add-to-bag actions and tasting-note dialogs. The bag supports quantity changes, removal, empty recovery and localStorage persistence. Checkout uses sample details and a non-editable demo card, with form validation, itemized totals and a simulated confirmation. No real payment or order is sent. Checkout contact values are not stored; only product IDs and quantities persist.
+All four products have explicit sample SGD prices, add-to-bag actions and dedicated product pages (Snow Jasmine, Hibiscus Noir, Volcano Oolong, Untamed Rosé). The old tasting-note dialogs have been replaced with page links. The bag supports quantity changes, removal, empty recovery and localStorage persistence. Checkout uses sample details and a non-editable demo card, with form validation, itemized totals and a simulated confirmation. No real payment or order is sent. Checkout contact values are not stored; only product IDs and quantities persist.
 
 ## Rounded styling
 
@@ -38,3 +38,15 @@ Kling 3.0 Pro through Higgsfield, one generation, **10.5 credits used**. The ori
 ## Continue later
 
 Check Git state and the live preview first. This remains a noindex public design/demo site. Final prices, shipping rules, production platform, brand-media rights and real commerce integrations require separate client decisions. Existing Chalu production hosting and DNS were untouched.
+
+## Latest revision — dedicated products and mobile showcase
+
+Four root-level product pages are generated from `templates/product.html` and `docs/products.json` using `scripts/render-products.py`. Run the renderer after editing shared homepage cards/header/footer, product data or template. `scripts/build.py` checks generated output is current and validates all six pages. `commerce.js` remains the price authority; the new test checks all product-page prices against it.
+
+Original botanical triptychs appear on soft CSS circles, with three labels per product. Notes describe aromas, not an ingredient/allergen declaration. No organic certification is claimed. Ingredient information is separate, attributed to Chalu; Rosé uses an explicitly incomplete blend overview. Generation prompts and saved asset paths are in `docs/BOTANICAL-ASSETS.md`. No new Higgsfield credits were spent.
+
+The mobile/tablet hero uses contain framing up to 900 px, keeping the entire film visible above the headline. The full hero remains 100svh. The existing video is intentionally subtle; it was confirmed playing live before this revision. Playback recovery now retries on a normal user gesture or page return, keeps explicit play/pause, and shows Retry film for load errors. Reduced-motion/data-saving defaults remain unchanged.
+
+The mobile collection (up to 760 px) uses native horizontal scrolling and snap positions, perspective rotation and bottle shadows. Optional automatic rotation advances every 4.2 seconds, reversing at the ends. It pauses after user interaction and offscreen/in background. Explicit arrows and play/pause are available; reduced-motion disables initial autoplay. Desktop retains the four-column collection. `navigation.js` is shared between home and product pages.
+
+Shared CSS/JS URL versions changed to avoid returning visitors retaining the older preview assets.

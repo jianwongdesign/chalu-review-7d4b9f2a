@@ -3,6 +3,9 @@ from html.parser import HTMLParser
 from pathlib import Path
 import re
 import shutil
+import json
+import subprocess
+import sys
 from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -41,8 +44,11 @@ class Page(HTMLParser):
                     self.links.append((parsed.path, parsed.fragment))
 
 
+PRODUCT_PAGES = tuple(p["slug"] + ".html" for p in json.loads((ROOT / "docs/products.json").read_text()))
+PAGE_FILES = ("index.html", "checkout.html", *PRODUCT_PAGES)
+subprocess.run([sys.executable, str(ROOT / "scripts/render-products.py"), "--check"], check=True)
 pages = {}
-for filename in ("index.html", "checkout.html"):
+for filename in PAGE_FILES:
     page = Page()
     page.feed((ROOT / filename).read_text())
     assert page.headings == 1, f"Expected exactly one H1 in {filename}"
@@ -54,7 +60,7 @@ for filename in ("index.html", "checkout.html"):
 for page in pages.values():
     for filename, target in page.links:
         assert target in pages[filename].ids, f"Missing destination: {filename}#{target}"
-for filename in ("styles.css", "shop.css"):
+for filename in ("styles.css", "shop.css", "product.css"):
     for asset in re.findall(r"url\(['\"]?([^'\")]+)", (ROOT / filename).read_text()):
         assert (ROOT / asset).is_file(), f"Missing CSS asset: {asset}"
 for tea in ("jasmine", "hibiscus", "oolong", "rose"):
@@ -63,7 +69,7 @@ for tea in ("jasmine", "hibiscus", "oolong", "rose"):
 if DIST.exists():
     shutil.rmtree(DIST)
 DIST.mkdir()
-for name in ("index.html", "checkout.html", "styles.css", "shop.css", "site.js", "commerce.js", "checkout.js", "robots.txt", ".nojekyll"):
+for name in (*PAGE_FILES, "styles.css", "shop.css", "product.css", "site.js", "navigation.js", "product.js", "collection.js", "commerce.js", "checkout.js", "robots.txt", ".nojekyll"):
     shutil.copy2(ROOT / name, DIST / name)
 shutil.copytree(ROOT / "assets", DIST / "assets")
 print(f"Validated and built {sum(1 for p in DIST.rglob('*') if p.is_file())} static files in dist/")

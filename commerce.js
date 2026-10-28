@@ -141,7 +141,6 @@
   }
   function openBag() {
     if (!bag || bag.open) return;
-    document.querySelector("#product-dialog")?.close();
     render();
     bag.showModal();
     document.body.classList.add("bag-open");
@@ -174,7 +173,7 @@
     }
     if (target.matches(".bag-close,.continue-shopping,[data-continue]"))
       closeBag();
-    if (target.hasAttribute("data-continue")) location.hash = "collection";
+    if (target.hasAttribute("data-continue")) location.href = "index.html#collection";
   });
   bag?.addEventListener("close", () =>
     document.body.classList.remove("bag-open"),

@@ -1,0 +1,91 @@
+.product-page { --tea-tint: #e2e7d8; --tea-wash: #edf0e5; --tea-tone: #849270; }
+.product-page.hibiscus { --tea-tint: #ecdeda; --tea-wash: #f4e9e5; --tea-tone: #af797d; }
+.product-page.oolong { --tea-tint: #e6dfce; --tea-wash: #f0eadc; --tea-tone: #ac9260; }
+.product-page.rose { --tea-tint: #eddfd5; --tea-wash: #f5e9e1; --tea-tone: #bc8d76; }
+.product-page .site-header { position: sticky; top: 0; z-index: 20; background: var(--green); color: var(--cream); border: 0; }
+.product-page .menu-lines { border-color: var(--cream); }
+.product-page .mobile-nav { color: var(--ink); }
+.product-page .header-contact { border-color: #c9b788; }
+.product-page main { max-width: 1800px; margin: auto; }
+.breadcrumbs { display: flex; flex-wrap: wrap; gap: 12px; font-size: 11px; padding: 30px var(--gutter); color: var(--muted); }
+.breadcrumbs a:hover { color: var(--ink); text-decoration: underline; }
+.tea-detail { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: clamp(40px,6vw,110px); padding: 0 var(--gutter) 100px; align-items: start; }
+.tea-portrait { height: min(760px,75vw); min-height: 600px; background: var(--tea-tint); border-radius: var(--radius-panel); position: sticky; top: 130px; overflow: hidden; display: grid; place-items: center; }
+.tea-portrait::before { content: ''; width: 76%; aspect-ratio: 1; border-radius: 50%; position: absolute; background: var(--tea-wash); opacity: .8; }
+.portrait-caption { position: absolute; top: 30px; left: 30px; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
+.portrait-word { position: absolute; top: 13%; width: 100%; text-align: center; font: italic clamp(100px,12vw,190px)/1 var(--serif); color: var(--tea-tone); opacity: .35; }
+.portrait-bottle { position: relative; height: 76%; max-width: 60%; width: auto; object-fit: contain; transform: rotate(-7deg); filter: drop-shadow(28px 24px 14px #21352426); }
+.portrait-seal { position: absolute; right: 6%; bottom: 17%; width: 108px; height: 108px; border: 1px solid #183c304d; border-radius: 50%; text-align: center; padding-top: 22px; font-family: var(--serif); font-size: 24px; line-height: 1.1; transform: rotate(10deg); }
+.portrait-seal small { font-family: var(--sans); font-size: 6px; letter-spacing: .12em; }
+.portrait-footer { position: absolute; inset: auto 30px 25px; font-size: 8px; letter-spacing: .14em; display: flex; justify-content: space-between; max-width: none; }
+.tea-copy { padding-top: 15px; }
+.tea-copy > .eyebrow { margin-bottom: 12px; }
+.tea-copy h1 { font-size: clamp(50px,4.8vw,80px); line-height: 1; letter-spacing: -.045em; }
+.tea-tagline { font: italic 27px/1.3 var(--serif); margin: 16px 0; }
+.tea-description { font-size: 13px; line-height: 1.9; color: #566253; }
+.tea-facts { display: flex; flex-wrap: wrap; gap: 9px; margin: 24px 0 30px; }
+.tea-facts span { border: 1px solid #cbd1c2; border-radius: 999px; padding: 6px 12px; font-size: 10px; }
+.tasting-notes { border-top: 1px solid var(--line); padding-top: 23px; }
+.notes-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+.notes-heading h2 { font-size: 30px; letter-spacing: -.02em; }
+.notes-heading > span { font-size: 8px; letter-spacing: .14em; }
+.botanical-art { position: relative; margin-top: 25px; }
+.botanical-art img { position: relative; width: 100%; height: auto; z-index: 1; }
+.note-circles { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(3,1fr); align-items: center; }
+.note-circles i { width: 78%; aspect-ratio: 1; border-radius: 50%; background: #e3e8d8; margin: auto; }
+.note-circles i:nth-child(2) { background: #eee0df; }
+.note-circles i:nth-child(3) { background: #e5e1ed; }
+.note-labels { padding: 0; margin: 13px 0 0; list-style: none; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); text-align: center; gap: 8px; }
+.note-labels strong { font-size: 12px; font-weight: 500; display: block; }
+.note-labels span { font-size: 9px; color: var(--muted); }
+.notes-caption { font-size: 9px; color: var(--muted); line-height: 1.6; margin: 20px 0 24px; }
+.tea-purchase { background: var(--tea-wash); border-radius: var(--radius-panel); padding: 20px; display: flex; justify-content: space-between; gap: 16px; align-items: center; }
+.tea-price { font-family: var(--serif); font-size: 35px; line-height: 1; }
+.price-unit { font-size: 10px; }
+.tea-purchase p { font-size: 9px; margin-top: 8px; }
+.tea-purchase .button { padding: 16px 25px; min-width: 160px; }
+.purchase-caption { font-size: 9px; color: var(--muted); margin: 10px 4px 24px; }
+.tea-disclosures details { border-top: 1px solid var(--line); padding: 16px 0; }
+.tea-disclosures summary { display: flex; justify-content: space-between; list-style: none; cursor: pointer; font-size: 12px; }
+.tea-disclosures summary::-webkit-details-marker { display: none; }
+.tea-disclosures summary span { font-size: 18px; line-height: 1; transition: transform .2s; }
+.tea-disclosures details[open] summary span { transform: rotate(45deg); }
+.tea-disclosures dl { margin: 20px 0; font-size: 11px; }
+.tea-disclosures dl div { display: grid; grid-template-columns: 85px 1fr; gap: 12px; margin: 6px 0; }
+.tea-disclosures dt { color: var(--muted); }
+.tea-disclosures dd { margin: 0; }
+.tea-disclosures h3 { font: 500 11px var(--sans); margin-bottom: 8px; }
+.tea-disclosures p { font-size: 11px; color: var(--muted); margin-top: 14px; }
+.source-link { font-size: 9px; text-decoration: underline; display: inline-block; margin-top: 12px; }
+.tea-moment { margin: 0 var(--gutter); display: grid; grid-template-columns: 1fr 1fr; background: var(--tea-wash); border-radius: var(--radius-panel); overflow: hidden; }
+.tea-moment > img { width: 100%; height: 540px; object-fit: cover; }
+.tea-moment > div { padding: clamp(30px,5vw,80px); align-self: center; }
+.tea-moment h2 { font-size: clamp(48px,4.7vw,76px); }
+.tea-moment p:not(.eyebrow) { font-size: 13px; margin: 24px 0 30px; }
+.related-teas { padding: 95px var(--gutter); }
+.related-heading { display: flex; justify-content: space-between; gap: 24px; align-items: end; margin-bottom: 40px; }
+.related-heading h2 { font-size: 58px; }
+.related-teas .product-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+@media(min-width:1800px) { .tea-portrait { height: 840px; } .tea-copy { padding-top: 30px; } .tea-copy h1 { font-size: 88px; } .tea-description { font-size: 15px; } }
+@media(max-width:1100px) { .tea-detail { gap: 35px; } .tea-portrait { min-height: 550px; height: 65vw; } .tea-copy h1 { font-size: 54px; } .tea-purchase { padding: 16px; } .tea-purchase .button { min-width: 130px; padding: 14px 16px; } }
+@media(max-width:760px) {
+ .product-page .site-header { height: 76px; gap: 15px; } .product-page .bag-toggle { margin-left: auto; }
+ .breadcrumbs { padding-top: 20px; padding-bottom: 20px; gap: 8px; font-size: 9px; }
+ .tea-detail { grid-template-columns: 1fr; gap: 30px; padding-bottom: 50px; }
+ .tea-portrait { position: relative; top: auto; min-height: 0; height: 440px; }
+ .portrait-word { font-size: 125px; } .portrait-caption { top: 22px; left: 22px; font-size: 8px; }
+ .portrait-seal { width: 82px; height: 82px; padding-top: 17px; font-size: 19px; right: 8%; }
+ .portrait-seal small { font-size: 5px; } .portrait-footer { inset: auto 22px 20px; font-size: 7px; }
+ .tea-copy { padding-top: 0; } .tea-copy h1 { font-size: clamp(48px,10vw,70px); } .tea-tagline { font-size: 26px; }
+ .notes-heading h2 { font-size: 31px; } .botanical-art { margin-top: 22px; } .note-labels strong { font-size: 11px; }
+ .tea-moment { grid-template-columns: 1fr; } .tea-moment > img { height: 330px; } .tea-moment > div { padding: 32px 26px 40px; }
+ .related-teas { padding-top: 55px; padding-bottom: 55px; } .related-heading { align-items: start; flex-direction: column; } .related-heading h2 { font-size: 48px; }
+ .related-teas .product-grid { grid-template-columns: 1fr; gap: 32px; } .related-teas .product { display: grid; grid-template-columns: 38% 1fr; gap: 20px; align-items: center; }
+ .related-teas .product-image { height: 215px; } .related-teas .product-image img { height: 165px; } .related-teas .product-index { display: none; } .related-teas .product-word { font-size: 44px; }
+ .related-teas .product h3 { font-size: 28px; } .related-teas .product-info { padding: 0; } .related-teas .product-info > p { font-size: 10px; }
+ .related-teas .product-buy { flex-wrap: wrap; gap: 10px; margin-top: 12px; } .related-teas .text-link { font-size: 10px; } .related-teas .add-button { padding: 10px; }
+}
+@media(max-width:360px) { .tea-portrait { height: 370px; } .tea-purchase { gap: 8px; padding: 14px 12px; } .tea-purchase .button { min-width: 115px; padding: 13px 10px; } .tea-price { font-size: 31px; } .notes-heading > span { font-size: 7px; } .note-labels strong { font-size: 10px; } .related-teas .product { gap: 14px; } }
+/* Definite sizing prevents the intrinsic bottle height expanding its grid row. */
+.tea-portrait { display: flex; align-items: center; justify-content: center; }
+.portrait-bottle { flex: 0 0 auto; min-height: 0; }

@@ -12,6 +12,10 @@ Read `HANDOFF.md`, `README.md`, `docs/DESIGN-BRIEF.md`, then inspect Git status 
 - Cart persistence contains only known product IDs and bounded integer quantities. Contact/payment data must not be persisted or transmitted.
 - Use relative paths for the `/crystal-cha/` Pages subdirectory. Preview remains noindex.
 - Recheck mobile, tablet, desktop and large screens, bag/checkout behavior, and video pause/poster behavior after relevant edits.
-- Check: `node --test scripts/commerce.test.cjs`, syntax-check all three JS files, and `python3 scripts/build.py`.
+- Check: `node --test scripts/commerce.test.cjs`, syntax-check all six JS files, and `python3 scripts/build.py`.
 - Pushing `main` publishes the preview automatically; verify the public URL and released files afterwards.
 - Hero generation: one completed Higgsfield job, 10.5 credits spent from a confirmed 50-credit maximum. No further generation is needed for the current task; re-estimate any future paid request.
+
+- Product source: `templates/product.html`, `docs/products.json`; regenerate via `python3 scripts/render-products.py` after changing these or shared index header/cards/footer. Build rejects stale generated pages.
+- Tasting illustrations are aroma cues, not ingredient/allergen or organic-certification claims. Preserve the explanatory caption and separate ingredient/tea information.
+- Mobile collection uses native scroll-snap with optional rotation. Preserve user pause, reduced-motion, keyboard and finger-scroll behavior.

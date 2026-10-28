@@ -94,5 +94,25 @@
     "source": "First frame of assets/hero-loop.mp4",
     "owner": "Derived from generated Chalu hero film",
     "use": "Poster and reduced-motion fallback"
+  },
+  {
+    "file": "assets/notes/jasmine.webp",
+    "source": "Built-in image-generation tool, 28 October 2026",
+    "use": "Original botanical aroma illustration; see docs/BOTANICAL-ASSETS.md for prompts and boundaries"
+  },
+  {
+    "file": "assets/notes/hibiscus.webp",
+    "source": "Built-in image-generation tool, 28 October 2026",
+    "use": "Original botanical aroma illustration; see docs/BOTANICAL-ASSETS.md for prompts and boundaries"
+  },
+  {
+    "file": "assets/notes/oolong.webp",
+    "source": "Built-in image-generation tool, 28 October 2026",
+    "use": "Original botanical aroma illustration; see docs/BOTANICAL-ASSETS.md for prompts and boundaries"
+  },
+  {
+    "file": "assets/notes/rose.webp",
+    "source": "Built-in image-generation tool, 28 October 2026",
+    "use": "Original botanical aroma illustration; see docs/BOTANICAL-ASSETS.md for prompts and boundaries"
   }
 ]

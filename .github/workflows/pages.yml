@@ -15,6 +15,9 @@ jobs:
       - uses: actions/checkout@v4
       - name: Validate JavaScript
         run: |
+          node --check navigation.js
+          node --check product.js
+          node --check collection.js
           node --check site.js
           node --check commerce.js
           node --check checkout.js

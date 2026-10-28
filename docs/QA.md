@@ -51,3 +51,16 @@ Local checks completed 28 October 2026:
 Reduced-motion browser emulation was declined by browser security, so it was not retried through another surface. Its poster-first behavior is source-reviewed only. This limits the runtime accessibility claim; normal video playback and explicit pause were tested.
 
 The final release should be verified anonymously after the GitHub Actions deployment and compared with the local build. Source and media provenance are retained in the repository.
+
+## Revision 4 — dedicated products, botanical notes and mobile showcase
+
+28 October 2026, local Chrome checks:
+
+- Four dedicated pages: correct H1, sample price, three notes and loaded botanical illustration. Full bottle within portrait bounds, no horizontal overflow at 320×568 (Jasmine), 768×1024 (Hibiscus), 1440×1000 (Oolong), 2560×1440 (Rosé). Jasmine additionally visually inspected at 390×844 and desktop.
+- Botanical mobile layout visually inspected: labels, caption, purchase panel and separate blend information are readable and retain rounded corners.
+- Added Snow Jasmine from its page into the shared bag, followed checkout, confirmed 2 bottles = S$64 plus S$6 demo delivery, then completed the simulated S$70 confirmation. No real order/payment involved.
+- Mobile carousel automatically advanced; pause/next controls worked; native horizontal scrolling moved the track. User interaction keeps rotation paused. No duplicate focusable cards.
+- Hero geometry checked at 320×568, 390×844, 768×1024, 1440×1000, 2560×1440: viewport height preserved, no overflow, text contained. Small-phone hero visually inspected with both complete bottles visible in contained film. Tablet contain framing was then extended to 900 px.
+- Video returned readyState 4, currentTime advanced, opacity reached 1, and pause/resume worked. No warning/error console entries in checked home session. Existing live film was also confirmed playing before edits; source motion is intentionally subtle.
+- Reduced-motion/data-saving and blocked-autoplay recovery are source-reviewed; no new emulation or physical iOS-device certification is claimed.
+- Four Node checks now include consistency between dedicated pages, metadata and authoritative commerce prices. All JS syntax and six-page static build validation pass. Build includes 43 files and rejects stale product render output.

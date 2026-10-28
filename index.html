@@ -29,9 +29,11 @@
       crossorigin
     />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="shop.css" />
-    <script src="commerce.js" defer></script>
-    <script src="site.js" defer></script>
+    <link rel="stylesheet" href="shop.css?v=20261028-products" />
+    <script src="commerce.js?v=20261028-products" defer></script>
+    <script src="navigation.js?v=20261028-products" defer></script>
+    <script src="site.js?v=20261028-products" defer></script>
+    <script src="collection.js?v=20261028-products" defer></script>
   </head>
   <body class="home-page">
     <a class="skip-link" href="#main">Skip to content</a>
@@ -181,9 +183,9 @@
           </p>
         </div>
         <p class="shop-demo-caption">DEMO SHOP · SAMPLE PRICES IN SGD</p>
-        <div class="product-grid">
+        <div class="product-grid" id="collection-track" role="region" aria-label="Sparkling tea collection" tabindex="0">
           <article class="product jasmine">
-            <div class="product-image">
+            <a class="product-image" href="snow-jasmine.html" aria-label="Discover snow jasmine">
               <span class="product-index">01 / THE BRIGHT ONE</span
               ><img
                 src="assets/jasmine.webp"
@@ -192,17 +194,13 @@
                 alt="Snow Jasmine sparkling tea bottle"
                 loading="lazy"
               /><span class="product-word" aria-hidden="true">Bloom</span>
-            </div>
+            </a>
             <div class="product-info">
               <h3>Snow Jasmine</h3>
               <p>Floral · White grape · Delicate</p>
-              <button
-                class="text-link"
-                data-product="jasmine"
-                aria-haspopup="dialog"
-              >
+              <a class="text-link" href="snow-jasmine.html">
                 Discover Snow Jasmine <span aria-hidden="true">↗</span>
-              </button>
+              </a>
               <div class="product-buy">
                 <span class="product-price">S$32<small>750 ml</small></span
                 ><button
@@ -216,7 +214,7 @@
             </div>
           </article>
           <article class="product hibiscus">
-            <div class="product-image">
+            <a class="product-image" href="hibiscus-noir.html" aria-label="Discover hibiscus noir">
               <span class="product-index">02 / THE CUVÉE BLEND</span
               ><img
                 src="assets/hibiscus.webp"
@@ -225,17 +223,13 @@
                 alt="Hibiscus Noir sparkling tea bottle"
                 loading="lazy"
               /><span class="product-word" aria-hidden="true">Bold</span>
-            </div>
+            </a>
             <div class="product-info">
               <h3>Hibiscus Noir</h3>
               <p>Red berries · Floral · Structured</p>
-              <button
-                class="text-link"
-                data-product="hibiscus"
-                aria-haspopup="dialog"
-              >
+              <a class="text-link" href="hibiscus-noir.html">
                 Discover Hibiscus Noir <span aria-hidden="true">↗</span>
-              </button>
+              </a>
               <div class="product-buy">
                 <span class="product-price">S$36<small>750 ml</small></span
                 ><button
@@ -249,7 +243,7 @@
             </div>
           </article>
           <article class="product oolong">
-            <div class="product-image">
+            <a class="product-image" href="volcano-oolong.html" aria-label="Discover volcano oolong">
               <span class="product-index">03 / THE FLAGSHIP</span
               ><img
                 src="assets/oolong.webp"
@@ -258,17 +252,13 @@
                 alt="Volcano Oolong sparkling tea bottle"
                 loading="lazy"
               /><span class="product-word" aria-hidden="true">Earth</span>
-            </div>
+            </a>
             <div class="product-info">
               <h3>Volcano Oolong</h3>
               <p>Toasted · Nutty · Mineral</p>
-              <button
-                class="text-link"
-                data-product="oolong"
-                aria-haspopup="dialog"
-              >
+              <a class="text-link" href="volcano-oolong.html">
                 Discover Volcano Oolong <span aria-hidden="true">↗</span>
-              </button>
+              </a>
               <div class="product-buy">
                 <span class="product-price">S$38<small>750 ml</small></span
                 ><button
@@ -282,7 +272,7 @@
             </div>
           </article>
           <article class="product rose">
-            <div class="product-image">
+            <a class="product-image" href="untamed-rose.html" aria-label="Discover untamed rose">
               <span class="product-index">04 / THE WILD ONE</span
               ><img
                 src="assets/rose.webp"
@@ -291,17 +281,13 @@
                 alt="Untamed Rosé sparkling tea bottle"
                 loading="lazy"
               /><span class="product-word" aria-hidden="true">Wild</span>
-            </div>
+            </a>
             <div class="product-info">
               <h3>Untamed Rosé</h3>
               <p>Wild berries · Citrus · Pepper</p>
-              <button
-                class="text-link"
-                data-product="rose"
-                aria-haspopup="dialog"
-              >
+              <a class="text-link" href="untamed-rose.html">
                 Discover Untamed Rosé <span aria-hidden="true">↗</span>
-              </button>
+              </a>
               <div class="product-buy">
                 <span class="product-price">S$36<small>750 ml</small></span
                 ><button
@@ -314,6 +300,10 @@
               </div>
             </div>
           </article>
+        </div>
+        <div class="collection-controls" hidden>
+          <span class="collection-hint">Swipe to find your nature</span>
+          <div><button type="button" data-collection-prev aria-label="Previous tea">←</button><output id="collection-position" aria-label="Current tea">01 / 04</output><button type="button" data-collection-next aria-label="Next tea">→</button><button type="button" data-collection-play aria-label="Pause collection rotation" aria-pressed="true">Ⅱ</button></div>
         </div>
         <div class="collection-note">
           <span>750 ML · ALCOHOL-FREE</span>
@@ -497,39 +487,6 @@
         ><span>茶路 · A NEW RITUAL</span>
       </div>
     </footer>
-    <dialog id="product-dialog" aria-labelledby="dialog-title">
-      <button class="dialog-close" aria-label="Close tasting notes">×</button>
-      <div class="dialog-image">
-        <img
-          id="dialog-bottle"
-          src="assets/jasmine.webp"
-          alt=""
-          width="324"
-          height="1000"
-        />
-      </div>
-      <div class="dialog-copy">
-        <p class="eyebrow" id="dialog-eyebrow"></p>
-        <h2 id="dialog-title"></h2>
-        <p id="dialog-description"></p>
-        <dl>
-          <div>
-            <dt>Tasting notes</dt>
-            <dd id="dialog-notes"></dd>
-          </div>
-          <div>
-            <dt>At a glance</dt>
-            <dd>750 ml · Alcohol-free</dd>
-          </div>
-        </dl>
-        <p class="dialog-demo-price">
-          <span id="dialog-price"></span> <small>Demo price · 750 ml</small>
-        </p>
-        <button class="button button-dark" id="dialog-add">
-          Add to bag <span aria-hidden="true">+</span>
-        </button>
-      </div>
-    </dialog>
     <dialog id="bag-dialog" class="bag-dialog" aria-labelledby="bag-title">
       <div class="bag-header">
         <div>

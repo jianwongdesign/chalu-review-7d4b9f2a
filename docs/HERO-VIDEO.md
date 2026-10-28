@@ -12,7 +12,7 @@ Generated 28 October 2026 with the Higgsfield generation skill.
 - Website version: `assets/hero-loop.mp4`; H.264/yuv420p, faststart, no audio, 1760×1176, 24 fps, 6.041667 seconds, 557,299 bytes.
 - Poster: `assets/hero-poster.webp`, extracted from the first delivered frame.
 
-The generation followed the reference image's approximately 3:2 ratio despite a 16:9 request. The site uses `object-fit: cover` and deliberate desktop/mobile positions; it does not stretch the video.
+The generation followed the reference image's approximately 3:2 ratio despite a 16:9 request. Desktop uses `object-fit: cover`. The latest mobile/tablet layout up to 900 px uses `object-fit: contain` in a composed upper film area so both bottles remain fully visible above the text. It does not stretch the video.
 
 ## Creative direction
 
@@ -23,3 +23,5 @@ A restrained product cinemagraph: bottles stay stationary while light, distant f
 The hero occupies `100vh` / `100svh`. Playback is muted, inline and looping, with an explicit play/pause button. The film pauses out of view and while the tab is hidden. Reduced-motion or data-saving visitors get the poster until they choose play. A failed video load retains the poster. First-frame poster and small file size reduce loading disruption.
 
 This is AI-generated motion based on existing Chalu imagery; approve it as creative media before any production launch.
+
+Latest playback update: confirm ready state on `playing`, set muted/defaultMuted before play, retry browser-blocked autoplay on a normal pointer gesture and page return, and expose a retry button after load failure. Explicit pause and reduced-motion/data-saving preferences remain authoritative. The restrained motion can look like a still at a glance; browser playback was verified before and after the revision. No additional paid generation.

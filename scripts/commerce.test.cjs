@@ -40,3 +40,20 @@ test("untrusted stored quantities cannot introduce products, negative totals or 
     assert.deepEqual(sanitize(value), {});
   assert.equal(calculate({ jasmine: Infinity, rose: NaN }).total, 0);
 });
+
+test("every dedicated page uses the same product identity and demo price as the bag", () => {
+  const { readFileSync } = require("node:fs");
+  const { join } = require("node:path");
+  const { catalogue } = require("../commerce.js");
+  const products = require("../docs/products.json");
+  assert.deepEqual(products.map(p => p.id).sort(), Object.keys(catalogue).sort());
+  for (const product of products) {
+    assert.equal(product.name, catalogue[product.id].name);
+    assert.equal(product.price, catalogue[product.id].price);
+    const html = readFileSync(join(__dirname, "..", product.slug + ".html"), "utf8");
+    assert.ok(html.includes(`data-add="${product.id}"`));
+    assert.ok(html.includes(`data-tea-price>${money(product.price)}`));
+    assert.ok(html.includes('href="checkout.html"'));
+    assert.ok(html.includes('name="robots" content="noindex, nofollow"'));
+  }
+});
