@@ -21,12 +21,16 @@ Native HTML, CSS and JavaScript. `python3 scripts/build.py` packages an allowlis
 
 - Local asset and anchor validation and JavaScript syntax check passed.
 - Browser viewport geometry checked at 320, 390, 768, 1024, 1440, 1920 and 2560 pixels: no horizontal overflow or headings outside the viewport.
-- Desktop and mobile hero/collection/dialog visually inspected.
+- Desktop and mobile hero/collection/dialog, tablet serving section, and large-monitor hero/introduction visually inspected.
 - Collection navigation works; mobile menu closes on link selection.
-- Snow Jasmine and Untamed Rosé dialogs display corresponding content.
+- All four tasting dialogs display their corresponding product names and images.
 - Escape closes the native modal and restores focus to its product button.
 - Dialog enquiry link closes the modal, restores body scrolling and navigates to contact.
-- Public deployment verification will be recorded after release.
+- Serving disclosure expands to reveal its content; browser error/warning log was empty.
+- Initial GitHub Pages deployment succeeded (run `40632849114`), and the public URL rendered the expected homepage in the browser without sign-in.
+- Follow-up refinement: cap the introduction's horizontal padding on large monitors. Locally rechecked at 2560 px with no overflow and the intended two-line heading.
+
+See `docs/QA.md` for the review record. Final deployment status is available in the repository's Actions tab; the latest commit is available through `git log -1`.
 
 ## Preview limits
 
