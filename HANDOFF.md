@@ -105,3 +105,7 @@ Reduced the shared page-next module across Shop, Story, Craft, Ritual and News: 
 ## Hero playback controls removed
 
 Removed both the central play/retry overlay and lower play/pause control at the user's request. site.js no longer depends on those elements; muted looping playback retains responsive media switching, offscreen/background pause, gesture recovery for blocked autoplay, and reduced-motion/data-saving poster fallback. Mobile shop CTA now uses the full available width. Collection carousel controls are unchanged. Verified phone 390×844 and desktop 1440×1000: correct film, readyState 4, playing/looping/muted, no hero controls, no overflow or console errors. Required four tests, seven JS syntax checks and static build passed. Styles/script cache version: 20261028-autoplay.
+
+## Bottom-left product signatures
+
+Moved Bloom/Bold/Earth/Wild to the bottom-left in collection images, related products and dedicated product portraits. Reduced decorative type to fit its corner and raised bottles slightly to reserve a clear area below; large portraits use 68% bottle height (64% on narrow phones). Shared pages.css version: 20261028-signatures. Verified Shop and all four products at 320/768/1440/2560 px: no overflow, all signatures left aligned, positive separation between portrait bottle bounds and wording. Desktop Shop, mobile Hibiscus and homepage carousel visually checked. Four commerce tests, all seven JS syntax checks and 63-file build pass.
