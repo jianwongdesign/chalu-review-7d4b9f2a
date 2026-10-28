@@ -1,6 +1,20 @@
 # Chalu hero film
 
-## Current edit — smoother motion
+## Phone portrait film
+
+The user requested a more attractive 100vh mobile hero dominated by the bottles. A direct Higgsfield Reframe quote was 99 credits for 8 seconds at 1080p, exceeding the remaining 25.5-credit project cap, so no reframe job was submitted. Instead an original portrait composition was made with the built-in image tool from assets/hero.webp, then animated with Kling 3.0 Pro.
+
+- Job: `b41d69b7-ecdd-400b-a177-2bc3eb9ca37a`.
+- Source: https://d8j0ntlcm91z4.cloudfront.net/user_3HOQsp3aI9QdUt9ZM3bz4dnBtay/hf_20261028_065138_b41d69b7-ecdd-400b-a177-2bc3eb9ca37a.mp4
+- Six seconds requested, Pro, sound off, matching start/end portrait reference. Source delivered 1080×1916, 24 fps, 6.041667 seconds.
+- Exact estimate and balance reduction: 10.5 credits (725.75 to 715.25). Cumulative project spend: **35 / 50 credits**.
+- assets/hero-mobile-loop.mp4 and assets/hero-mobile-poster.webp are selected only for phone portrait at <=600 px. Desktop keeps the eased V3 clip.
+
+The generated portrait keeps both complete bottles prominent on carved wood with botanical foliage. A gentle breeze and shifting light provide movement. The website version is 798,916 bytes, 1080×1916, 360 frames and 6 seconds, using motion-compensated 60 fps interpolation, H.264/yuv420p/faststart and no audio. Matching poster extracted from its first frame. The controller swaps source and poster on format changes, preserves explicit pause, and keeps reduced-motion/data-saving visitors poster-first.
+
+Phone layout is 100svh, media fills the viewport, bottle labels remain above compact bottom text/actions, and the empty band is removed. Mobile text omits the long description/secondary story link; those remain on wider layouts.
+
+## Desktop edit — smoother motion
 
 The user requested smoother movement. `assets/hero-loop-v3.mp4` uses the same original Kling V2 source, with motion-compensated interpolation at 120 fps and cosine time mapping into an 8-second, 60 fps loop. Both turnarounds ease to zero speed, avoiding the abrupt constant-speed reversal in V2.
 

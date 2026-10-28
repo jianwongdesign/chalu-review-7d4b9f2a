@@ -32,11 +32,11 @@
     <link rel="stylesheet" href="shop.css?v=20261028-clean" />
     <script src="commerce.js?v=20261028-clean" defer></script>
     <script src="navigation.js?v=20261028-products" defer></script>
-    <script src="site.js?v=20261028-clean" defer></script>
+    <script src="site.js?v=20261028-portrait" defer></script>
     <script src="collection.js?v=20261028-products" defer></script>
     <link rel="stylesheet" href="motion.css?v=20261028-motion">
   <script src="motion.js?v=20261028-expanded" defer></script>
-  <link rel="stylesheet" href="pages.css?v=20261028-expanded">
+  <link rel="stylesheet" href="pages.css?v=20261028-portrait">
 </head>
   <body class="home-page">
     <a class="skip-link" href="#main">Skip to content</a>
@@ -99,6 +99,8 @@
     <main id="main">
       <section class="hero cinema-hero" aria-labelledby="hero-title">
         <div class="hero-media" aria-hidden="true">
+          <picture>
+          <source media="(max-width: 600px) and (orientation: portrait)" srcset="assets/hero-mobile-poster.webp">
           <img
             src="assets/hero-poster-v2.webp"
             width="2000"
@@ -107,6 +109,7 @@
             fetchpriority="high"
             class="hero-poster"
           />
+          </picture>
           <video
             id="hero-video"
             muted
@@ -115,6 +118,9 @@
             preload="none"
             poster="assets/hero-poster-v2.webp"
             data-src="assets/hero-loop-v3.mp4"
+            data-mobile-src="assets/hero-mobile-loop.mp4"
+            data-poster="assets/hero-poster-v2.webp"
+            data-mobile-poster="assets/hero-mobile-poster.webp"
             tabindex="-1"
           ></video>
         </div>

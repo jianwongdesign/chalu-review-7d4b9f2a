@@ -115,3 +115,33 @@ main p, .story-copy, .serve-list, .product h3 { max-width: none; }
  .tea-reading { padding-top: 0; padding-bottom: 48px; }
  .craft-reading { padding-bottom: 45px; }
 }
+
+/* Phone portrait uses its own full-height film, composed around complete bottles. */
+@media(max-width:600px) and (orientation:portrait) {
+ .home-page .announcement { display: none; }
+ .home-page .site-header { top: 0; height: 84px; border-bottom-color: #f5f2e92e; background: linear-gradient(#071b154d,transparent); }
+ .home-page .site-header.is-scrolled { height: 76px; background: var(--green); }
+ .home-page .brand img { width: 110px; height: 60px; }
+ .cinema-hero .hero-media { inset: 0; width: 100%; height: 100%; }
+ .cinema-hero .hero-media img, .cinema-hero .hero-media video { object-fit: cover; object-position: 60% center; }
+ .cinema-hero .hero-shade { background: linear-gradient(180deg,#081b1540 0%,transparent 25%,transparent 63%,#081b157a 81%,#081b15ed 100%); }
+ .cinema-hero .hero-copy { top: auto; bottom: max(28px,env(safe-area-inset-bottom)); left: 24px; right: 24px; width: auto; transform: none; }
+ .cinema-hero h1 { font-size: clamp(36px,10.8vw,52px); line-height: .98; letter-spacing: -.035em; text-shadow: 0 2px 18px #001b1570; }
+ .cinema-hero h1 em { font-size: .92em; }
+ .cinema-hero .hero-description, .cinema-hero .hero-story-link { display: none; }
+ .cinema-hero .hero-actions { margin-top: 18px; display: block; }
+ .cinema-hero .hero-actions .button { width: calc(100% - 64px); justify-content: space-between; min-height: 48px; padding: 13px 20px; font-size: 11px; }
+ .cinema-hero .cinema-footer { left: auto; right: 24px; bottom: max(30px,env(safe-area-inset-bottom)); }
+ .cinema-hero .video-control { width: 44px; height: 44px; min-height: 44px; padding: 0; justify-content: center; background: #173b2f80; backdrop-filter: blur(8px); }
+ .cinema-hero .video-control [data-video-label] { display: none; }
+ .hero-play { left: 50%; top: 42%; width: 88px; height: 88px; }
+}
+@media(max-width:600px) and (orientation:portrait) and (max-height:650px) {
+ .home-page .site-header { height: 72px; }
+ .home-page .brand img { width: 96px; height: 52px; }
+ .cinema-hero .hero-copy { bottom: 18px; }
+ .cinema-hero h1 { font-size: 34px; }
+ .cinema-hero .hero-actions { margin-top: 12px; }
+ .cinema-hero .hero-actions .button { min-height: 44px; padding: 11px 16px; font-size: 10px; }
+ .cinema-hero .cinema-footer { bottom: 18px; }
+}

@@ -33,7 +33,7 @@ class Page(HTMLParser):
             self.noindex = "noindex" in attrs.get("content", "")
         if tag == "img":
             assert "alt" in attrs, f"Missing image alternative text: {attrs}"
-        for key in ("src", "href", "poster", "data-src"):
+        for key in ("src", "href", "poster", "data-src", "data-mobile-src", "data-poster", "data-mobile-poster", "srcset"):
             value = attrs.get(key, "")
             if value.startswith("#") and len(value) > 1:
                 self.targets.append(value[1:])

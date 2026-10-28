@@ -64,3 +64,7 @@ Shop, Our story, The craft and The ritual each need a dedicated shareable page. 
 Add useful copy to every subpage while keeping decorative micro-headings removed. Expand tea selection, founder/story context, tasting guidance, serving and pairing ideas. Replace the plain next-page box across all four navigation pages with a rounded image-and-text panel matching the surrounding content width. Use an original generated tea-farm image. The hero motion should be smoother; the existing footage is now an eased 8-second 60 fps edit with no further Higgsfield spending.
 
 Existing brand and product details rechecked against https://chaludrinks.com/ on 28 October 2026. New meal/tasting/hosting suggestions are original editorial guidance, not manufacturer-tested claims. No unverified shelf-life, health, certification, brewing-duration or commercial-policy claims were added.
+
+## Confirmed phone hero redesign
+
+Make the phone homepage hero more attractive, 100vh and mostly focused on the bottles. Use a purpose-composed portrait film, full-bleed media, compact bottom headline/CTA and overlay navigation. Remove the old separated media band. Keep complete bottles visible and smoothly switch to the existing wider film for tablet/desktop and landscape. Higgsfield portrait generation brings total spend to 35/50 credits.

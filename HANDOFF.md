@@ -80,3 +80,9 @@ User requested smoother hero motion, more content on every subpage, and an image
 All four navigation pages now have expanded content in templates/pages/*.html. Products have tasting_copy, occasion_copy and serve_copy in docs/products.json, rendered into a new readable tasting section and fuller serving disclosure. Checkout has a practical demo-help block. Small decorative headings remain absent.
 
 The shared next-page module now uses a two-column photograph/copy layout with full paragraphs and a button, matching the content gutters. It stacks on mobile. assets/tea-farm.webp is an original built-in image-generation result (1536×1024, 314 KB), an imagined Yunnan-inspired farm, not a verified Chalu estate. Preserve that provenance and alt wording.
+
+## Current phone hero revision
+
+The user disliked the separated mobile film/text composition and requested a 100vh bottle-led hero. A new portrait bottle composition (built-in image tool) was animated in Higgsfield Kling 3.0 Pro for 10.5 credits. Third job: b41d69b7-ecdd-400b-a177-2bc3eb9ca37a. Cumulative spend is now 35/50; direct reframing was quoted at 99 and was not submitted.
+
+Phone portrait <=600 px selects assets/hero-mobile-loop.mp4 and assets/hero-mobile-poster.webp; desktop/tablet/phone landscape use the previous V3 film. Mobile now has edge-to-edge 100svh video, larger complete bottles, compact bottom headline/shop CTA and an icon pause control, with navigation over the image. The small announcement, description and secondary CTA are omitted at this breakpoint. Picture handles the poster; site.js switches video source/poster on format changes and preserves explicit pause. Build validates the new data-* media references and picture source.

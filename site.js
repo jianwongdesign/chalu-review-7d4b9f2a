@@ -7,6 +7,11 @@ let userPaused = motionPreference.matches || Boolean(navigator.connection?.saveD
 let heroVisible = true;
 let hasFailed = false;
 let loading = false;
+let playRequest = 0;
+const portraitHero = matchMedia("(max-width: 600px) and (orientation: portrait)");
+const activeFilm = () => portraitHero.matches ? video.dataset.mobileSrc : video.dataset.src;
+const activePoster = () => portraitHero.matches ? video.dataset.mobilePoster : video.dataset.poster;
+video.poster = activePoster();
 function syncVideoControl() {
   const playing = !video.paused && !video.ended && video.readyState >= 2;
   const label = hasFailed ? "Retry film" : loading && !playing ? "Loading film…" : playing ? "Pause film" : "Play film";
@@ -25,10 +30,12 @@ async function playFilm() {
   video.defaultMuted = true;
   video.setAttribute("muted", "");
   video.preload = "auto";
-  if (!video.getAttribute("src")) video.src = video.dataset.src;
+  if (!video.getAttribute("src")) video.src = activeFilm();
+  const request = ++playRequest;
   loading = true;
   syncVideoControl();
   try { await video.play(); } catch { /* Autoplay may require the visible play button. */ }
+  if (request !== playRequest) return;
   loading = false;
   syncVideoControl();
 }
@@ -60,6 +67,18 @@ document.addEventListener("pointerup", event => {
   if (!event.target.closest("#video-control, #hero-play") && !userPaused && video.paused) playFilm();
 });
 window.addEventListener("pageshow", () => { if (!userPaused) playFilm(); });
+portraitHero.addEventListener("change", () => {
+  ++playRequest;
+  video.pause();
+  video.classList.remove("is-ready");
+  video.removeAttribute("src");
+  video.poster = activePoster();
+  video.load();
+  hasFailed = false;
+  loading = false;
+  syncVideoControl();
+  if (!userPaused) playFilm();
+});
 syncVideoControl();
 if (!userPaused) playFilm();
 const pageParams = new URLSearchParams(location.search);

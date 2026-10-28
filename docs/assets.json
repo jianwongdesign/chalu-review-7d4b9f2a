@@ -154,5 +154,15 @@
     "file": "assets/tea-farm.webp",
     "source": "Built-in image generation, 28 October 2026; source exec-912db53b-bb0f-434f-8681-e2191aefb2d2.png",
     "use": "Original imagined Yunnan-inspired tea-farm landscape for shared next-page editorial panel; not an actual verified estate photograph"
+  },
+  {
+    "file": "assets/hero-mobile-loop.mp4",
+    "source": "Higgsfield job b41d69b7-ecdd-400b-a177-2bc3eb9ca37a; see HERO-VIDEO.md",
+    "use": "Portrait mobile hero, 60 fps edit; 10.5 credits for generation, cumulative 35/50"
+  },
+  {
+    "file": "assets/hero-mobile-poster.webp",
+    "source": "First frame of portrait Higgsfield video; portrait reference edited from assets/hero.webp with built-in image generation, exec-b9da289a-ff78-4b3c-8dc6-bf38622523c6.png",
+    "use": "Phone portrait hero poster; preserve complete bottle framing"
   }
 ]

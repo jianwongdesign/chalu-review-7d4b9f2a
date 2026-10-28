@@ -101,3 +101,15 @@ Final copy cleanup: all ten pages checked at 320×568 and 1440×1000 after remov
 - Hero V3: 1760×1176, 60 fps, 480 frames, 8 seconds, 2,761,598 bytes. Motion-compensated intermediate frames plus cosine retiming ease both turnarounds and the loop seam. Source bottle framing remains complete; sampled output reviewed for label integrity.
 - Browser video reaches readyState 4, advances currentTime, displays at opacity 1, and responds to pause and central play. Mobile contain framing is unchanged. Reduced-motion/data-saving remain source-reviewed only.
 - All seven JS syntax checks, four commerce tests, renderer freshness checks and ten-page static validation pass. Build now contains 57 files, including the new farm image and V3 video.
+
+## Revision 8 — full-height portrait mobile hero
+
+28 October 2026:
+
+- New phone portrait film: 1080×1916, 60 fps, 360 frames, 6 seconds, 798,916 bytes. Both full bottles inspected in source and on rendered phone layouts; labels sit above the headline. Foreground/background leaves provide gentle continuous movement.
+- At 320×568, 390×844 and 430×932 the hero and media fill the viewport, with no horizontal overflow. Screenshots reviewed at 320 and 390. Compact headline, shop CTA and 44 px pause control fit the bottom area; navigation overlays the film.
+- Portrait source and responsive poster load correctly. readyState 4, opacity 1 and advancing currentTime confirmed. Pause reveals central play, and resume works.
+- Paused portrait to 844×390 landscape preserves pause, switches to desktop poster and leaves the video unloaded until play. Resuming uses desktop V3; returning to portrait switches back to the six-second film.
+- Tablet 768×1024, desktop 1440×1000 and large 2560×1440 retain V3 and viewport-height hero without overflow. Mobile menu opens and follows its Shop link.
+- All seven syntax checks, four commerce tests, both generated-page checks and static build pass. Build contains 59 files; validation includes responsive poster and mobile data-* media paths.
+- Additional generation cost 10.5 credits, confirmed balance 725.75 → 715.25; cumulative spending 35/50. Direct 99-credit reframing was not submitted.
