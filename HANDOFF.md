@@ -109,3 +109,7 @@ Removed both the central play/retry overlay and lower play/pause control at the 
 ## Bottom-left product signatures
 
 Moved Bloom/Bold/Earth/Wild to the bottom-left in collection images, related products and dedicated product portraits. Reduced decorative type to fit its corner and raised bottles slightly to reserve a clear area below; large portraits use 68% bottle height (64% on narrow phones). Shared pages.css version: 20261028-signatures. Verified Shop and all four products at 320/768/1440/2560 px: no overflow, all signatures left aligned, positive separation between portrait bottle bounds and wording. Desktop Shop, mobile Hibiscus and homepage carousel visually checked. Four commerce tests, all seven JS syntax checks and 63-file build pass.
+
+## Even shop row and homepage wording confirmation
+
+Removed the 60 px stagger on alternate shop products. All four image/title rows now align evenly. Confirmed bottom-left words also appear in the homepage collection shown by the user; both sources load the refreshed 20261028-aligned stylesheet. Desktop 1440 px image/title tops match across four products; 390/768/2560 px have equal zero top padding and no overflow. Homepage and shop visually reviewed. Required tests, syntax and build passed.
