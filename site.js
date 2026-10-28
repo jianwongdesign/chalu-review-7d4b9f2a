@@ -1,9 +1,7 @@
-// A visible play action makes autoplay restrictions clear and recoverable.
+// Quiet autoplay with responsive media and a poster when playback is unavailable.
 const video = document.querySelector("#hero-video");
-const videoButton = document.querySelector("#video-control");
-const heroPlay = document.querySelector("#hero-play");
 const motionPreference = matchMedia("(prefers-reduced-motion: reduce)");
-let userPaused = motionPreference.matches || Boolean(navigator.connection?.saveData);
+const playbackAllowed = () => !motionPreference.matches && !navigator.connection?.saveData;
 let heroVisible = true;
 let hasFailed = false;
 let loading = false;
@@ -12,20 +10,12 @@ const portraitHero = matchMedia("(max-width: 600px) and (orientation: portrait)"
 const activeFilm = () => portraitHero.matches ? video.dataset.mobileSrc : video.dataset.src;
 const activePoster = () => portraitHero.matches ? video.dataset.mobilePoster : video.dataset.poster;
 video.poster = activePoster();
-function syncVideoControl() {
+function syncPlayback() {
   const playing = !video.paused && !video.ended && video.readyState >= 2;
-  const label = hasFailed ? "Retry film" : loading && !playing ? "Loading film…" : playing ? "Pause film" : "Play film";
-  videoButton.setAttribute("aria-label", hasFailed ? "Retry background film" : playing ? "Pause background film" : "Play background film");
-  videoButton.setAttribute("aria-pressed", String(playing));
-  videoButton.querySelector("[data-video-icon]").textContent = playing ? "Ⅱ" : "▷";
-  videoButton.querySelector("[data-video-label]").textContent = label;
-  heroPlay.hidden = playing;
-  heroPlay.querySelector("[data-hero-play-label]").textContent = hasFailed ? "Retry film" : loading ? "Loading film…" : "Play film";
-  heroPlay.setAttribute("aria-label", hasFailed ? "Retry background film" : "Play background film");
   video.dataset.playback = hasFailed ? "error" : playing ? "playing" : loading ? "loading" : "paused";
 }
 async function playFilm() {
-  if (hasFailed || document.hidden || !heroVisible) return;
+  if (!playbackAllowed() || hasFailed || document.hidden || !heroVisible) return;
   video.muted = true;
   video.defaultMuted = true;
   video.setAttribute("muted", "");
@@ -33,40 +23,32 @@ async function playFilm() {
   if (!video.getAttribute("src")) video.src = activeFilm();
   const request = ++playRequest;
   loading = true;
-  syncVideoControl();
-  try { await video.play(); } catch { /* Autoplay may require the visible play button. */ }
+  syncPlayback();
+  try { await video.play(); } catch { /* Keep the poster; retry after a normal visitor gesture. */ }
   if (request !== playRequest) return;
   loading = false;
-  syncVideoControl();
+  syncPlayback();
 }
-function manualPlay() {
-  userPaused = false;
-  if (hasFailed) { hasFailed = false; video.load(); }
-  playFilm();
-}
-video.addEventListener("canplay", () => video.classList.add("is-ready"));
-video.addEventListener("playing", () => { loading = false; video.classList.add("is-ready"); syncVideoControl(); });
-video.addEventListener("pause", () => { loading = false; syncVideoControl(); });
-video.addEventListener("error", () => { hasFailed = true; loading = false; video.classList.remove("is-ready"); syncVideoControl(); });
-videoButton.addEventListener("click", () => {
-  if (video.paused || hasFailed) manualPlay();
-  else { userPaused = true; video.pause(); }
+video.addEventListener("playing", () => { loading = false; video.classList.add("is-ready"); syncPlayback(); });
+video.addEventListener("pause", () => { loading = false; syncPlayback(); });
+video.addEventListener("error", () => { hasFailed = true; loading = false; video.classList.remove("is-ready"); syncPlayback(); });
+motionPreference.addEventListener("change", () => {
+  if (!playbackAllowed()) { ++playRequest; video.pause(); video.classList.remove("is-ready"); }
+  else playFilm();
 });
-heroPlay.addEventListener("click", manualPlay);
-motionPreference.addEventListener("change", event => { if (event.matches) { userPaused = true; video.pause(); } });
 new IntersectionObserver(entries => {
   heroVisible = entries[0].isIntersecting;
   if (!heroVisible) video.pause();
-  else if (!userPaused) playFilm();
+  else playFilm();
 }, {threshold:.1}).observe(document.querySelector(".cinema-hero"));
 document.addEventListener("visibilitychange", () => {
   if (document.hidden) video.pause();
-  else if (!userPaused) playFilm();
+  else playFilm();
 });
-document.addEventListener("pointerup", event => {
-  if (!event.target.closest("#video-control, #hero-play") && !userPaused && video.paused) playFilm();
-});
-window.addEventListener("pageshow", () => { if (!userPaused) playFilm(); });
+function recoverAutoplay() { if (video.paused) playFilm(); }
+document.addEventListener("pointerup", recoverAutoplay);
+document.addEventListener("keydown", recoverAutoplay);
+window.addEventListener("pageshow", playFilm);
 portraitHero.addEventListener("change", () => {
   ++playRequest;
   video.pause();
@@ -76,11 +58,11 @@ portraitHero.addEventListener("change", () => {
   video.load();
   hasFailed = false;
   loading = false;
-  syncVideoControl();
-  if (!userPaused) playFilm();
+  syncPlayback();
+  playFilm();
 });
-syncVideoControl();
-if (!userPaused) playFilm();
+syncPlayback();
+playFilm();
 const pageParams = new URLSearchParams(location.search);
 if (pageParams.get("bag") === "1") {
   window.ChaluShop.openBag();

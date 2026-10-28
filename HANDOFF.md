@@ -101,3 +101,7 @@ QA: 13 subpages at 320, 768, 1440 and 2560 px; all one H1 and no horizontal over
 ## Compact shared tea-farm section
 
 Reduced the shared page-next module across Shop, Story, Craft, Ritual and News: image 550→360 px on desktop/tablet and 310→220 px on phone, heading capped at 48 px (36 px mobile), narrower image column and tighter spacing. Full content width and rounded image treatment remain. Checked all five pages at 320/768/2560 px without overflow and visually reviewed News at 1440 px. Required commerce tests, JS syntax checks and 63-file build passed. Shared stylesheet version: 20261028-compact.
+
+## Hero playback controls removed
+
+Removed both the central play/retry overlay and lower play/pause control at the user's request. site.js no longer depends on those elements; muted looping playback retains responsive media switching, offscreen/background pause, gesture recovery for blocked autoplay, and reduced-motion/data-saving poster fallback. Mobile shop CTA now uses the full available width. Collection carousel controls are unchanged. Verified phone 390×844 and desktop 1440×1000: correct film, readyState 4, playing/looping/muted, no hero controls, no overflow or console errors. Required four tests, seven JS syntax checks and static build passed. Styles/script cache version: 20261028-autoplay.
