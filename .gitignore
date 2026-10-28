@@ -1,0 +1,8 @@
+.DS_Store
+.local/
+.impeccable/
+dist/
+node_modules/
+.env
+.env.*
+!.env.example
