@@ -25,3 +25,5 @@ Read `HANDOFF.md`, `README.md`, `docs/DESIGN-BRIEF.md`, then inspect Git status 
 
 - Main navigation destinations are shop.html, story.html, craft.html and ritual.html. Regenerate with `python3 scripts/render-pages.py` after changing index content or templates/page.html. Build checks all ten pages.
 - Copy wraps naturally to the available column width; avoid reintroducing manual paragraph line breaks or narrow max-width caps.
+
+- Decorative eyebrow headings and small marketing captions were removed at the user’s request. Do not reintroduce them; retain useful prices, tasting notes, form labels and demo disclosures.

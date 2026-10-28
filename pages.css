@@ -67,3 +67,6 @@ main p, .story-copy, .serve-list, .product h3 { max-width: none; }
 @media(max-width:760px) and (max-height:740px) { .hero-play { top: calc(108px + 18.5svh); } }
 @media(max-width:760px) and (max-height:600px) { .hero-play { top: calc(98px + 16.5svh); width: 84px; height: 84px; } }
 @media(max-width:900px) and (max-height:500px) and (orientation:landscape) { .hero-play { left: 72.5%; top: calc(98px + (100svh - 118px) / 2); } }
+
+/* A quieter presentation after removing decorative micro-copy. */
+.cinema-footer { justify-content: flex-end; }

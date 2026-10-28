@@ -88,3 +88,5 @@ The final release should be verified anonymously after the GitHub Actions deploy
 - Dedicated shop: add Snow Jasmine, open bag, proceed to checkout and complete sample order. Confirmation shows S$32 + S$6 = S$38; bag clears. No real order/payment.
 - All four Node commerce tests, seven JS syntax checks and both renderer freshness checks pass. Static build validates ten pages and 55 files.
 - Reduced-motion/data-saving paths remain source-reviewed; no browser security workaround or physical-device certification.
+
+Final copy cleanup: all ten pages checked at 320×568 and 1440×1000 after removing decorative eyebrow text and marketing captions. Zero eyebrow elements and no horizontal overflow. Mobile homepage remains 100svh and the v2 film plays. Practical product/checkout text remains intact.
