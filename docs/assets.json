@@ -82,5 +82,17 @@
     "source": "https://images.squarespace-cdn.com/content/v1/67da3ab08606a379b294668d/4500f4a1-cf1e-4e5d-b10e-6fdcb8bbd873/Chalu-Babas-15.jpg",
     "owner": "Chalu",
     "use": "Client concept preview; confirm media rights before production"
+  },
+  {
+    "file": "assets/hero-loop.mp4",
+    "source": "Higgsfield job f317a6aa-2eeb-4fc9-b5a6-d48719d68333; see HERO-VIDEO.md",
+    "owner": "Generated motion based on Chalu reference photography",
+    "use": "Client demo hero film; no audio; 10.5 credits"
+  },
+  {
+    "file": "assets/hero-poster.webp",
+    "source": "First frame of assets/hero-loop.mp4",
+    "owner": "Derived from generated Chalu hero film",
+    "use": "Poster and reduced-motion fallback"
   }
 ]

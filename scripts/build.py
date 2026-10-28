@@ -3,6 +3,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 import re
 import shutil
+from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parent.parent
 DIST = ROOT / "dist"
@@ -16,6 +17,7 @@ class Page(HTMLParser):
         self.assets = []
         self.headings = 0
         self.noindex = False
+        self.links = []
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
@@ -28,30 +30,40 @@ class Page(HTMLParser):
             self.noindex = "noindex" in attrs.get("content", "")
         if tag == "img":
             assert "alt" in attrs, f"Missing image alternative text: {attrs}"
-        for key in ("src", "href"):
+        for key in ("src", "href", "poster", "data-src"):
             value = attrs.get(key, "")
             if value.startswith("#") and len(value) > 1:
                 self.targets.append(value[1:])
             elif value and not value.startswith(("#", "https:", "mailto:")):
-                self.assets.append(value)
+                parsed = urlsplit(value)
+                self.assets.append(parsed.path)
+                if parsed.fragment:
+                    self.links.append((parsed.path, parsed.fragment))
 
 
-page = Page()
-page.feed((ROOT / "index.html").read_text())
-assert page.headings == 1, "Expected exactly one H1"
-assert page.noindex, "Preview must remain noindex"
-assert set(page.targets) <= page.ids, f"Missing anchor: {set(page.targets) - page.ids}"
-for asset in page.assets:
-    assert (ROOT / asset).is_file(), f"Missing asset: {asset}"
-for asset in re.findall(r"url\(['\"]?([^'\")]+)", (ROOT / "styles.css").read_text()):
-    assert (ROOT / asset).is_file(), f"Missing CSS asset: {asset}"
+pages = {}
+for filename in ("index.html", "checkout.html"):
+    page = Page()
+    page.feed((ROOT / filename).read_text())
+    assert page.headings == 1, f"Expected exactly one H1 in {filename}"
+    assert page.noindex, f"Preview must remain noindex: {filename}"
+    assert set(page.targets) <= page.ids, f"Missing anchor: {set(page.targets) - page.ids}"
+    for asset in page.assets:
+        assert (ROOT / asset).is_file(), f"Missing asset: {asset}"
+    pages[filename] = page
+for page in pages.values():
+    for filename, target in page.links:
+        assert target in pages[filename].ids, f"Missing destination: {filename}#{target}"
+for filename in ("styles.css", "shop.css"):
+    for asset in re.findall(r"url\(['\"]?([^'\")]+)", (ROOT / filename).read_text()):
+        assert (ROOT / asset).is_file(), f"Missing CSS asset: {asset}"
 for tea in ("jasmine", "hibiscus", "oolong", "rose"):
     assert (ROOT / f"assets/{tea}.webp").is_file(), f"Missing product: {tea}"
 
 if DIST.exists():
     shutil.rmtree(DIST)
 DIST.mkdir()
-for name in ("index.html", "styles.css", "site.js", "robots.txt", ".nojekyll"):
+for name in ("index.html", "checkout.html", "styles.css", "shop.css", "site.js", "commerce.js", "checkout.js", "robots.txt", ".nojekyll"):
     shutil.copy2(ROOT / name, DIST / name)
 shutil.copytree(ROOT / "assets", DIST / "assets")
 print(f"Validated and built {sum(1 for p in DIST.rglob('*') if p.is_file())} static files in dist/")

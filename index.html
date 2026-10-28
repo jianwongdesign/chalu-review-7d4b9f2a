@@ -29,13 +29,15 @@
       crossorigin
     />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="shop.css" />
+    <script src="commerce.js" defer></script>
     <script src="site.js" defer></script>
   </head>
-  <body>
+  <body class="home-page">
     <a class="skip-link" href="#main">Skip to content</a>
     <div class="announcement">
-      Rooted in Yunnan. Made for the moment.
-      <span>Alcohol-free sparkling tea</span>
+      Made in Yunnan. Made for the moment.
+      <span>Demo store · No real payments</span>
     </div>
     <header class="site-header">
       <a class="brand" href="#" aria-label="Chalu home"
@@ -46,12 +48,30 @@
           alt="Chalu sparkling tea"
       /></a>
       <nav class="desktop-nav" aria-label="Main navigation">
-        <a href="#collection">The collection</a><a href="#story">Our story</a
-        ><a href="#craft">The craft</a><a href="#ritual">The ritual</a>
+        <a href="#collection">Shop the collection</a
+        ><a href="#story">Our story</a><a href="#craft">The craft</a
+        ><a href="#ritual">The ritual</a>
       </nav>
       <a class="header-contact" href="#contact"
         >Let’s raise a glass <span aria-hidden="true">↗</span></a
       >
+      <button
+        class="bag-toggle"
+        data-open-bag
+        aria-haspopup="dialog"
+        aria-label="Open shopping bag, 0 items"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.3"
+          aria-hidden="true"
+        >
+          <path d="M5 7h14l1 14H4L5 7Z" />
+          <path d="M8 8V6a4 4 0 0 1 8 0v2" /></svg
+        ><span>Bag</span><span data-bag-count>0</span>
+      </button>
       <button
         class="menu-toggle"
         aria-expanded="false"
@@ -65,49 +85,69 @@
         aria-label="Mobile navigation"
         hidden
       >
-        <a href="#collection">The collection</a><a href="#story">Our story</a
-        ><a href="#craft">The craft</a><a href="#ritual">The ritual</a
+        <a href="#collection">Shop the collection</a
+        ><a href="#story">Our story</a><a href="#craft">The craft</a
+        ><a href="#ritual">The ritual</a
         ><a href="#contact">Let’s raise a glass ↗</a>
       </nav>
     </header>
     <main id="main">
-      <section class="hero" aria-labelledby="hero-title">
+      <section class="hero cinema-hero" aria-labelledby="hero-title">
+        <div class="hero-media" aria-hidden="true">
+          <img
+            src="assets/hero-poster.webp"
+            width="2000"
+            height="1334"
+            alt=""
+            fetchpriority="high"
+            class="hero-poster"
+          />
+          <video
+            id="hero-video"
+            muted
+            loop
+            playsinline
+            preload="none"
+            poster="assets/hero-poster.webp"
+            data-src="assets/hero-loop.mp4"
+            tabindex="-1"
+          ></video>
+        </div>
+        <div class="hero-shade"></div>
         <div class="hero-copy">
           <p class="eyebrow">
-            <span class="tiny-star" aria-hidden="true">✳</span> A new ritual,
-            rooted in tea
+            <span class="tiny-star" aria-hidden="true">✳</span> MADE IN YUNNAN
+            · 0% ALCOHOL
           </p>
           <h1 id="hero-title">
-            A little wild.<br />Beautifully<br /><em>refined.</em>
+            A little wild.<br /><em>Beautifully refined.</em>
           </h1>
           <p class="hero-description">
-            From the highlands of Yunnan to the heart of your table. Discover
-            sparkling tea with a spirit all its own.
+            Exceptional tea. A delicate sparkle.<br />A new way to savour the
+            moment.
           </p>
-          <a class="button button-dark" href="#collection"
-            >Explore the collection <span aria-hidden="true">↗</span></a
-          >
-          <div class="hero-foot">
-            <span>0% alcohol. A world of character.</span
-            ><a href="#introduction" aria-label="Discover the world of Chalu"
-              >↓</a
+          <div class="hero-actions">
+            <a class="button button-ivory" href="#collection"
+              >Shop the collection <span aria-hidden="true">↗</span></a
+            ><a class="hero-story-link" href="#story"
+              >Discover our story <span aria-hidden="true">↗</span></a
             >
           </div>
         </div>
-        <div class="hero-visual">
-          <img
-            src="assets/hero.webp"
-            width="2000"
-            height="1333"
-            alt="Chalu Hibiscus Noir and Volcano Oolong nestled in a wooden tray"
-            fetchpriority="high"
-          />
-          <div class="hero-caption">
-            <span>茶路 · THE TEA ROAD</span><span>YUNNAN, CHINA</span>
-          </div>
-          <div class="origin-stamp" aria-label="Born in Yunnan">
-            <span>BORN IN</span><b>云南</b><span>YUNNAN</span>
-          </div>
+        <div class="cinema-footer">
+          <a class="hero-scroll" href="#introduction"
+            ><span class="scroll-line" aria-hidden="true"></span> A new ritual,
+            rooted in tea</a
+          ><span class="cinema-location">茶路 · MADE IN YUNNAN</span
+          ><button
+            class="video-control"
+            id="video-control"
+            aria-label="Play background film"
+            aria-pressed="false"
+          >
+            <span data-video-icon aria-hidden="true">▷</span
+            ><span data-video-label>Play film</span>
+          </button>
         </div>
       </section>
       <section class="intro section-pad" id="introduction">
@@ -140,6 +180,7 @@
             your kind of moment.
           </p>
         </div>
+        <p class="shop-demo-caption">DEMO SHOP · SAMPLE PRICES IN SGD</p>
         <div class="product-grid">
           <article class="product jasmine">
             <div class="product-image">
@@ -162,6 +203,16 @@
               >
                 Discover Snow Jasmine <span aria-hidden="true">↗</span>
               </button>
+              <div class="product-buy">
+                <span class="product-price">S$32<small>750 ml</small></span
+                ><button
+                  class="add-button"
+                  data-add="jasmine"
+                  aria-label="Add Snow Jasmine to bag"
+                >
+                  Add to bag <span aria-hidden="true">+</span>
+                </button>
+              </div>
             </div>
           </article>
           <article class="product hibiscus">
@@ -185,6 +236,16 @@
               >
                 Discover Hibiscus Noir <span aria-hidden="true">↗</span>
               </button>
+              <div class="product-buy">
+                <span class="product-price">S$36<small>750 ml</small></span
+                ><button
+                  class="add-button"
+                  data-add="hibiscus"
+                  aria-label="Add Hibiscus Noir to bag"
+                >
+                  Add to bag <span aria-hidden="true">+</span>
+                </button>
+              </div>
             </div>
           </article>
           <article class="product oolong">
@@ -208,6 +269,16 @@
               >
                 Discover Volcano Oolong <span aria-hidden="true">↗</span>
               </button>
+              <div class="product-buy">
+                <span class="product-price">S$38<small>750 ml</small></span
+                ><button
+                  class="add-button"
+                  data-add="oolong"
+                  aria-label="Add Volcano Oolong to bag"
+                >
+                  Add to bag <span aria-hidden="true">+</span>
+                </button>
+              </div>
             </div>
           </article>
           <article class="product rose">
@@ -231,12 +302,22 @@
               >
                 Discover Untamed Rosé <span aria-hidden="true">↗</span>
               </button>
+              <div class="product-buy">
+                <span class="product-price">S$36<small>750 ml</small></span
+                ><button
+                  class="add-button"
+                  data-add="rose"
+                  aria-label="Add Untamed Rosé to bag"
+                >
+                  Add to bag <span aria-hidden="true">+</span>
+                </button>
+              </div>
             </div>
           </article>
         </div>
         <div class="collection-note">
           <span>750 ML · ALCOHOL-FREE</span>
-          <p>A considered alternative. A celebration in its own right.</p>
+          <p>Demo prices in SGD · No real orders or payments.</p>
         </div>
       </section>
       <section class="story" id="story" aria-labelledby="story-title">
@@ -412,7 +493,7 @@
         <a class="back-top" href="#" aria-label="Back to top">↑</a>
       </div>
       <div class="footer-bottom">
-        <span>© 2026 Chalu</span><span>Homepage concept · Design preview</span
+        <span>© 2026 Chalu</span><span>Demo store · No real orders</span
         ><span>茶路 · A NEW RITUAL</span>
       </div>
     </footer>
@@ -441,10 +522,39 @@
             <dd>750 ml · Alcohol-free</dd>
           </div>
         </dl>
-        <a class="button button-dark" href="#contact" id="dialog-contact"
-          >Enquire about this tea <span aria-hidden="true">↗</span></a
-        >
+        <p class="dialog-demo-price">
+          <span id="dialog-price"></span> <small>Demo price · 750 ml</small>
+        </p>
+        <button class="button button-dark" id="dialog-add">
+          Add to bag <span aria-hidden="true">+</span>
+        </button>
       </div>
     </dialog>
+    <dialog id="bag-dialog" class="bag-dialog" aria-labelledby="bag-title">
+      <div class="bag-header">
+        <div>
+          <p class="eyebrow">A little something to savour</p>
+          <h2 id="bag-title">Your bag <span data-bag-count>0</span></h2>
+        </div>
+        <button class="bag-close icon-button" aria-label="Close shopping bag">
+          ×
+        </button>
+      </div>
+      <p class="demo-notice">Demo store · Sample prices · No real payments</p>
+      <div id="bag-items" class="bag-items"></div>
+      <div id="bag-totals" class="bag-totals">
+        <div><span>Subtotal</span><strong id="bag-subtotal"></strong></div>
+        <p>Demo delivery is calculated at checkout.</p>
+        <a class="button button-dark" href="checkout.html"
+          >Continue to demo checkout <span aria-hidden="true">↗</span></a
+        ><button class="continue-shopping">Continue exploring</button>
+      </div>
+    </dialog>
+    <div
+      id="shop-status"
+      class="shop-status"
+      role="status"
+      aria-live="polite"
+    ></div>
   </body>
 </html>

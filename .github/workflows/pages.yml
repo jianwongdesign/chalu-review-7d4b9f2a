@@ -14,7 +14,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Validate JavaScript
-        run: node --check site.js
+        run: |
+          node --check site.js
+          node --check commerce.js
+          node --check checkout.js
+          node --test scripts/commerce.test.cjs
       - name: Validate and build static site
         run: python3 scripts/build.py
       - uses: actions/upload-pages-artifact@v3

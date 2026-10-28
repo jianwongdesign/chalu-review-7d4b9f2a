@@ -1,41 +1,36 @@
-# Chalu homepage — restart handoff
+# Chalu — restart handoff
 
-Updated: 28 October 2026.
+Updated 28 October 2026.
 
-## Project
+## Current scope
 
-- Local folder: `crystal-cha`
-- Brand: **Chalu**, explicitly confirmed by the user.
+- Brand: **Chalu**, explicitly confirmed.
 - Repository: https://github.com/jianwongdesign/crystal-cha
-- Preview: https://jianwongdesign.github.io/crystal-cha/
-- Branch: `main`
-- Scope: original, responsive homepage concept using Chalu identity and photography, with Saicho as a premium design reference.
+- Shareable preview: https://jianwongdesign.github.io/crystal-cha/
+- Branch: `main`; run `git log -1` for the latest checkpoint.
+- The user requested demo e-commerce and checkout, “Made in Yunnan” wording, and a premium 100vh video hero. They confirmed a maximum of 50 Higgsfield credits.
 
-## Built
+## Implemented
 
-An editorial split hero, introductory brand statement, four colour-coded product cards with native tasting-note dialogs, Yunnan/founder story, craft explanation, serving accordions, and email contact section. Mobile menu, modal focus management, Escape dismissal and reduced-motion styles are included. Fonts and optimized imagery are hosted locally.
+The homepage now opens with a full-viewport cinematic hero, dark overlays, editorial text, transparent navigation, shop CTA and pause control. Navigation becomes solid green when scrolling, keeping the bag available. A silent generated loop and matching poster are self-hosted. Origin badge wording is “Made in Yunnan”.
 
-Native HTML, CSS and JavaScript. `python3 scripts/build.py` packages an allowlist of public files into `dist/`; GitHub Actions publishes that artifact to Pages on pushes to `main`.
+All four products have explicit sample SGD prices, add-to-bag actions and tasting-note dialogs. The bag supports quantity changes, removal, empty recovery and localStorage persistence. Checkout uses sample details and a non-editable demo card, with form validation, itemized totals and a simulated confirmation. No real payment or order is sent. Checkout contact values are not stored; only product IDs and quantities persist.
+
+## Video
+
+Kling 3.0 Pro through Higgsfield, one generation, **10.5 credits used**. The original result is 6.04 seconds at 1760×1176 despite the requested 16:9; CSS cover provides the responsive full-screen crop without distorting the image. Optimized H.264 is 557,299 bytes, with no audio. See `docs/HERO-VIDEO.md` for source and job information. No retries or extra generations were used.
 
 ## Verification
 
-- Local asset and anchor validation and JavaScript syntax check passed.
-- Browser viewport geometry checked at 320, 390, 768, 1024, 1440, 1920 and 2560 pixels: no horizontal overflow or headings outside the viewport.
-- Desktop and mobile hero/collection/dialog, tablet serving section, and large-monitor hero/introduction visually inspected.
-- Collection navigation works; mobile menu closes on link selection.
-- All four tasting dialogs display their corresponding product names and images.
-- Escape closes the native modal and restores focus to its product button.
-- Dialog enquiry link closes the modal, restores body scrolling and navigates to contact.
-- Serving disclosure expands to reveal its content; browser error/warning log was empty.
-- Initial GitHub Pages deployment succeeded (run `40632849114`), and the public URL rendered the expected homepage in the browser without sign-in.
-- Follow-up refinement: cap the introduction's horizontal padding on large monitors. Locally rechecked at 2560 px with no overflow and the intended two-line heading.
+- Previous homepage and initial release checks are documented in Git history.
+- New basket calculations and invalid stored values pass three Node tests.
+- JavaScript syntax and static build validation cover both pages and the video assets.
+- Browser checks: add products, change quantity, remove last item, empty-bag recovery, reload persistence, product-dialog add, edit-bag link, checkout validation and simulated order confirmation.
+- Verified sample totals: S$70 subtotal; S$102 with complimentary demo delivery; one S$36 bottle plus S$6 demo delivery = S$42.
+- Full-viewport hero geometry checked at 320×568, 390×844, 768×1024, 1024×768, 1440×1000, 1920×1080 and 2560×1440; no page overflow or overlap with the header.
+- Generated video loads, plays muted, loops, and pauses through the visible control. Film frames were inspected for consistent packaging.
+- Reduced-motion emulation was declined by browser security. The source fallback is implemented and reviewed; do not claim it was runtime-emulated.
 
-See `docs/QA.md` for the review record. Final deployment status is available in the repository's Actions tab; the latest commit is available through `git log -1`.
+## Continue later
 
-## Preview limits
-
-Public design preview, not production. `noindex, nofollow` and crawler-disallow are intentional. No e-commerce, checkout, newsletter backend or form submissions. Email links use the existing public Chalu business address. No production host or DNS changes were made.
-
-## Next visit
-
-Read this file and the design brief, inspect Git status/log, then verify the live preview before changing it. Final client review should cover the layout, campaign copy, photo rights, production platform and any required commerce functionality. Product names and current brand identity should be preserved unless requested otherwise.
+Check Git state and the live preview first. This remains a noindex public design/demo site. Final prices, shipping rules, production platform, brand-media rights and real commerce integrations require separate client decisions. Existing Chalu production hosting and DNS were untouched.

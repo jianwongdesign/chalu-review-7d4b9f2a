@@ -29,3 +29,14 @@ Premium, botanical, editorial. A more deliberate reading path guides visitors fr
 This is a static homepage design preview. Confirm final copy, imagery rights, launch platform, commerce requirements, privacy/legal content, analytics and the production domain separately. Existing production hosting, DNS and the Chalu site are unchanged.
 
 Keep `noindex` on the preview. A production launch requires a separate reviewed release.
+
+## Confirmed revision — demo commerce and film
+
+The user subsequently requested:
+
+- Shopping and checkout functionality as a **demo**, not live commerce.
+- Replace “Born in Yunnan” with “Made in Yunnan”.
+- Generate a premium looping hero video through Higgsfield, with a confirmed maximum of **50 credits**.
+- Make the homepage hero **100vh** and arrange overlay text carefully.
+
+This revision supersedes the earlier static-only scope. The implemented store uses explicitly illustrative SGD prices, a local basket and simulated checkout. The original split hero is replaced by a full-screen film. One video generation cost 10.5 credits.
