@@ -1,88 +1,66 @@
-// A muted, looping hero with explicit pause and a useful still-image fallback.
+// A visible play action makes autoplay restrictions clear and recoverable.
 const video = document.querySelector("#hero-video");
 const videoButton = document.querySelector("#video-control");
+const heroPlay = document.querySelector("#hero-play");
 const motionPreference = matchMedia("(prefers-reduced-motion: reduce)");
-let userPaused =
-  motionPreference.matches || Boolean(navigator.connection?.saveData);
+let userPaused = motionPreference.matches || Boolean(navigator.connection?.saveData);
 let heroVisible = true;
 let hasFailed = false;
+let loading = false;
 function syncVideoControl() {
-  const playing = !video.paused && !video.ended;
-  videoButton.setAttribute(
-    "aria-label",
-    playing ? "Pause background film" : "Play background film",
-  );
+  const playing = !video.paused && !video.ended && video.readyState >= 2;
+  const label = hasFailed ? "Retry film" : loading && !playing ? "Loading film…" : playing ? "Pause film" : "Play film";
+  videoButton.setAttribute("aria-label", hasFailed ? "Retry background film" : playing ? "Pause background film" : "Play background film");
   videoButton.setAttribute("aria-pressed", String(playing));
-  videoButton.querySelector("[data-video-icon]").textContent = playing
-    ? "Ⅱ"
-    : "▷";
-  videoButton.querySelector("[data-video-label]").textContent = playing
-    ? "Pause film"
-    : "Play film";
+  videoButton.querySelector("[data-video-icon]").textContent = playing ? "Ⅱ" : "▷";
+  videoButton.querySelector("[data-video-label]").textContent = label;
+  heroPlay.hidden = playing;
+  heroPlay.querySelector("[data-hero-play-label]").textContent = hasFailed ? "Retry film" : loading ? "Loading film…" : "Play film";
+  heroPlay.setAttribute("aria-label", hasFailed ? "Retry background film" : "Play background film");
+  video.dataset.playback = hasFailed ? "error" : playing ? "playing" : loading ? "loading" : "paused";
 }
 async function playFilm() {
   if (hasFailed || document.hidden || !heroVisible) return;
-  if (!video.getAttribute("src")) video.src = video.dataset.src;
   video.muted = true;
   video.defaultMuted = true;
   video.setAttribute("muted", "");
-  video.autoplay = true;
   video.preload = "auto";
-  try {
-    await video.play();
-  } catch {
-    syncVideoControl();
-  }
+  if (!video.getAttribute("src")) video.src = video.dataset.src;
+  loading = true;
+  syncVideoControl();
+  try { await video.play(); } catch { /* Autoplay may require the visible play button. */ }
+  loading = false;
+  syncVideoControl();
+}
+function manualPlay() {
+  userPaused = false;
+  if (hasFailed) { hasFailed = false; video.load(); }
+  playFilm();
 }
 video.addEventListener("canplay", () => video.classList.add("is-ready"));
-video.addEventListener("playing", () => {
-  video.classList.add("is-ready");
-  syncVideoControl();
-});
-video.addEventListener("pause", syncVideoControl);
-video.addEventListener("error", () => {
-  hasFailed = true;
-  video.classList.remove("is-ready");
-  videoButton.hidden = false;
-  videoButton.setAttribute("aria-label", "Retry background film");
-  videoButton.querySelector("[data-video-label]").textContent = "Retry film";
-});
+video.addEventListener("playing", () => { loading = false; video.classList.add("is-ready"); syncVideoControl(); });
+video.addEventListener("pause", () => { loading = false; syncVideoControl(); });
+video.addEventListener("error", () => { hasFailed = true; loading = false; video.classList.remove("is-ready"); syncVideoControl(); });
 videoButton.addEventListener("click", () => {
-  if (hasFailed) {
-    hasFailed = false;
-    video.load();
-  }
-  if (video.paused) {
-    userPaused = false;
-    playFilm();
-  } else {
-    userPaused = true;
-    video.pause();
-  }
+  if (video.paused || hasFailed) manualPlay();
+  else { userPaused = true; video.pause(); }
 });
-motionPreference.addEventListener("change", (event) => {
-  if (event.matches) {
-    userPaused = true;
-    video.pause();
-  }
-});
-new IntersectionObserver(
-  (entries) => {
-    heroVisible = entries[0].isIntersecting;
-    if (!heroVisible) video.pause();
-    else if (!userPaused) playFilm();
-  },
-  { threshold: 0.1 },
-).observe(document.querySelector(".cinema-hero"));
+heroPlay.addEventListener("click", manualPlay);
+motionPreference.addEventListener("change", event => { if (event.matches) { userPaused = true; video.pause(); } });
+new IntersectionObserver(entries => {
+  heroVisible = entries[0].isIntersecting;
+  if (!heroVisible) video.pause();
+  else if (!userPaused) playFilm();
+}, {threshold:.1}).observe(document.querySelector(".cinema-hero"));
 document.addEventListener("visibilitychange", () => {
   if (document.hidden) video.pause();
   else if (!userPaused) playFilm();
 });
-// A gesture can recover autoplay restrictions without overriding an explicit pause.
-document.addEventListener("pointerup", (event) => {
-  if (!event.target.closest("#video-control") && !userPaused && video.paused) playFilm();
+document.addEventListener("pointerup", event => {
+  if (!event.target.closest("#video-control, #hero-play") && !userPaused && video.paused) playFilm();
 });
 window.addEventListener("pageshow", () => { if (!userPaused) playFilm(); });
+syncVideoControl();
 if (!userPaused) playFilm();
 const pageParams = new URLSearchParams(location.search);
 if (pageParams.get("bag") === "1") {

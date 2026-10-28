@@ -1660,3 +1660,11 @@ dialog[data-tea="rose"] .dialog-image {
     min-height: 48px;
   }
 }
+
+/* Text uses its available column and wraps at the natural edge. */
+p, .section-heading > p, .story-copy, .story-copy > p:not(.eyebrow),
+.craft-grid p, .ritual-copy > p:not(.eyebrow), .serve-list,
+.product h3, .collection-note p { max-width: none; }
+.story-copy { width: 100%; }
+.story-copy h2 em { display: inline; }
+.serve-list details p { padding-right: 0; }

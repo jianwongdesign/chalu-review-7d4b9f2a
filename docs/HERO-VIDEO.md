@@ -1,5 +1,25 @@
 # Chalu hero film
 
+## Current film — visible camera motion
+
+28 October 2026. User reported the earlier cinemagraph looked like a still.
+
+- Model: Kling 3.0 Pro, silent, 8-second generation, one output.
+- Job: `10c65994-dd37-49e0-82e5-3dd6d5577d19`.
+- Reference: `assets/hero.webp`, start image only.
+- Estimate and observed balance reduction: **14 credits**, from 739.75 to 725.75.
+- Total hero-video spending: **24.5 / 50 approved credits**, including the earlier 10.5-credit generation.
+- Source: https://d8j0ntlcm91z4.cloudfront.net/user_3HOQsp3aI9QdUt9ZM3bz4dnBtay/hf_20261028_062037_10c65994-dd37-49e0-82e5-3dd6d5577d19.mp4
+- Source delivered 1760×1176, 24 fps, 8.041667 seconds despite a 16:9 request.
+- Website: `assets/hero-loop-v2.mp4`, 1760×1176, H.264/yuv420p, faststart, no audio, **4.5 seconds / 1,442,351 bytes**.
+- Poster: `assets/hero-poster-v2.webp`, first frame of website loop.
+
+Creative direction: immediate lateral camera movement and a gentle orbit around the two existing bottles, with warm highlights and moving background perspective. Preserve labels, no extra objects, people or titles. The later source frames cropped bottle ends, so only the first 2.25 seconds are used, followed by their reverse. This creates a continuous loop while keeping complete bottles in the source frame. No further paid attempt was needed.
+
+The full hero remains 100vh / 100svh. Desktop covers its backdrop; mobile/tablet up to 900 px contains the complete film above the copy. The prominent central Play film control appears when paused or autoplay is blocked, shows loading/retry states and hides during actual playback. A separate bottom control pauses/resumes. Hidden tabs and out-of-view heroes pause. Reduced-motion/data-saving visitors receive a poster until choosing play; these preference paths are source-reviewed only.
+
+## Earlier film — retained reference
+
 Generated 28 October 2026 with the Higgsfield generation skill.
 
 - Model: Kling 3.0 Pro; silent, one result, six seconds requested.

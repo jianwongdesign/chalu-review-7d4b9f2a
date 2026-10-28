@@ -14,7 +14,7 @@ Read `HANDOFF.md`, `README.md`, `docs/DESIGN-BRIEF.md`, then inspect Git status 
 - Recheck mobile, tablet, desktop and large screens, bag/checkout behavior, and video pause/poster behavior after relevant edits.
 - Check: `node --test scripts/commerce.test.cjs`, syntax-check all seven JS files, and `python3 scripts/build.py`.
 - Pushing `main` publishes the preview automatically; verify the public URL and released files afterwards.
-- Hero generation: one completed Higgsfield job, 10.5 credits spent from a confirmed 50-credit maximum. No further generation is needed for the current task; re-estimate any future paid request.
+- Hero generation: two completed Higgsfield jobs, 24.5 credits total (10.5 + 14) from a confirmed 50-credit maximum. Current hero is hero-loop-v2.mp4; re-estimate any future paid request.
 
 - Product source: `templates/product.html`, `docs/products.json`; regenerate via `python3 scripts/render-products.py` after changing these or shared index header/cards/footer. Build rejects stale generated pages.
 - Tasting illustrations are aroma cues, not ingredient/allergen or organic-certification claims. Preserve the explanatory caption and separate ingredient/tea information.
@@ -22,3 +22,6 @@ Read `HANDOFF.md`, `README.md`, `docs/DESIGN-BRIEF.md`, then inspect Git status 
 
 - Shared motion lives in `motion.js` / `motion.css`. Keep native scrolling, reduced-motion, keyboard disclosure access and no-JS readability intact.
 - Body and serif fonts use genuine variable WOFF2 weights, generally 500. Do not map a static regular font to a variable weight range.
+
+- Main navigation destinations are shop.html, story.html, craft.html and ritual.html. Regenerate with `python3 scripts/render-pages.py` after changing index content or templates/page.html. Build checks all ten pages.
+- Copy wraps naturally to the available column width; avoid reintroducing manual paragraph line breaks or narrow max-width caps.

@@ -1389,8 +1389,8 @@ body.bag-open {
   .hero-story-link { font-size: 9px; min-height: 48px; }
 }
 @media (max-width:760px) {
-  .home-page #collection { overflow: hidden; }
-  .home-page #collection-track { display: grid; grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: min(78vw,340px); gap: 20px; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scrollbar-width: none; margin: 0 calc(-1 * var(--gutter)); padding: 26px calc((100vw - min(78vw,340px)) / 2) 20px; align-items: start; }
+  :is(.home-page, .shop-page) #collection { overflow: hidden; }
+  :is(.home-page, .shop-page) #collection-track { display: grid; grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: min(78vw,340px); gap: 20px; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scrollbar-width: none; margin: 0 calc(-1 * var(--gutter)); padding: 26px calc((100vw - min(78vw,340px)) / 2) 20px; align-items: start; }
   #collection-track::-webkit-scrollbar { display: none; }
   #collection-track > .product { scroll-snap-align: center; scroll-snap-stop: always; min-width: 0; }
   #collection-track .product-image { height: 360px; transform: perspective(900px) translateY(var(--lift,0px)) rotateY(var(--turn,0deg)) scale(var(--scale,1)); transform-origin: center; box-shadow: 0 20px 25px -20px #17372d73, inset 1px 1px 0 #ffffff80; background-image: radial-gradient(ellipse at 35% 25%,#ffffff70,transparent 65%); }
@@ -1439,3 +1439,5 @@ body.bag-open {
   .cinema-hero .hero-shade { background: linear-gradient(90deg,#10261c 35%,transparent 70%); }
   .cinema-hero .cinema-footer { bottom: 8px; }
 }
+
+.cinema-hero .hero-description { max-width: 100%; }

@@ -132,5 +132,17 @@
     "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/dmsans/DMSans%5Bopsz%2Cwght%5D.ttf",
     "owner": "DM Sans font authors",
     "use": "SIL Open Font License; genuine variable weight; Latin subset in WOFF2"
+  },
+  {
+    "file": "assets/hero-loop-v2.mp4",
+    "source": "Higgsfield job 10c65994-dd37-49e0-82e5-3dd6d5577d19; see HERO-VIDEO.md",
+    "owner": "Generated motion based on Chalu reference photography",
+    "use": "4.5-second forward/reverse hero loop; this generation 14 credits, cumulative 24.5 / 50"
+  },
+  {
+    "file": "assets/hero-poster-v2.webp",
+    "source": "First frame of assets/hero-loop-v2.mp4",
+    "owner": "Derived from generated Chalu hero film",
+    "use": "Poster and reduced-motion fallback"
   }
 ]

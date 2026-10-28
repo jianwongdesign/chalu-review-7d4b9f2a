@@ -60,3 +60,13 @@ Product data now includes `pairings` (three dish/reason pairs per tea), rendered
 All main text now uses weight 500. The previous DM file was static 400 despite a declared variable range; the new DM and Cormorant files are actual variable WOFF2 fonts from Google Fonts, subset to Latin/extended Latin, punctuation and arrows. Three files total 176,016 bytes. Original downloaded TTFs are local-only in `.local/font-sources/`; the committed WOFF2 sources are recorded in `docs/assets.json`. CSS URLs are versioned for this release.
 
 Validation: all six pages at 320/768/1440 widths with no horizontal overflow and computed body/H1 weight 500; three pairings on each tea; desktop/mobile disclosure open/close, repeated clicks and keyboard Enter; native smooth anchor scrolling to the homepage ritual; no clipped/stale inline heights after completion. Reduced-motion remains source-reviewed only (previous browser emulation refusal still applies). Build now contains 48 static files.
+
+## Current revision — navigation pages, natural copy and moving hero
+
+All four main navigation entries now open dedicated root-level pages: shop.html, story.html, craft.html and ritual.html. Header/footer/CTA links and empty-bag/checkout shopping recovery use these routes. The shared page template and `scripts/render-pages.py` reuse homepage sections; run both renderers after shared edits. Story/craft have extra editorial sections and ritual links each tea's pairings. The shop preserves demo commerce and mobile perspective carousel. Build validates ten pages / 55 files.
+
+Removed forced paragraph and section-heading breaks and narrow copy caps. Product descriptions, ingredients and “The perfect pour” now fill their available columns before wrapping. Hero display typography retains its deliberate composition.
+
+Hero V2 supersedes the subtle first clip. Kling 3.0 Pro generated an 8-second moving shot for 14 credits; total 24.5 / 50. Later frames cropped bottles, so the first 2.25 seconds are looped forward/reverse for 4.5 seconds. Current film: assets/hero-loop-v2.mp4 (1,442,351 bytes) and matching v2 poster. A central play/loading/retry control makes blocked playback recoverable. No further spending needed. See docs/HERO-VIDEO.md.
+
+Local verification: four new pages at 320/768/1440 widths, mobile menu destination and active navigation; product right-column paragraph uses its full 604.8 px desktop width with no manual breaks. Hero playback, pause/central resume and geometry at 320×568, 390×844, 768×1024, 1440×1000, 2560×1440 and 844×390; no horizontal overflow. New shop add-to-bag and checkout show S$32 + S$6 = S$38. Reduced-motion remains source-reviewed only.

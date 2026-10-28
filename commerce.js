@@ -173,7 +173,7 @@
     }
     if (target.matches(".bag-close,.continue-shopping,[data-continue]"))
       closeBag();
-    if (target.hasAttribute("data-continue")) location.href = "index.html#collection";
+    if (target.hasAttribute("data-continue")) location.href = "shop.html";
   });
   bag?.addEventListener("close", () =>
     document.body.classList.remove("bag-open"),

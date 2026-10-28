@@ -45,8 +45,10 @@ class Page(HTMLParser):
 
 
 PRODUCT_PAGES = tuple(p["slug"] + ".html" for p in json.loads((ROOT / "docs/products.json").read_text()))
-PAGE_FILES = ("index.html", "checkout.html", *PRODUCT_PAGES)
+NAV_PAGES = ("shop.html", "story.html", "craft.html", "ritual.html")
+PAGE_FILES = ("index.html", "checkout.html", *PRODUCT_PAGES, *NAV_PAGES)
 subprocess.run([sys.executable, str(ROOT / "scripts/render-products.py"), "--check"], check=True)
+subprocess.run([sys.executable, str(ROOT / "scripts/render-pages.py"), "--check"], check=True)
 pages = {}
 for filename in PAGE_FILES:
     page = Page()
@@ -60,7 +62,7 @@ for filename in PAGE_FILES:
 for page in pages.values():
     for filename, target in page.links:
         assert target in pages[filename].ids, f"Missing destination: {filename}#{target}"
-for filename in ("styles.css", "shop.css", "product.css", "motion.css"):
+for filename in ("styles.css", "shop.css", "product.css", "motion.css", "pages.css"):
     for asset in re.findall(r"url\(['\"]?([^'\")]+)", (ROOT / filename).read_text()):
         assert (ROOT / asset).is_file(), f"Missing CSS asset: {asset}"
 for tea in ("jasmine", "hibiscus", "oolong", "rose"):
@@ -69,7 +71,7 @@ for tea in ("jasmine", "hibiscus", "oolong", "rose"):
 if DIST.exists():
     shutil.rmtree(DIST)
 DIST.mkdir()
-for name in (*PAGE_FILES, "styles.css", "shop.css", "product.css", "motion.css", "motion.js", "site.js", "navigation.js", "product.js", "collection.js", "commerce.js", "checkout.js", "robots.txt", ".nojekyll"):
+for name in (*PAGE_FILES, "styles.css", "shop.css", "product.css", "motion.css", "pages.css", "motion.js", "site.js", "navigation.js", "product.js", "collection.js", "commerce.js", "checkout.js", "robots.txt", ".nojekyll"):
     shutil.copy2(ROOT / name, DIST / name)
 shutil.copytree(ROOT / "assets", DIST / "assets")
 print(f"Validated and built {sum(1 for p in DIST.rglob('*') if p.is_file())} static files in dist/")

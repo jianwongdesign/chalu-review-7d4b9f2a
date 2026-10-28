@@ -7,12 +7,13 @@
     <meta name="theme-color" content="#183c30" />
     <title>Demo checkout — Chalu</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="styles.css?v=20261028-motion" />
-    <link rel="stylesheet" href="shop.css?v=20261028-motion" />
-    <script src="commerce.js?v=20261028-products" defer></script>
+    <link rel="stylesheet" href="styles.css?v=20261028-pages" />
+    <link rel="stylesheet" href="shop.css?v=20261028-pages" />
+    <script src="commerce.js?v=20261028-pages" defer></script>
     <script src="checkout.js" defer></script>
     <link rel="stylesheet" href="motion.css?v=20261028-motion">
-  <script src="motion.js?v=20261028-motion" defer></script>
+  <script src="motion.js?v=20261028-pages" defer></script>
+  <link rel="stylesheet" href="pages.css?v=20261028-pages">
 </head>
   <body class="checkout-page">
     <a class="skip-link" href="#main">Skip to checkout</a>
@@ -26,21 +27,21 @@
           width="130"
           height="69"
           alt="Chalu sparkling tea" /></a
-      ><a href="index.html#collection">← Continue shopping</a>
+      ><a href="shop.html">← Continue shopping</a>
     </header>
     <main id="main" class="checkout-shell">
       <div class="checkout-heading">
         <p class="eyebrow">A little closer to your next ritual</p>
         <h1>Almost <em>yours.</em></h1>
         <p>
-          This is a demo checkout. Use the sample details below.<br />No payment
+          This is a demo checkout. Use the sample details below. No payment
           is collected and no order is sent.
         </p>
       </div>
       <div id="checkout-empty" class="checkout-empty" hidden>
         <h2>Your bag is waiting.</h2>
         <p>Choose a tea before trying the demo checkout.</p>
-        <a class="button button-dark" href="index.html#collection"
+        <a class="button button-dark" href="shop.html"
           >Explore the collection ↗</a
         >
       </div>
@@ -133,7 +134,7 @@
             Complete demo order <span aria-hidden="true">↗</span>
           </button>
           <p class="checkout-fineprint">
-            This button demonstrates the order confirmation screen.<br />You
+            This button demonstrates the order confirmation screen. You
             will not be charged, and nothing will be shipped.
           </p>
         </form>
@@ -156,7 +157,7 @@
             </div>
           </dl>
           <p class="summary-note">
-            Sample prices for this design preview.<br />Demo delivery: S$6, or
+            Sample prices for this design preview. Demo delivery: S$6, or
             complimentary from S$80.
           </p>
           <a class="text-link" href="index.html?bag=1#collection"
@@ -174,10 +175,10 @@
         <span class="confirmation-mark" aria-hidden="true">✓</span>
         <p class="eyebrow">A taste of what’s to come</p>
         <h2 id="confirmation-title">
-          A lovely choice.<br /><em>Demo complete.</em>
+          A lovely choice. <em>Demo complete.</em>
         </h2>
         <p>
-          Your checkout preview is complete. No real order was placed,<br />no
+          Your checkout preview is complete. No real order was placed, no
           payment was taken, and nothing will be shipped.
         </p>
         <div class="confirmation-reference">
@@ -187,7 +188,7 @@
         <p class="confirmation-total">
           Demo total <strong id="confirmation-total"></strong>
         </p>
-        <a class="button button-dark" href="index.html#collection"
+        <a class="button button-dark" href="shop.html"
           >Back to the collection <span aria-hidden="true">↗</span></a
         >
       </section>

@@ -54,3 +54,7 @@ The mobile hero must show the full bottles and retain the video. It now contains
 ## Confirmed polish — smooth movement and readability
 
 Use subtle, smooth expand/collapse motion for FAQ-style disclosures, gentle content reveals while scrolling, and slightly bolder wording throughout the site. Each tea also gets specific suggested dishes with flavour explanations alongside its tasting notes. All typography uses genuine variable fonts at medium weights, retaining the existing serif/sans pairing.
+
+## Confirmed revision — full navigation and natural wrapping
+
+Shop, Our story, The craft and The ritual each need a dedicated shareable page. Let wording fill its actual column before wrapping, including The perfect pour and other right-hand product copy. The homepage video must visibly move: the current replacement has a gentle camera orbit and a mobile-safe 4.5-second forward/reverse loop. Total Higgsfield cost is now 24.5 of the approved 50 credits.

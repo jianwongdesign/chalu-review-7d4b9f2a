@@ -75,3 +75,16 @@ The final release should be verified anonymously after the GitHub Actions deploy
 - Homepage anchor navigation retains CSS smooth scrolling. Homepage serving panels and product disclosures enter animated state, then finish with consistent `open`/`aria-expanded` and cleared explicit heights. Tested repeated toggles, Enter activation, mobile width and no clipped content after settlement.
 - Scroll entrances enhance visible content without a permanent hidden state. Keyboard focus cancels an entrance on its target. Reduced-motion and no-JS fallbacks are source-reviewed, not browser-emulated.
 - Existing four commerce tests, seven JS syntax checks, generated-page freshness and static-link/font validation pass. No warning/error logs in the inspected browser session. Build: 48 files.
+
+## Revision 6 — dedicated navigation, natural wrapping and hero V2
+
+28 October 2026:
+
+- Shop, Story, Craft and Ritual each checked at 320×568, 768×1024 and 1440×1000: one H1, correct dedicated navigation links, no horizontal overflow. Desktop Story link and mobile Craft menu navigation work.
+- Product right-column text uses the available width (604.8 px on the inspected desktop Jasmine page); “The perfect pour” and ingredients have no manual line breaks. All four product pages at 320×568 have no horizontal overflow or paragraph breaks.
+- New film is readyState 4 and plays muted with advancing currentTime. Pause reveals the central play action; pressing it resumes and hides the overlay. No warning/error logs in the inspected home session.
+- Hero equals viewport height at 320×568, 390×844, 768×1024, 1440×1000, 2560×1440 and landscape 844×390. No horizontal overflow; mobile/tablet contain the full film and desktop uses cover. Mobile and desktop screenshots visually reviewed.
+- The source video’s later frames crop bottles. Website loop deliberately uses only the opening 2.25 seconds forward/reverse (4.5 seconds total), with complete bottles in the source frame. Encoding is H.264/yuv420p/faststart with no audio; 1,442,351 bytes.
+- Dedicated shop: add Snow Jasmine, open bag, proceed to checkout and complete sample order. Confirmation shows S$32 + S$6 = S$38; bag clears. No real order/payment.
+- All four Node commerce tests, seven JS syntax checks and both renderer freshness checks pass. Static build validates ten pages and 55 files.
+- Reduced-motion/data-saving paths remain source-reviewed; no browser security workaround or physical-device certification.

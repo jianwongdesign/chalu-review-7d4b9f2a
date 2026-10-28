@@ -4,7 +4,7 @@ An original responsive concept for Chalu, stored in the `crystal-cha` project. C
 
 - **Shareable preview:** https://jianwongdesign.github.io/crystal-cha/
 - **Repository:** https://github.com/jianwongdesign/crystal-cha
-- **Hero film:** https://jianwongdesign.github.io/crystal-cha/assets/hero-loop.mp4
+- **Hero film:** https://jianwongdesign.github.io/crystal-cha/assets/hero-loop-v2.mp4
 - **Status:** Design and shopping demo. No real payments, orders or delivery.
 
 ## Design
@@ -28,7 +28,7 @@ Illustrative prices: Snow Jasmine S$32, Hibiscus Noir S$36, Volcano Oolong S$38,
 
 ## Film
 
-One six-second Kling 3.0 Pro generation via Higgsfield cost **10.5 credits**, within the user's confirmed 50-credit cap. Two matching reference frames anchor the loop. The self-hosted H.264 film is 557,299 bytes, silent and approximately 6.04 seconds. It has a matching still poster, pause/play control and offscreen/background pause logic. Reduced-motion and data-saving preferences default to the poster until the visitor presses play. See `docs/HERO-VIDEO.md`.
+The current Kling 3.0 Pro film has visible camera movement. Its opening 2.25 seconds play forwards and backwards as a 4.5-second seamless loop, preserving full bottles for mobile contain framing. The silent H.264 file is 1,442,351 bytes. Two generations cost **24.5 credits total**, within the approved 50-credit cap. A matching poster, prominent play/retry overlay, pause control and offscreen/background pause logic support playback. Reduced-motion and data-saving preferences default to the poster until the visitor presses play. See `docs/HERO-VIDEO.md`.
 
 ## Run and verify
 
@@ -43,12 +43,13 @@ node --check commerce.js
 node --check checkout.js
 node --test scripts/commerce.test.cjs
 python3 scripts/render-products.py
+python3 scripts/render-pages.py
 python3 scripts/build.py
 ```
 
 Visit http://127.0.0.1:4173/. No package install or API keys are needed. Python and Node checks use their standard libraries.
 
-Pushing `main` runs validation, builds an allowlist of website files into `dist/`, and publishes GitHub Pages. The build checks all six pages, local and cross-page anchors, image/font/video assets and noindex metadata.
+Pushing `main` runs validation, builds an allowlist of website files into `dist/`, and publishes GitHub Pages. The build checks all ten pages, local and cross-page anchors, image/font/video assets and noindex metadata.
 
 ## Files
 
@@ -88,3 +89,12 @@ All pages use slightly stronger 500-weight text, including genuine medium Cormor
 FAQ-style disclosures animate height and content opacity; repeated clicks reverse from the current visible height. Native summary/keyboard behaviour, browser scrolling and no-JS content remain usable. Scroll entrances are one-time subtle rises/fades, with capped stagger. Reduced-motion skips entrances and preserves instant disclosures; focus and window resize finish relevant animations.
 
 Each product has three distinct suggested dishes in its “Better together” section, with short flavour-based explanations. These are editorial pairing ideas inspired by Chalu’s published flavour profiles, not manufacturer-tested recommendations. Tasting notes and ingredient information remain separate.
+
+## Main navigation pages
+
+- [Shop the collection](https://jianwongdesign.github.io/crystal-cha/shop.html)
+- [Our story](https://jianwongdesign.github.io/crystal-cha/story.html)
+- [The craft](https://jianwongdesign.github.io/crystal-cha/craft.html)
+- [The ritual](https://jianwongdesign.github.io/crystal-cha/ritual.html)
+
+These are dedicated documents with active navigation, shared commerce, mobile menus and contextual next-page links. Their source is `templates/page.html` and `scripts/render-pages.py`, which reuse maintained homepage sections. `pages.css` provides page layouts and naturally wrapping copy. Run both page renderers after shared homepage edits.
