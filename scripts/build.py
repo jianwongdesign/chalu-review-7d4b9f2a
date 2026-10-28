@@ -49,6 +49,7 @@ PRODUCT_PAGES = tuple(p["slug"] + ".html" for p in json.loads((ROOT / "docs/prod
 NAV_PAGES = ("shop.html", "story.html", "craft.html", "ritual.html", "news.html")
 ARTICLE_PAGES = tuple(p["slug"] + ".html" for p in json.loads((ROOT / "docs/news.json").read_text()))
 PAGE_FILES = ("index.html", "checkout.html", *PRODUCT_PAGES, *NAV_PAGES, *ARTICLE_PAGES)
+subprocess.run([sys.executable, str(ROOT / "scripts/render-contact.py"), "--check"], check=True)
 subprocess.run([sys.executable, str(ROOT / "scripts/render-news.py"), "--check"], check=True)
 subprocess.run([sys.executable, str(ROOT / "scripts/render-products.py"), "--check"], check=True)
 subprocess.run([sys.executable, str(ROOT / "scripts/render-pages.py"), "--check"], check=True)
@@ -74,7 +75,7 @@ for tea in ("jasmine", "hibiscus", "oolong", "rose"):
 if DIST.exists():
     shutil.rmtree(DIST)
 DIST.mkdir()
-for name in (*PAGE_FILES, "styles.css", "shop.css", "product.css", "motion.css", "pages.css", "motion.js", "site.js", "navigation.js", "product.js", "collection.js", "commerce.js", "checkout.js", "robots.txt", ".nojekyll"):
+for name in (*PAGE_FILES, "styles.css", "shop.css", "product.css", "motion.css", "pages.css", "contact.js", "motion.js", "site.js", "navigation.js", "product.js", "collection.js", "commerce.js", "checkout.js", "robots.txt", ".nojekyll"):
     shutil.copy2(ROOT / name, DIST / name)
 shutil.copytree(ROOT / "assets", DIST / "assets")
 expired = package_preview(DIST, PAGE_FILES)

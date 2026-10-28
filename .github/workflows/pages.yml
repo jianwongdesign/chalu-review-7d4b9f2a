@@ -28,6 +28,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Validate JavaScript
         run: |
+          node --check contact.js
           node --check preview.js
           python3 -m unittest discover -s scripts -p '*_test.py'
           node --check motion.js

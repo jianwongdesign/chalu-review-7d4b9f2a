@@ -12,7 +12,7 @@ Read `HANDOFF.md`, `README.md`, `docs/DESIGN-BRIEF.md`, then inspect Git status 
 - Cart persistence contains only known product IDs and bounded integer quantities. Contact/payment data must not be persisted or transmitted.
 - Use relative paths for the `/crystal-cha/` Pages subdirectory. Preview remains noindex.
 - Recheck mobile, tablet, desktop and large screens, bag/checkout behavior, and video autoplay/poster behavior after relevant edits.
-- Check: `node --test scripts/commerce.test.cjs`, syntax-check all eight JS files, and `python3 scripts/build.py`.
+- Check: `node --test scripts/commerce.test.cjs`, syntax-check all nine JS files, and `python3 scripts/build.py`.
 - Pushing `main` publishes the preview automatically; verify the public URL and released files afterwards.
 - Hero generation: three completed Higgsfield jobs, 35 credits total (10.5 + 14 + 10.5) from a confirmed 50-credit maximum. Desktop hero is hero-loop-v3.mp4; phone portrait uses hero-mobile-loop.mp4 and its own poster; re-estimate any future paid request.
 
@@ -32,9 +32,11 @@ Read `HANDOFF.md`, `README.md`, `docs/DESIGN-BRIEF.md`, then inspect Git status 
 
 - Phone portrait (<=600 px) uses an edge-to-edge 100svh bottle film, compact bottom copy and no announcement bar. Preserve complete bottle framing and switch media on orientation/width changes while respecting reduced-motion and data-saving preferences. Hero play/pause controls were removed at the user's request; use automatic playback and a poster fallback. Tablet/landscape retain the desktop media composition.
 
-- News content: docs/news.json and templates/article.html; run render-news.py, render-products.py, then render-pages.py after shared edits. Three stories are explicitly sample editorial content, not dated brand announcements.
+- News content: docs/news.json and templates/article.html; run render-contact.py, render-news.py, render-products.py, then render-pages.py after shared edits. Three stories are explicitly sample editorial content, not dated brand announcements.
 - Subpages use open editorial layouts, fine rules and rounded photographs, rather than tinted cards around whole sections. Preserve natural wrapping, the mobile collection carousel and all demo commerce controls.
 
 - Preview lifetime is fixed in preview-policy.json: ends 2026-11-07 20:57:22 UTC (8 November 04:57:22 Malaysia time). Never reset the expiry during ordinary edits. Build adds copy deterrents and the client expiry guard to every deployed route; root source HTML is intentionally not the packaged preview. Test dist/ when checking these controls.
 - After the deadline, build emits only expired pages/404/state/robots, with original assets removed. GitHub Actions checks at minutes 17 and 47 each hour and retires the deployed preview if needed; GitHub scheduling may be delayed. All pushes/manual builds after expiry also emit expired content. Keep the source repository and originals for reference; its visibility is still public.
 - Run python3 -m unittest discover -s scripts -p '*_test.py' for expiry/retirement boundary tests. Copy controls are deterrents, not DRM/authentication; keep form fields editable and do not add invasive developer-tool detection.
+
+- Floating WhatsApp source is docs/contact.json and scripts/render-contact.py. Number is currently empty because none was supplied/verified. Empty configuration renders a clearly labelled demo dialog; a country-code digits-only number renders a real wa.me link. Never invent a destination. Shared footer places it on marketing/product/article pages, not checkout or expired pages. Phone/tablet launcher stays hidden over the homepage film and while the mobile menu is open.

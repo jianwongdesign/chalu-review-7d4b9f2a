@@ -111,6 +111,7 @@ Phone portrait layouts up to 600 px use a separate six-second portrait film with
 `docs/news.json`, `templates/article.html` and `scripts/render-news.py` maintain these stories and the homepage listing. After shared changes, run the renderers in this order:
 
 ```sh
+python3 scripts/render-contact.py
 python3 scripts/render-news.py
 python3 scripts/render-products.py
 python3 scripts/render-pages.py
@@ -129,3 +130,10 @@ The build injects `preview.js` / `preview.css` into every deployed page. Text se
 The scheduled workflow checks at minutes 17 and 47 each hour. After expiry, it rebuilds every route as an expiry message and omits the original media and scripts. The deployed `preview-state.json` makes the cleanup idempotent. Schedules can be delayed by GitHub, so server-side cleanup is best effort after the deadline; the browser guard handles the normal exact-time experience. Push/manual deployments after the deadline also produce only the expired version. Repository files/history stay intact for future reference.
 
 Use `python3 scripts/build.py` and serve **dist/** to review the guarded output locally. Test the policy with `python3 -m unittest discover -s scripts -p '*_test.py'`. Active output now contains 67 files. An expired output has no original assets. To extend access later, explicitly update the policy expiry and publish a new build.
+
+
+## Floating WhatsApp contact
+
+The shared footer includes a forest-green WhatsApp pill on desktop and a 58 px circular launcher on mobile/tablet. It stays hidden over the mobile homepage hero and while the menu is open. It appears on all thirteen marketing/product/article pages; checkout and expired pages omit it.
+
+The destination is **pending**. `docs/contact.json` currently has an empty `whatsapp_number`; clicking the button shows an explicit demo dialog and does not send anything. Once the user provides a number, enter country-code digits only and run render-contact.py, render-news.py, render-products.py and render-pages.py, then build. A configured number generates a direct WhatsApp chat link with the supplied greeting. No WhatsApp SDK, tracking or unsolicited messages are used. Active build: 68 files.
