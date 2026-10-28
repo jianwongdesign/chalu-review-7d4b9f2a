@@ -124,3 +124,13 @@ Final copy cleanup: all ten pages checked at 320×568 and 1440×1000 after remov
 - Desktop navigation fits at 1024. Mobile menu includes News and closes on navigation. Dedicated story link opens its article with three body sections and two related articles.
 - Product add-to-bag and demo checkout: Snow Jasmine S$32 + S$6 delivery = S$38; phone simulated confirmation succeeds, clears bag, no horizontal overflow.
 - Existing homepage mobile film and 35/50 Higgsfield credit ledger unchanged. Reduced-motion handling is source-reviewed only.
+
+
+## Limited preview window and copy deterrents
+
+- Fixed lifetime verified: 2026-10-28T08:57:22Z to 2026-11-07T20:57:22Z, exactly 10 days 12 hours.
+- Six Python tests: duration, before/exact deadline, content/asset removal, scheduled skip before expiry, retirement retry for active/unreachable deployments, no repeated deploy after confirmed retirement.
+- Four commerce tests and eight JS syntax checks pass; active build 67 files. All fourteen packaged pages carry the guard; root source files remain normal development pages.
+- Browser: Cmd+A on non-editable preview content selects no text; checkout field value Preview remains editable and fully selectable. S$38 demo confirmation succeeds.
+- Browser: expired shop route shows expiry message, no media and no mobile overflow. A local 25-second deadline test automatically navigated an already-open News page to preview-expired.html.
+- No claim of DRM or authenticated access. Public repository is still accessible; browser copy controls can be bypassed. GitHub scheduled retirement is best effort and may run after the client deadline.

@@ -3,18 +3,33 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    - cron: '17,47 * * * *'
 permissions:
   contents: read
 concurrency:
   group: pages
   cancel-in-progress: false
 jobs:
+  check:
+    runs-on: ubuntu-latest
+    outputs:
+      deploy: ${{ steps.policy.outputs.deploy }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check preview expiry
+        id: policy
+        run: python3 scripts/preview_deploy_check.py
   build:
+    needs: check
+    if: needs.check.outputs.deploy == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Validate JavaScript
         run: |
+          node --check preview.js
+          python3 -m unittest discover -s scripts -p '*_test.py'
           node --check motion.js
           node --check navigation.js
           node --check product.js

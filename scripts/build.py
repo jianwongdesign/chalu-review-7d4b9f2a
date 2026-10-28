@@ -7,6 +7,7 @@ import json
 import subprocess
 import sys
 from urllib.parse import urlsplit
+from preview_policy import package_preview
 
 ROOT = Path(__file__).resolve().parent.parent
 DIST = ROOT / "dist"
@@ -76,4 +77,6 @@ DIST.mkdir()
 for name in (*PAGE_FILES, "styles.css", "shop.css", "product.css", "motion.css", "pages.css", "motion.js", "site.js", "navigation.js", "product.js", "collection.js", "commerce.js", "checkout.js", "robots.txt", ".nojekyll"):
     shutil.copy2(ROOT / name, DIST / name)
 shutil.copytree(ROOT / "assets", DIST / "assets")
+expired = package_preview(DIST, PAGE_FILES)
+print("Preview state: expired" if expired else "Preview state: active")
 print(f"Validated and built {sum(1 for p in DIST.rglob('*') if p.is_file())} static files in dist/")

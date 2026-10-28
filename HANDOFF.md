@@ -117,3 +117,12 @@ Removed the 60 px stagger on alternate shop products. All four image/title rows 
 ## Centred bottles and explicit even card baseline
 
 User reiterated no alternating up/down cards and requested bottles in the middle. Collection and related-product images now have zero vertical offset; bottle height is capped to preserve room for the bottom-left words while centring vertically and horizontally. Shop product top padding/margin explicitly zero. Shared stylesheet version 20261028-centered. At 1440 px all four shop card tops match and bottle centre deltas are <0.01 px horizontally, 0 vertically. Home and Shop checked at 390/768/2560 with zero offsets/padding and no overflow. Required commerce tests, JS syntax and build pass.
+
+
+## Limited preview access and copy deterrents
+
+User requested copying restrictions and a one-and-a-half-week duration. preview-policy.json fixes the window at 2026-10-28T08:57:22Z to 2026-11-07T20:57:22Z (8 November 04:57:22 MYT), exactly 10 days 12 hours. Build injects guard/CSS into every deployed HTML page. Homepage/product/cart scripts remain unchanged. Editable checkout fields are exempt from selection/copy controls. No fake developer-tool detection, passwords or new external service.
+
+Browser guard checks on initial visit, deadline timer, page restore and visibility return. Expired output replaces all fourteen routes and 404 with a lightweight message, omits original JS/media, and publishes preview-state.json. Workflow runs a cheap check at minutes 17/47; before expiry it skips deployment, after expiry it retires the preview once, and skips when state already matches. Network failures retry retirement. Scheduling is best effort, not exact-time access control. Existing public repo remains public; users were told controls do not hide source files or make browser content copy-proof.
+
+QA uses .local/preview-qa/{active,expired,timeout} on port 4174. Packaged active page has selection disabled; Cmd+A outside editable fields selects no text. Checkout First name remains editable/selectable and simulated S$38 order works. Expired shop route contains the expiry message, zero media and no mobile overflow. Unit coverage exercises exact deadline, duration, original asset removal, active/successful/unreachable retirement states. Required commerce/JS/build checks pass. Use dist for preview-policy QA; root source HTML intentionally stays unguarded for development.

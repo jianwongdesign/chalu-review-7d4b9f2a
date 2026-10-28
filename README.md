@@ -118,3 +118,14 @@ python3 scripts/build.py
 ```
 
 The build validates fourteen pages and packages 63 files. Subpages now use open editorial compositions, alternating photography, fine dividers and generous spacing. Selection guides and pairings are unboxed; the shop has staggered arched bottle images, and products have soft open portrait backgrounds. The shared tea-farm photograph stays rounded with copy beside it on the page canvas. Checkout retains its form controls with a lighter summary layout.
+
+
+## Time-limited review access
+
+This preview runs for 10 days and 12 hours from 28 October 2026, 08:57:22 UTC. It ends **8 November 2026 at 04:57:22 Malaysia time** (7 November, 20:57:22 UTC). `preview-policy.json` is the single source of these dates; ordinary deployments do not extend them.
+
+The build injects `preview.js` / `preview.css` into every deployed page. Text selection, copying, image dragging and the context menu are discouraged outside editable form fields. A browser timer redirects expired visits and already-open tabs to the expiry screen. These controls cannot prevent screenshots, developer tools, saved files or source downloads. The GitHub repository remains public and browser clocks can be changed; this is not authenticated access.
+
+The scheduled workflow checks at minutes 17 and 47 each hour. After expiry, it rebuilds every route as an expiry message and omits the original media and scripts. The deployed `preview-state.json` makes the cleanup idempotent. Schedules can be delayed by GitHub, so server-side cleanup is best effort after the deadline; the browser guard handles the normal exact-time experience. Push/manual deployments after the deadline also produce only the expired version. Repository files/history stay intact for future reference.
+
+Use `python3 scripts/build.py` and serve **dist/** to review the guarded output locally. Test the policy with `python3 -m unittest discover -s scripts -p '*_test.py'`. Active output now contains 67 files. An expired output has no original assets. To extend access later, explicitly update the policy expiry and publish a new build.
