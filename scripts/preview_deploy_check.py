@@ -11,7 +11,7 @@ deploy = os.environ.get('GITHUB_EVENT_NAME') != 'schedule'
 if not deploy and now >= deadline:
     deploy = True
     try:
-        url = 'https://jianwongdesign.github.io/crystal-cha/preview-state.json?expiry-check=' + str(int(now.timestamp()))
+        url = 'https://jianwongdesign.github.io/chalu-review-7d4b9f2a/preview-state.json?expiry-check=' + str(int(now.timestamp()))
         with urlopen(url, timeout=15) as response:
             state = json.load(response)
         deploy = state != {'status': 'expired', 'expires_at': policy['expires_at']}

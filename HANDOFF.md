@@ -5,8 +5,8 @@ Updated 28 October 2026.
 ## Current scope
 
 - Brand: **Chalu**, explicitly confirmed.
-- Repository: https://github.com/jianwongdesign/crystal-cha
-- Shareable preview: https://jianwongdesign.github.io/crystal-cha/
+- Repository: https://github.com/jianwongdesign/chalu-review-7d4b9f2a
+- Shareable preview: https://jianwongdesign.github.io/chalu-review-7d4b9f2a/
 - Branch: `main`; run `git log -1` for the latest checkpoint.
 - The user requested demo e-commerce and checkout, “Made in Yunnan” wording, and a premium 100vh video hero. They confirmed a maximum of 50 Higgsfield credits.
 
@@ -135,3 +135,8 @@ Added a shared premium green WhatsApp launcher with cream SVG, fine gold border,
 No number was found in this project or on Chalu's existing homepage. Asked user asynchronously for a WhatsApp number including country code; no answer yet. docs/contact.json remains empty and the click honestly shows a demo, never an invented number or generic recipient picker. scripts/render-contact.py validates configured number and generates a direct wa.me link when supplied. Run contact renderer first, followed by news/products/pages. contact.js is the ninth JS syntax check. Preview expiry stays unchanged at 2026-11-07T20:57:22Z.
 
 QA: desktop button geometry and appearance, mobile dialog at 390 px, Escape/scroll unlock, mobile hero hidden then collection visible, mobile-menu suppression. Existing six expiry tests/four commerce tests, nine JS syntax checks and 68-file build pass. Actual WhatsApp routing remains pending the number.
+
+
+## Preview address replacement — 29 October 2026
+
+User authorized replacing the published link and disabling the old preview URL. Repository renamed from `crystal-cha` to `chalu-review-7d4b9f2a`; local folder remains unchanged. Current preview: https://jianwongdesign.github.io/chalu-review-7d4b9f2a/. Updated social image URLs and scheduled expiry checks. Fixed expiry remains 7 November 2026 at 20:57:22 UTC. This is still a public preview, not authenticated access. Pre-change Git bundle and Pages settings are in `.local/link-change-20261029/`.

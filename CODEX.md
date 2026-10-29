@@ -2,7 +2,7 @@
 
 Read `HANDOFF.md`, `README.md`, `docs/DESIGN-BRIEF.md`, then inspect Git status and recent commits.
 
-- Brand is **Chalu**. `crystal-cha` is the repository name.
+- Brand is **Chalu**. `chalu-review-7d4b9f2a` is the repository name; the local workspace remains `crystal-cha`.
 - Vanilla HTML/CSS/JS. No frontend dependencies or production credentials required.
 - GitHub Pages is a public preview; chaludrinks.com production is separate.
 - Preserve the green/ivory/gold design, full-viewport video hero and existing four product names.
@@ -10,7 +10,7 @@ Read `HANDOFF.md`, `README.md`, `docs/DESIGN-BRIEF.md`, then inspect Git status 
 - User explicitly requested demo e-commerce and checkout. Keep sample prices and order simulation clearly labelled; never silently connect real payments or order submission.
 - `commerce.js` is the authoritative sample-price catalogue. Product card display prices must stay consistent with it.
 - Cart persistence contains only known product IDs and bounded integer quantities. Contact/payment data must not be persisted or transmitted.
-- Use relative paths for the `/crystal-cha/` Pages subdirectory. Preview remains noindex.
+- Use relative paths for the `/chalu-review-7d4b9f2a/` Pages subdirectory. Preview remains noindex.
 - Recheck mobile, tablet, desktop and large screens, bag/checkout behavior, and video autoplay/poster behavior after relevant edits.
 - Check: `node --test scripts/commerce.test.cjs`, syntax-check all nine JS files, and `python3 scripts/build.py`.
 - Pushing `main` publishes the preview automatically; verify the public URL and released files afterwards.

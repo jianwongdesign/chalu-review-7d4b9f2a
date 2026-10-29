@@ -2,9 +2,9 @@
 
 An original responsive concept for Chalu, stored in the `crystal-cha` project. Chalu branding was confirmed on 28 October 2026.
 
-- **Shareable preview:** https://jianwongdesign.github.io/crystal-cha/
-- **Repository:** https://github.com/jianwongdesign/crystal-cha
-- **Hero film:** https://jianwongdesign.github.io/crystal-cha/assets/hero-loop-v3.mp4
+- **Shareable preview:** https://jianwongdesign.github.io/chalu-review-7d4b9f2a/
+- **Repository:** https://github.com/jianwongdesign/chalu-review-7d4b9f2a
+- **Hero film:** https://jianwongdesign.github.io/chalu-review-7d4b9f2a/assets/hero-loop-v3.mp4
 - **Status:** Design and shopping demo. No real payments, orders or delivery.
 
 ## Design
@@ -75,10 +75,10 @@ Chalu photography and trademarks remain their owners' property; confirm usage ri
 
 ## Product links
 
-- [Snow Jasmine](https://jianwongdesign.github.io/crystal-cha/snow-jasmine.html)
-- [Hibiscus Noir](https://jianwongdesign.github.io/crystal-cha/hibiscus-noir.html)
-- [Volcano Oolong](https://jianwongdesign.github.io/crystal-cha/volcano-oolong.html)
-- [Untamed Rosé](https://jianwongdesign.github.io/crystal-cha/untamed-rose.html)
+- [Snow Jasmine](https://jianwongdesign.github.io/chalu-review-7d4b9f2a/snow-jasmine.html)
+- [Hibiscus Noir](https://jianwongdesign.github.io/chalu-review-7d4b9f2a/hibiscus-noir.html)
+- [Volcano Oolong](https://jianwongdesign.github.io/chalu-review-7d4b9f2a/volcano-oolong.html)
+- [Untamed Rosé](https://jianwongdesign.github.io/chalu-review-7d4b9f2a/untamed-rose.html)
 
 Edit the template or product data, then run `python3 scripts/render-products.py`. The build rejects stale generated pages. Sample prices must match `commerce.js`; a unit check enforces this.
 
@@ -92,10 +92,10 @@ Each product has three distinct suggested dishes in its “Better together” se
 
 ## Main navigation pages
 
-- [Shop the collection](https://jianwongdesign.github.io/crystal-cha/shop.html)
-- [Our story](https://jianwongdesign.github.io/crystal-cha/story.html)
-- [The craft](https://jianwongdesign.github.io/crystal-cha/craft.html)
-- [The ritual](https://jianwongdesign.github.io/crystal-cha/ritual.html)
+- [Shop the collection](https://jianwongdesign.github.io/chalu-review-7d4b9f2a/shop.html)
+- [Our story](https://jianwongdesign.github.io/chalu-review-7d4b9f2a/story.html)
+- [The craft](https://jianwongdesign.github.io/chalu-review-7d4b9f2a/craft.html)
+- [The ritual](https://jianwongdesign.github.io/chalu-review-7d4b9f2a/ritual.html)
 
 These are dedicated documents with active navigation, shared commerce, mobile menus and contextual next-page links. Their source is `templates/page.html`, the fuller editorial fragments in `templates/pages/`, and `scripts/render-pages.py`, which reuse maintained homepage sections. `pages.css` provides page layouts and naturally wrapping copy. Run both page renderers after shared homepage edits.
 
@@ -106,7 +106,7 @@ Phone portrait layouts up to 600 px use a separate six-second portrait film with
 
 ## News and editorial subpages
 
-[News & stories](https://jianwongdesign.github.io/crystal-cha/news.html) is linked from the homepage, desktop/mobile menus and footer. Three dedicated sample articles cover the brand story, hosting a tasting and choosing tea for a meal. They are labelled preview editorial content; no fictional dates or announcements are presented as real news.
+[News & stories](https://jianwongdesign.github.io/chalu-review-7d4b9f2a/news.html) is linked from the homepage, desktop/mobile menus and footer. Three dedicated sample articles cover the brand story, hosting a tasting and choosing tea for a meal. They are labelled preview editorial content; no fictional dates or announcements are presented as real news.
 
 `docs/news.json`, `templates/article.html` and `scripts/render-news.py` maintain these stories and the homepage listing. After shared changes, run the renderers in this order:
 
