@@ -6,6 +6,21 @@ from preview_policy import package_preview, read_policy
 
 
 class PreviewPolicyTests(unittest.TestCase):
+    def test_nested_portfolio_guard_and_expiry_remove_exported_media(self):
+        _, end = read_policy()
+        with tempfile.TemporaryDirectory() as folder:
+            output = Path(folder) / 'dist'
+            (output / 'kita-export/images').mkdir(parents=True)
+            (output / 'kita-export/index.html').write_text('<html><head></head><body>PORTFOLIO</body></html>')
+            (output / 'kita-export/images/cover.png').write_bytes(b'EXPORTED MEDIA')
+            self.assertFalse(package_preview(output, ('kita-export/index.html',), end - timedelta(seconds=1)))
+            content = (output / 'kita-export/index.html').read_text()
+            self.assertIn('src="../preview.js?v=1"', content)
+            self.assertIn('href="../preview.css?v=1"', content)
+            self.assertTrue(package_preview(output, ('kita-export/index.html',), end))
+            self.assertIn('This preview has ended.', (output / 'kita-export/index.html').read_text())
+            self.assertFalse((output / 'kita-export/images').exists())
+
     def test_duration_is_ten_and_a_half_days(self):
         from datetime import datetime
         policy, end = read_policy()

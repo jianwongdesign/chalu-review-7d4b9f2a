@@ -1,0 +1,254 @@
+[
+  {
+    "page": "index",
+    "device": "desktop",
+    "file": "desktop-index.jpg",
+    "width": 1440,
+    "height": 6015,
+    "overflow": false,
+    "broken": 0
+  },
+  {
+    "page": "shop",
+    "device": "desktop",
+    "file": "desktop-shop.jpg",
+    "width": 1440,
+    "height": 3269,
+    "overflow": false,
+    "broken": 0
+  },
+  {
+    "page": "story",
+    "device": "desktop",
+    "file": "desktop-story.jpg",
+    "width": 1440,
+    "height": 2761,
+    "overflow": false,
+    "broken": 0
+  },
+  {
+    "page": "craft",
+    "device": "desktop",
+    "file": "desktop-craft.jpg",
+    "width": 1440,
+    "height": 2902,
+    "overflow": false,
+    "broken": 0
+  },
+  {
+    "page": "ritual",
+    "device": "desktop",
+    "file": "desktop-ritual.jpg",
+    "width": 1440,
+    "height": 3414,
+    "overflow": false,
+    "broken": 0
+  },
+  {
+    "page": "news",
+    "device": "desktop",
+    "file": "desktop-news.jpg",
+    "width": 1440,
+    "height": 1788,
+    "overflow": false,
+    "broken": 0
+  },
+  {
+    "page": "snow-jasmine",
+    "device": "desktop",
+    "file": "desktop-snow-jasmine.jpg",
+    "width": 1440,
+    "height": 3803,
+    "overflow": false,
+    "broken": 0
+  },
+  {
+    "page": "hibiscus-noir",
+    "device": "desktop",
+    "file": "desktop-hibiscus-noir.jpg",
+    "width": 1440,
+    "height": 3794,
+    "overflow": false,
+    "broken": 0
+  },
+  {
+    "page": "volcano-oolong",
+    "device": "desktop",
+    "file": "desktop-volcano-oolong.jpg",
+    "width": 1440,
+    "height": 3803,
+    "overflow": false,
+    "broken": 0
+  },
+  {
+    "page": "untamed-rose",
+    "device": "desktop",
+    "file": "desktop-untamed-rose.jpg",
+    "width": 1440,
+    "height": 3793,
+    "overflow": false,
+    "broken": 0
+  },
+  {
+    "page": "news-yunnan-to-the-table",
+    "device": "desktop",
+    "file": "desktop-news-yunnan-to-the-table.jpg",
+    "width": 1440,
+    "height": 2903,
+    "overflow": false,
+    "broken": 0
+  },
+  {
+    "page": "news-sparkling-tea-tasting",
+    "device": "desktop",
+    "file": "desktop-news-sparkling-tea-tasting.jpg",
+    "width": 1440,
+    "height": 2915,
+    "overflow": false,
+    "broken": 0
+  },
+  {
+    "page": "news-tea-for-your-table",
+    "device": "desktop",
+    "file": "desktop-news-tea-for-your-table.jpg",
+    "width": 1440,
+    "height": 2854,
+    "overflow": false,
+    "broken": 0
+  },
+  {
+    "page": "checkout",
+    "device": "desktop",
+    "file": "desktop-checkout.jpg",
+    "width": 1440,
+    "height": 1877,
+    "overflow": false,
+    "broken": 0
+  },
+  {
+    "page": "index",
+    "device": "mobile",
+    "file": "mobile-index.jpg",
+    "width": 390,
+    "height": 7808,
+    "overflow": false,
+    "broken": 0
+  },
+  {
+    "page": "shop",
+    "device": "mobile",
+    "file": "mobile-shop.jpg",
+    "width": 390,
+    "height": 4502,
+    "overflow": false,
+    "broken": 0
+  },
+  {
+    "page": "story",
+    "device": "mobile",
+    "file": "mobile-story.jpg",
+    "width": 390,
+    "height": 3743,
+    "overflow": false,
+    "broken": 0
+  },
+  {
+    "page": "craft",
+    "device": "mobile",
+    "file": "mobile-craft.jpg",
+    "width": 390,
+    "height": 3934,
+    "overflow": false,
+    "broken": 0
+  },
+  {
+    "page": "ritual",
+    "device": "mobile",
+    "file": "mobile-ritual.jpg",
+    "width": 390,
+    "height": 4968,
+    "overflow": false,
+    "broken": 0
+  },
+  {
+    "page": "news",
+    "device": "mobile",
+    "file": "mobile-news.jpg",
+    "width": 390,
+    "height": 3032,
+    "overflow": false,
+    "broken": 0
+  },
+  {
+    "page": "snow-jasmine",
+    "device": "mobile",
+    "file": "mobile-snow-jasmine.jpg",
+    "width": 390,
+    "height": 5013,
+    "overflow": false,
+    "broken": 0
+  },
+  {
+    "page": "hibiscus-noir",
+    "device": "mobile",
+    "file": "mobile-hibiscus-noir.jpg",
+    "width": 390,
+    "height": 5013,
+    "overflow": false,
+    "broken": 0
+  },
+  {
+    "page": "volcano-oolong",
+    "device": "mobile",
+    "file": "mobile-volcano-oolong.jpg",
+    "width": 390,
+    "height": 5012,
+    "overflow": false,
+    "broken": 0
+  },
+  {
+    "page": "untamed-rose",
+    "device": "mobile",
+    "file": "mobile-untamed-rose.jpg",
+    "width": 390,
+    "height": 5003,
+    "overflow": false,
+    "broken": 0
+  },
+  {
+    "page": "news-yunnan-to-the-table",
+    "device": "mobile",
+    "file": "mobile-news-yunnan-to-the-table.jpg",
+    "width": 390,
+    "height": 3899,
+    "overflow": false,
+    "broken": 0
+  },
+  {
+    "page": "news-sparkling-tea-tasting",
+    "device": "mobile",
+    "file": "mobile-news-sparkling-tea-tasting.jpg",
+    "width": 390,
+    "height": 3863,
+    "overflow": false,
+    "broken": 0
+  },
+  {
+    "page": "news-tea-for-your-table",
+    "device": "mobile",
+    "file": "mobile-news-tea-for-your-table.jpg",
+    "width": 390,
+    "height": 3834,
+    "overflow": false,
+    "broken": 0
+  },
+  {
+    "page": "checkout",
+    "device": "mobile",
+    "file": "mobile-checkout.jpg",
+    "width": 390,
+    "height": 2721,
+    "overflow": false,
+    "broken": 0
+  }
+]

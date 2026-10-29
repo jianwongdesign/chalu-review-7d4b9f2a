@@ -140,3 +140,9 @@ QA: desktop button geometry and appearance, mobile dialog at 390 px, Escape/scro
 ## Preview address replacement — 29 October 2026
 
 User authorized replacing the published link and disabling the old preview URL. Repository renamed from `crystal-cha` to `chalu-review-7d4b9f2a`; local folder remains unchanged. Current preview: https://jianwongdesign.github.io/chalu-review-7d4b9f2a/. Updated social image URLs and scheduled expiry checks. Fixed expiry remains 7 November 2026 at 20:57:22 UTC. This is still a public preview, not authenticated access. Pre-change Git bundle and Pages settings are in `.local/link-change-20261029/`.
+
+## Kita portfolio export — 29 October 2026
+
+User requested a Chalu portfolio set in the style of the supplied Range Developments/Wondertabs reference, exported under `kita-export` and viewable on the web. `kita-export/index.html` is the self-contained gallery, with seven PNG presentation images, 28 full-page desktop/mobile JPG captures, 12 viewport JPGs and the existing hero MP4. `source/` contains editable board layouts, capture scripts and generation provenance. The cover uses built-in image generation; all website UI boards use actual local browser captures. No site design or product content was changed.
+
+Build now packages the gallery at `/kita-export/` while excluding its editable sources. The same fixed preview expiry applies online, including nested-route guard paths and removal of exported media after expiry. Local source exports remain intact. Added a nested-route expiry test. The original `/crystal-cha/` URL remains retired.

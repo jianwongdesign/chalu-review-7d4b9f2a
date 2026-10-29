@@ -1,0 +1,3 @@
+const puppeteer=require('puppeteer');
+const path=require('node:path');
+(async()=>{const browser=await puppeteer.launch({headless:true});const page=await browser.newPage();await page.setViewport({width:2400,height:1900,deviceScaleFactor:1});await page.goto('http://127.0.0.1:4175/kita-export/source/boards.html',{waitUntil:'networkidle0'});await page.evaluate(async()=>{await document.fonts.ready;await Promise.all([...document.images].map(i=>i.decode()))});for(const section of await page.$$('section')){const id=await section.evaluate(e=>e.id);await section.screenshot({path:path.resolve(__dirname,'../images/'+id+'.png')});console.log(id)}await browser.close()})().catch(e=>{console.error(e);process.exit(1)});

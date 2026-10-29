@@ -27,13 +27,16 @@ def package_preview(output, page_files, now=None):
         shutil.rmtree(output)
         output.mkdir(parents=True)
         for filename in (*page_files, '404.html'):
-            (output / filename).write_text(ended_page)
+            path = output / filename
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(ended_page)
         for filename in ('robots.txt', '.nojekyll'):
             shutil.copy2(ROOT / filename, output / filename)
     else:
         expires = escape(policy['expires_at'], quote=True)
-        markup = f'<link rel="stylesheet" href="preview.css?v=1"><script src="preview.js?v=1" data-expires="{expires}"></script>'
         for filename in page_files:
+            prefix = '../' * (len(Path(filename).parts) - 1)
+            markup = f'<link rel="stylesheet" href="{prefix}preview.css?v=1"><script src="{prefix}preview.js?v=1" data-expires="{expires}"></script>'
             path = output / filename
             content = path.read_text()
             # Keep the guard before deferred application scripts and visible content.
