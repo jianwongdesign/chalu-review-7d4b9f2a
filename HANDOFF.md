@@ -146,3 +146,8 @@ User authorized replacing the published link and disabling the old preview URL. 
 User requested a Chalu portfolio set in the style of the supplied Range Developments/Wondertabs reference, exported under `kita-export` and viewable on the web. `kita-export/index.html` is the self-contained gallery, with seven PNG presentation images, 28 full-page desktop/mobile JPG captures, 12 viewport JPGs and the existing hero MP4. `source/` contains editable board layouts, capture scripts and generation provenance. The cover uses built-in image generation; all website UI boards use actual local browser captures. No site design or product content was changed.
 
 Build now packages the gallery at `/kita-export/` while excluding its editable sources. The same fixed preview expiry applies online, including nested-route guard paths and removal of exported media after expiry. Local source exports remain intact. Added a nested-route expiry test. The original `/crystal-cha/` URL remains retired.
+
+
+## Portfolio cover navigation — 29 October 2026
+
+The portfolio entry at `/kita-export/` now shows the Chalu cover image, service category and short project brief. The whole accessible card opens `chalu.html`, which retains all seven presentation images, page captures and downloads. Its Selected work link returns to the entry page. Both routes are packaged and expire together. The complete local ZIP was refreshed with this navigation.

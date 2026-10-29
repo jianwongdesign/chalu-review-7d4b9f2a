@@ -1,6 +1,6 @@
 # Chalu portfolio export
 
-Open `index.html` in a browser to view the complete portfolio. All gallery fonts, images and video are included; the View website links use the separately hosted preview.
+Open `index.html` in a browser for the project cover card and short introduction. Click the card to open the full showcase in `chalu.html`. All gallery fonts, images and video are included; the View website links use the separately hosted preview.
 
 Online gallery: https://jianwongdesign.github.io/chalu-review-7d4b9f2a/kita-export/
 

@@ -82,16 +82,18 @@ shutil.copytree(ROOT / "assets", DIST / "assets")
 export_source = ROOT / "kita-export"
 export_output = DIST / "kita-export"
 export_output.mkdir()
-for name in ("index.html", "gallery.css"):
+export_pages = ("index.html", "chalu.html")
+for name in (*export_pages, "gallery.css"):
     shutil.copy2(export_source / name, export_output / name)
 for name in ("images", "screenshots", "fonts", "media"):
     shutil.copytree(export_source / name, export_output / name)
-gallery = Page()
-gallery.feed((export_source / "index.html").read_text())
-assert gallery.headings == 1 and gallery.noindex, "Portfolio must have one H1 and noindex"
-assert set(gallery.targets) <= gallery.ids, "Missing portfolio anchor"
-for asset in gallery.assets:
-    assert (export_source / asset).is_file(), f"Missing portfolio asset: {asset}"
-expired = package_preview(DIST, (*PAGE_FILES, "kita-export/index.html"))
+for name in export_pages:
+    gallery = Page()
+    gallery.feed((export_source / name).read_text())
+    assert gallery.headings == 1 and gallery.noindex, f"Portfolio must have one H1 and noindex: {name}"
+    assert set(gallery.targets) <= gallery.ids, f"Missing portfolio anchor: {name}"
+    for asset in gallery.assets:
+        assert (export_source / asset).is_file(), f"Missing portfolio asset: {asset}"
+expired = package_preview(DIST, (*PAGE_FILES, *(f"kita-export/{name}" for name in export_pages)))
 print("Preview state: expired" if expired else "Preview state: active")
 print(f"Validated and built {sum(1 for p in DIST.rglob('*') if p.is_file())} static files in dist/")
