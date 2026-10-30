@@ -3,6 +3,7 @@
 An original responsive concept for Chalu, stored in the `crystal-cha` project. Chalu branding was confirmed on 28 October 2026.
 
 - **Shareable preview:** https://jianwongdesign.github.io/chalu-review-7d4b9f2a/
+- **Previous shareable link (restored):** https://jianwongdesign.github.io/crystal-cha/ — forwards to the current preview with the same expiry.
 - **Repository:** https://github.com/jianwongdesign/chalu-review-7d4b9f2a
 - **Hero film:** https://jianwongdesign.github.io/chalu-review-7d4b9f2a/assets/hero-loop-v3.mp4
 - **Status:** Design and shopping demo. No real payments, orders or delivery.

@@ -151,3 +151,12 @@ Build now packages the gallery at `/kita-export/` while excluding its editable s
 ## Portfolio cover navigation — 29 October 2026
 
 The portfolio entry at `/kita-export/` now shows the Chalu cover image, service category and short project brief. The whole accessible card opens `chalu.html`, which retains all seven presentation images, page captures and downloads. Its Selected work link returns to the entry page. Both routes are packaged and expire together. The complete local ZIP was refreshed with this navigation.
+
+
+## Old preview address restored — 30 October 2026
+
+User requested restoring the old link as well. A separate lightweight repository, https://github.com/jianwongdesign/crystal-cha, now owns the original Pages address and forwards visitors to the current `/chalu-review-7d4b9f2a/` preview. It contains redirects for every existing HTML route, portfolio entry/detail pages, and a 404 fallback. JavaScript preserves the route, query and fragment; each known route also has a refresh and clickable fallback. No original media is duplicated.
+
+The canonical repository and current link remain unchanged. The destination continues to enforce the existing expiry, 2026-11-07T20:57:22Z. The alias repository uses branch-based Pages from `main` at `/`. Creating it replaces GitHub's old repository-name redirect, so always use `chalu-review-7d4b9f2a` for storefront source changes and use `crystal-cha` only for legacy URL redirects. Local alias checkout, pre-change bundle/settings and verification evidence: `.local/legacy-link-20261030/`.
+
+Verification: alias Pages deployment 40992708701 succeeded at commit bb797268083fbca8bd5a60c16bb31650981c8769. Live browser checks followed the old homepage, Snow Jasmine and portfolio URLs to their matching current pages, with expected titles/headings and preserved query strings. Local redirect checks also covered fragments and Shop.
