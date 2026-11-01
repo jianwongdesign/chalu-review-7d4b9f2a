@@ -78,22 +78,6 @@ DIST.mkdir()
 for name in (*PAGE_FILES, "styles.css", "shop.css", "product.css", "motion.css", "pages.css", "contact.js", "motion.js", "site.js", "navigation.js", "product.js", "collection.js", "commerce.js", "checkout.js", "robots.txt", ".nojekyll"):
     shutil.copy2(ROOT / name, DIST / name)
 shutil.copytree(ROOT / "assets", DIST / "assets")
-# The portfolio export is an additional preview route. Keep editable sources local.
-export_source = ROOT / "kita-export"
-export_output = DIST / "kita-export"
-export_output.mkdir()
-export_pages = ("index.html", "chalu.html")
-for name in (*export_pages, "gallery.css"):
-    shutil.copy2(export_source / name, export_output / name)
-for name in ("images", "screenshots", "fonts", "media"):
-    shutil.copytree(export_source / name, export_output / name)
-for name in export_pages:
-    gallery = Page()
-    gallery.feed((export_source / name).read_text())
-    assert gallery.headings == 1 and gallery.noindex, f"Portfolio must have one H1 and noindex: {name}"
-    assert set(gallery.targets) <= gallery.ids, f"Missing portfolio anchor: {name}"
-    for asset in gallery.assets:
-        assert (export_source / asset).is_file(), f"Missing portfolio asset: {asset}"
-expired = package_preview(DIST, (*PAGE_FILES, *(f"kita-export/{name}" for name in export_pages)))
+expired = package_preview(DIST, PAGE_FILES)
 print("Preview state: expired" if expired else "Preview state: active")
 print(f"Validated and built {sum(1 for p in DIST.rglob('*') if p.is_file())} static files in dist/")

@@ -138,3 +138,7 @@ Use `python3 scripts/build.py` and serve **dist/** to review the guarded output 
 The shared footer includes a forest-green WhatsApp pill on desktop and a 58 px circular launcher on mobile/tablet. It stays hidden over the mobile homepage hero and while the menu is open. It appears on all thirteen marketing/product/article pages; checkout and expired pages omit it.
 
 The destination is **pending**. `docs/contact.json` currently has an empty `whatsapp_number`; clicking the button shows an explicit demo dialog and does not send anything. Once the user provides a number, enter country-code digits only and run render-contact.py, render-news.py, render-products.py and render-pages.py, then build. A configured number generates a direct WhatsApp chat link with the supplied greeting. No WhatsApp SDK, tracking or unsolicited messages are used. Active build: 68 files.
+
+## Company portfolio assets
+
+Cover images, company/project details, screenshots and the portfolio gallery have moved to [cover_web — Chalu](https://github.com/jianwongdesign/cover_web/tree/main/companies/chalu). Maintain those files only in that repository. This repository owns the website source and preview; its build no longer publishes `/kita-export/`. Previous copies remain in Git history.

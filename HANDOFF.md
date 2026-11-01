@@ -160,3 +160,10 @@ User requested restoring the old link as well. A separate lightweight repository
 The canonical repository and current link remain unchanged. The destination continues to enforce the existing expiry, 2026-11-07T20:57:22Z. The alias repository uses branch-based Pages from `main` at `/`. Creating it replaces GitHub's old repository-name redirect, so always use `chalu-review-7d4b9f2a` for storefront source changes and use `crystal-cha` only for legacy URL redirects. Local alias checkout, pre-change bundle/settings and verification evidence: `.local/legacy-link-20261030/`.
 
 Verification: alias Pages deployment 40992708701 succeeded at commit bb797268083fbca8bd5a60c16bb31650981c8769. Live browser checks followed the old homepage, Snow Jasmine and portfolio URLs to their matching current pages, with expected titles/headings and preserved query strings. Local redirect checks also covered fragments and Shop.
+
+
+## Portfolio moved to company repository — 1 November 2026
+
+The user requested that cover images and website information live only in `jianwongdesign/cover_web`, organised by company. Chalu now lives at `companies/chalu/`, with `company.json`, README, cover, gallery, screenshots, media, fonts, editable scripts and a refreshed ZIP. The root `companies.json` indexes companies. Local checkout: `/Users/jianwong/project/cover_web`. The target remains private and has no new public Pages deployment.
+
+The former `kita-export/` package is removed from the current website tree and build. Do not recreate it here. Historic Git objects are retained. Legacy portfolio URLs no longer serve the package; the storefront and its fixed expiry are unchanged. Gallery QA in the new checkout passed at 390, 768, 1440 and 2560 pixels, with cover navigation, images and film playback verified.
